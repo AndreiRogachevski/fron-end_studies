@@ -1,7 +1,18 @@
-html {
-    width: 700px;
+body {
+    width: 800px;
     margin: 0 auto;
+    line-height: 1.5;
+}
+address{
+    white-space: pre-line;
+    font-style: normal;
 }
 .right {
     text-align: right;
+}
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
 }
