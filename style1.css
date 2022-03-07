@@ -1,0 +1,10 @@
+h1, h2 {
+    text-align: center;
+}
+h1 {
+    text-transform: capitalize;
+    text-decoration: overline;
+}
+h2 {
+    color: rgb(153, 8, 8);
+}
