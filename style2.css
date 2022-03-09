@@ -1,4 +1,9 @@
 h1 {
     text-transform: capitalize;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: lighter;
+    text-align: center;
+    text-decoration: underline solid palevioletred 15px;
+    text-decoration-skip-ink: none;
+    text-underline-offset: -50%;
 }
