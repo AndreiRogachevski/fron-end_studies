@@ -1,0 +1,13 @@
+body {
+    margin: auto;
+    width: 750px;
+}
+li li {
+    list-style-type: lower-alpha;
+}
+.background {
+    background-color: yellow;
+}
+.italic {
+    font-style: italic;
+}

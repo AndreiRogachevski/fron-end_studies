@@ -5,6 +5,9 @@ body {
 h1, h2 {
     text-align: center;
 }
+h2 {
+    white-space: pre;
+}
 span,
 .bold {
     font-weight: 900;
