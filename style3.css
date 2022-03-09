@@ -1,0 +1,24 @@
+body {
+    width: 800px;
+    margin: auto;
+}
+h1, h2 {
+    text-align: center;
+}
+span,
+.bold {
+    font-weight: 900;
+}
+.margin {
+    margin-bottom: 0px;
+}
+dl {
+    margin-top: 0px;
+    margin-left: 30px;
+    }
+    .top {
+        margin-top: 20px;
+    }
+    code {
+        font-size: 1.4em;
+    }
