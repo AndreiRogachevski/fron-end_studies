@@ -1,0 +1,18 @@
+table {
+  border: outset;
+  width: 600px;
+}
+th,
+td {
+  border: inset;
+}
+.tab{
+  margin: 0;
+  padding: 0;
+}
+.tar{
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  height: 100px;
+}

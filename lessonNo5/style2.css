@@ -1,0 +1,24 @@
+caption {
+  font-size: 2em;
+  text-align: left;
+  white-space: pre-line;margin-bottom: 20px;
+}
+table {
+  width: 700px;
+  border-collapse: separate;
+  text-transform: capitalize;
+  border-spacing: 0;
+}
+th,
+td {
+  border: 2px solid black;
+  text-align: center;
+
+}
+.color_gray {
+  background-color: gainsboro;
+}
+.height{
+    padding: 10px 20px;
+    width: 10%;
+}
