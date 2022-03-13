@@ -1,0 +1,34 @@
+table,
+th,
+td {
+  width: 500px;
+  padding: 10px 15px;
+  font-family: sans-serif;
+  border-collapse: collapse;
+  background-clip: padding-box;
+}
+table {
+  border-bottom: 2px solid #12a353;
+}
+.radius-l {
+  background-color: #12a353;
+  border-top-left-radius: 10px;
+}
+.radius-r {
+  background-color: #12a353;
+  border-top-right-radius: 10px;
+}
+.background {
+  background-color: #12a353;
+}
+th {
+  text-align: left;
+  color: rgb(255, 255, 255);
+}
+.colors {
+  font-weight: 600;
+  color: #12a353;
+  background-color: rgb(236, 236, 236);
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+}
