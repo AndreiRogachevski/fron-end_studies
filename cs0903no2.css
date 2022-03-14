@@ -1,0 +1,13 @@
+li{
+    display: inline-block;
+}
+a{
+    display: block;
+    width: 96px;
+    height: 96px;
+    background-image: url(./zany-face.png);
+    background-position: center;
+    border: 1px solid darkgoldenrod;
+    border-radius: 100%;
+    margin: 0 20px;
+}
