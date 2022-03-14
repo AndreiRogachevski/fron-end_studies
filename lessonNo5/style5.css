@@ -8,18 +8,18 @@ td {
   background-clip: padding-box;
 }
 table {
-  border-bottom: 2px solid #12a353;
+  border-bottom: 2px solid #1daa7b;
 }
 .radius-l {
-  background-color: #12a353;
+  background-color: #1daa7b;
   border-top-left-radius: 10px;
 }
 .radius-r {
-  background-color: #12a353;
+  background-color: #1daa7b;
   border-top-right-radius: 10px;
 }
 .background {
-  background-color: #12a353;
+  background-color: #1daa7b;
 }
 th {
   text-align: left;
@@ -27,7 +27,7 @@ th {
 }
 .colors {
   font-weight: 600;
-  color: #12a353;
+  color: #1daa7b;
   background-color: rgb(236, 236, 236);
   border-top: 1px solid gray;
   border-bottom: 1px solid gray;

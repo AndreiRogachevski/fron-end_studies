@@ -1,18 +1,19 @@
 table {
-  border: outset;
-  width: 600px;
+  border: 1.5px outset rgb(190, 190, 190);
 }
 th,
 td {
-  border: inset;
+  border: 1.5px inset rgb(190, 190, 190);
 }
 .tab {
-  margin: 0;
+  border-spacing: 0;
   padding: 0;
+  border: 0;
 }
 .tar {
-  margin: 0;
-  padding: 0;
-  width: 200px;
-  height: 100px;
+  width:200px;
+  height: 40px;
+}
+.text{
+  text-align: center;
 }

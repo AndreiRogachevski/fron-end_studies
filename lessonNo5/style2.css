@@ -1,7 +1,9 @@
 caption {
   font-size: 2em;
+  font-weight: bold;
   text-align: left;
-  white-space: pre-line;margin-bottom: 20px;
+  white-space: pre-line;
+  margin-bottom: 20px;
 }
 table {
   width: 700px;
@@ -9,11 +11,13 @@ table {
   text-transform: capitalize;
   border-spacing: 0;
 }
+.text-r{
+  text-align: right;
+}
 th,
 td {
   border: 2px solid black;
   text-align: center;
-
 }
 .color_gray {
   background-color: gainsboro;

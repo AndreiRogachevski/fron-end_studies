@@ -1,0 +1,28 @@
+table {
+  margin: 0 auto;
+}
+caption {
+  font-size: 2em;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 0px 25px;
+  text-align: center;
+  text-transform: capitalize;
+}
+th {
+  font-style: italic;
+}
+.color-w {
+  background-color: white;
+}
+.color-g {
+  background-color: gainsboro;
+}
+.loc {
+  font-style: normal;
+  font-size: 1.5em;
+}
