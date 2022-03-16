@@ -1,6 +1,4 @@
 body {
-  display: flex;
-  flex-direction: column;
   background-color: gainsboro;
 }
 header {
@@ -16,10 +14,14 @@ main {
   display: flex;
   margin-top: 20px;
 }
-aside nav {
+aside nav{
   background-color: #74e774;
   min-width: 150px;
   height: 100%;
+}
+aside nav ul{
+  margin: 0;  
+  padding-top: 20px;
 }
 article {
   background-color: #ff804f;
@@ -31,15 +33,15 @@ article {
 img {
   border: 5px solid #ff00ff;
 }
-article footer{
-    justify-content: space-around;
-}
 footer {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 20px;
+  justify-content: space-around;
+  aligns-content: space-between;
+  align-items: center;
 }
 body > footer {
+  margin-top: 20px;
   background-color: #79cbc4;
 }
 h4 {
@@ -47,9 +49,14 @@ h4 {
   font-size: 2em;
   border-bottom: 1px solid black;
   width: 100%;
-  margin-top: 10px;
+  margin: 10px 0;
   text-align: center;
 }
-li{
-    color: #5a489a;
+footer nav{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+li {
+  color: #5a489a;
 }
