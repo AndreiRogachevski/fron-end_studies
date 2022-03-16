@@ -37,8 +37,6 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  aligns-content: space-between;
-  align-items: center;
 }
 body > footer {
   margin-top: 20px;
