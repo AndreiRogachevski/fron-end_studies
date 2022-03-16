@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lesson7_2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      main {
+        background-color: gray;
+        display: flex;
+        justify-content: space-around;
+      }
+      section {
+        border: 1px solid;
+        border-radius: 10px;
+        line-height: 1.8em;
+        margin: 10px;
+        padding-top: 10px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      h3 {
+        margin-top: 10px;
+      }
+      span {
+        font-weight: bold;
+      }
+      section div:last-child {
+        display: flex;
+        background-color: rgb(4, 167, 167);
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 100%;
+        border-radius: 0 0 10px 10px;
+      }
+      section img {
+        width: 200px;
+        height: 200px;
+      }
+      a {
+        text-decoration: none;
+        color: white;
+      }
+      section div img {
+        background-color: white;
+        width: 30px;
+        height: 30px;
+      }
+      section:hover{
+         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      }
+      section:hover div:last-child{
+          background-color: rgb(0, 63, 63);
+      }
+      section div:last-child:active{
+          background-color: blueviolet;
+          transition: 0.1s;
+          transition: ;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section>
+        <img src="./stul1.jpg" alt="" />
+        <h3>Wood-soft</h3>
+        <p>xcvdfv dfsd sdf d sdf</p>
+        <span>$100.00</span>
+        <div>
+          <img src="./star.png" alt="" /><img src="./star.png" alt="" /><img
+            src="./star.png"
+            alt=""
+          /><img src="./star.png" alt="" /><img src="./star.png" alt="" />
+        </div>
+        <div>
+          <a href="#">Buy Now</a>
+        </div>
+      </section>
+      <section>
+        <img src="./stul2.jpg" alt="" />
+        <h3>Wood-hard</h3>
+        <p>xcvdfv dfsd sdf d sdf</p>
+        <span>$100.00</span>
+        <div>
+          <img src="./star.png" alt="" /><img src="./star.png" alt="" /><img
+            src="./star.png"
+            alt=""
+          /><img src="./star.png" alt="" /><img src="./star.png" alt="" />
+        </div>
+        <div>
+          <a href="#">Buy Now</a>
+        </div>
+      </section>
+      <section>
+        <img src="./stul3.jpg" alt="" />
+        <h3>Wood-hard-cheel</h3>
+        <p>xcvdfv dfsd sdf d sdf</p>
+        <span>$100.00</span>
+        <div>
+          <img src="./star.png" alt="" /><img src="./star.png" alt="" /><img
+            src="./star.png"
+            alt=""
+          /><img src="./star.png" alt="" /><img src="./star.png" alt="" />
+        </div>
+        <div>
+          <a href="#">Buy Now</a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
