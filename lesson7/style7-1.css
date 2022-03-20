@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+main {
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 100px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+body{
+    background-color: #e0e0e0;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  background-color: #eeeeee;
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 7px 15px;
+  width: 275px;
+}
+section > img{
+    padding: 60px 0;
+    background-color: white;
+}
+.bag {
+  background-color: #ff0000;
+  width: 25px;
+  padding: 10px;
+  margin: 15px;
+  border-radius: 10px;
+  align-self: center;
+}
+.bag:hover{
+    background-color: gray;
+    transition: 0.2s;
+}
+h3, p{
+    margin: 10px 15px 10px 0;
+}
+h3{
+    line-height: 2em;
+}
+.title {
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+}
+div img {
+  width: 20px;
+  border: 1px solid gainsboro;
+}
+section div:nth-child(3){
+    margin: 30px 15px;
+    display: flex;
+}
+span{
+   margin-left: auto;
+}
