@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Lato", sans-serif;
+  background-color: #e0e0e0;
+}
+main {
+  display: flex;
+  margin: auto 100px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+}
+section {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  margin: 10px;
+  box-shadow: #979797 0px 5px 8px;
+  background-color: #eee;
+  width: 300px;
+}
+.percent {
+  background-color: white;
+  background-image: url(./10-percent.png);
+  background-repeat: no-repeat;
+  background-position: 250px 10px;
+  background-size: 40px;
+  padding: 50px 0;
+}
+.new {
+  background-color: white;
+  background-image: url(./new.png);
+  background-repeat: no-repeat;
+  background-position: 10px 10px;
+  background-size: 40px;
+  padding: 50px 0;
+}
+section .newpercent {
+  background: url(./new.png) repeat-y 10px 10px,
+    #fff url(./10-percent.png) repeat-y 250px 10px;
+  background-repeat: no-repeat;
+  background-size: 40px;
+  padding: 50px 0;
+}
+.photo{
+  background-color: white;
+  background-size: 40px;
+  padding: 50px 0;
+}
+.price {
+  color: #3ab3db;
+  font-size: 1.6em;
+  font-weight: 900;
+  margin: 15px;
+}
+h3,
+p,
+ul {
+  margin: 15px;
+}
+h3 span,
+p {
+  color: rgb(100, 100, 100);
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+}
+li {
+  padding: 10px;
+  margin: 2px;
+  background-color: #cfcfcf;
+  border-radius: 100%;
+}
+ul img {
+  width: 15px;
+}
