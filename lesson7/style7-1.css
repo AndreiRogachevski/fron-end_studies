@@ -17,7 +17,7 @@ body{
 section {
   display: flex;
   flex-direction: column;
-  background-color: #eeeeee;
+  background-color: rgb(240, 240, 240);
   margin: 10px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 7px 15px;
   width: 275px;

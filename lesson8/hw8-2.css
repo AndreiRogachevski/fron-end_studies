@@ -1,0 +1,90 @@
+body {
+  background-color: #00e480;
+  font-family: sans-serif;
+  width: 1000px;
+}
+main {
+  display: flex;
+  margin: 300px auto;
+  justify-content: center;
+}
+h3 {
+  font-size: 2em;
+  padding: 20px 0;
+}
+span.price,
+span > span {
+  color: #ff3d3e;
+  font-size: 2em;
+  vertical-align: sub;
+}
+.main {
+  background-color: white;
+  width: 400px;
+  height: 600px;
+  padding: 0 0 0 200px;
+  border-radius: 2px;
+}
+p {
+  color: gray;
+}
+.main .apples li img {
+  width: 30px;
+  height: 30px;
+}
+.main .apples li {
+  padding: 2px 5px;
+  margin: 3px;
+}
+.main .apples li:first-child {
+  border: 1px solid;
+  border-radius: 10px;
+}
+.position {
+  position: relative;
+  background-color: #b6ea3d;
+  box-shadow: 5px 10px 50px 3px gray;
+  border-radius: 10px;
+  height: 450px;
+  top: 70px;
+  left: 170px;
+}
+ul.apples {
+  display: flex;
+  list-style: none;
+  background-color: white;
+  height: 100px;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+.position ul.apples {
+  justify-content: space-around;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.position .apples li {
+  border: 1px solid rgb(0, 105, 0);
+  border-radius: 5px;
+}
+div > img {
+  position: relative;
+  left: -80px;
+  top: 10px;
+}
+.benefits {
+  list-style-position: inside;
+  padding: 0;
+}
+.button {
+  display: flex;
+  width: 200px;
+  height: 50px;
+  background-color: #ff3d3e;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 5px 5px 30px 0 gray;
+  justify-content: center;
+  align-items: center;
+}

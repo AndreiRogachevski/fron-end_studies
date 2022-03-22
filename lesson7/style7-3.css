@@ -24,31 +24,16 @@ section {
   width: 300px;
 }
 .percent {
-  background-color: white;
-  background-image: url(./10-percent.png);
-  background-repeat: no-repeat;
-  background-position: 250px 10px;
-  background-size: 40px;
-  padding: 50px 0;
+  background: url(./img/10-percent.png) no-repeat 95% 10px/40px;
 }
 .new {
-  background-color: white;
-  background-image: url(./new.png);
-  background-repeat: no-repeat;
-  background-position: 10px 10px;
-  background-size: 40px;
-  padding: 50px 0;
+  background: url(./img/new.png) no-repeat 5% 10px/40px;
 }
-section .newpercent {
-  background: url(./new.png) repeat-y 5% 10px,
-    #fff url(./10-percent.png) repeat-y 95% 10px;
-  background-repeat: no-repeat;
-  background-size: 40px;
-  padding: 50px 0;
+.newpercent {
+  background: url(./img/new.png) no-repeat 5% 10px/40px, url(./img/10-percent.png) no-repeat 95% 10px/40px;
 }
 .photo{
   background-color: white;
-  background-size: 40px;
   padding: 50px 0;
 }
 .price {
