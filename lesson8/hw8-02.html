@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        width: 300px;
+        margin: 50px auto;
+      }
+      .float1 {
+        width: 100px;
+        height: 100px;
+        background: aquamarine;
+        border-radius: 10px;
+        float: left;
+        text-align: center;
+      }
+      .float2 {
+        width: 100px;
+        height: 100px;
+        background: aquamarine;
+        border-radius: 10px;
+        float: right;
+        text-align: center;
+      }
+      .float3 {
+        width: 100px;
+        height: 100px;
+        background: aquamarine;
+        border-radius: 10px;
+        float: left;
+        text-align: center;
+      }
+      .below {
+        clear: both;
+      }
+      .float4 {
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        background: aquamarine;
+        border-radius: 10px;
+        float: right;
+        text-align: center;
+      }
+      .box1 {
+        width: 300px;
+        margin: 50px auto;
+        background: rgb(112, 187, 0);
+        color: #fff;
+        display: flow-root;
+      }
+      .box1 p{
+          margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="float float1">One</div>
+      <div class="float float2">Two</div>
+      <p>The two boxes should float to either side of this text.</p>
+    </div>
+    <div class="box">
+      <div class="float3">Float</div>
+      <p>This sentence appears next to the float.</p>
+      <p class="below">Cause this sentence to appear below the float.</p>
+    </div>
+    <div class="box1">
+      <div class="float4">Float</div>
+      <p>This sentence appears next to the float.</p>
+    </div>
+  </body>
+</html>
