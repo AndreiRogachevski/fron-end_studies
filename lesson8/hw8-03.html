@@ -7,23 +7,43 @@
     <style>
       body {
         width: 500px;
+        height: 1400px;
         margin: 0 auto;
       }
-
       p {
         background: aqua;
         border: 3px solid blue;
         padding: 10px;
         margin: 10px;
       }
-
+      h1 {
+        position: fixed;
+        top: 0;
+        width: 500px;
+        margin-top: 0;
+        background: white;
+        padding: 10px;
+      }
+      p:nth-of-type(1) {
+        margin-top: 60px;
+      }
       span {
         background: red;
         border: 1px solid black;
       }
       .positioned {
-        position: static;
-        background: yellow;
+        position: sticky;
+        top: 30px;
+        left: 30px;
+      }
+      dt {
+        background-color: black;
+        color: white;
+        padding: 10px;
+        position: sticky;
+        top: 0;
+        left: 0;
+        margin: 1em 0;
       }
     </style>
   </head>
@@ -55,5 +75,34 @@
       >, or just go on to a new line if not, much like this image will do:
       <img src="./img/long.jpg" />
     </p>
+    <h1>Sticky positioning</h1>
+
+    <dl>
+      <dt>A</dt>
+      <dd>Apple</dd>
+      <dd>Ant</dd>
+      <dd>Altimeter</dd>
+      <dd>Airplane</dd>
+      <dt>B</dt>
+      <dd>Bird</dd>
+      <dd>Buzzard</dd>
+      <dd>Bee</dd>
+      <dd>Banana</dd>
+      <dd>Beanstalk</dd>
+      <dt>C</dt>
+      <dd>Calculator</dd>
+      <dd>Cane</dd>
+      <dd>Camera</dd>
+      <dd>Camel</dd>
+      <dt>D</dt>
+      <dd>Duck</dd>
+      <dd>Dime</dd>
+      <dd>Dipstick</dd>
+      <dd>Drone</dd>
+      <dt>E</dt>
+      <dd>Egg</dd>
+      <dd>Elephant</dd>
+      <dd>Egret</dd>
+    </dl>
   </body>
 </html>
