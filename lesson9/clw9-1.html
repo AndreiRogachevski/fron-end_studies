@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Class Work 9-1</title>
+    <style>
+      article {
+        margin: 0 auto;
+        width: 800px;
+      }
+      h1 {
+        font-size: 49px;
+      }
+      fieldset {
+        display: flex;
+        flex-direction: column;
+      }
+      input {
+        width: 200px;
+      }
+      .checkbox{
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <h1>Форма заявки на работу в зоопарке</h1>
+      <p>Пожалуста заполните форму, Обязательные поля помечены</p>
+      <form action="" method="get">
+        <fieldset>
+          <legend>Контактная информация</legend>
+          <section>
+          <label for="text">Имя</label>
+          <input type="text" required id="text" /></section>
+          <section><label for="tel">Телефон</label>
+          <input type="tel" id="tel" /></section>
+          <section><label for="email">Email</label>
+          <input type="email" required id="email" /></section>
+        </fieldset>
+        <fieldset>
+          <legend>Персональная информация</legend>
+          <section><label for="text">Возраст</label>
+          <input type="text" id="text" required min="18" max="55" /></section>
+          <section><label for="sex">Пол</label>
+          <select name="" id="">
+            <option value="femail">Женщина</option>
+            <option value="male">Мужчина</option>
+          </select></section>
+          <section><label for="area">Пречислите личные качества</label>
+          <textarea name="" id="area" cols="30" rows="10"></textarea></section>
+        </fieldset>
+        <fieldset class="checkbox">
+          <legend>Выберите ваших любимых животных</legend>
+          <ul>
+              <li><input type="checkbox" id="zebra" />
+          <label for="zebra">Зебра</label></li>
+              <li><input type="checkbox" id="cat" />
+          <label for="cat">Кошак</label></li>
+              <li><input type="checkbox" id="snake" />
+          <label for="snake">Анаконда</label></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+          </ul>
+          <section></section>
+          <section></section>
+          <section></section>
+          <section><input type="checkbox" id="human" />
+          <label for="human">Человек</label></section>
+          <section><input type="checkbox" id="elef" />
+          <label for="elef">Слон</label></section>
+          <section><input type="checkbox" id="antilopa" />
+          <label for="antilopa">Антилопа</label></section>
+          <section><input type="checkbox" id="peeg" />
+          <label for="peeg">Голубь</label></section>
+          <section><input type="checkbox" id="crab" />
+          <label for="crab">Краб</label></section>
+        </fieldset>
+        <button>Отправить информацию</button>
+      </form>
+    </article>
+  </body>
+</html>
