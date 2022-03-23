@@ -9,19 +9,20 @@ body {
 }
 main {
   display: flex;
-  margin: 30px 150px;
+  margin: 20px auto;
+  width: 1100px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: start;
 }
 section {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
-  margin: 20px 15px;
+  margin: 20px 0;
   box-shadow: #979797 0px 5px 8px;
   background-color: #eee;
-  width: 300px;
+  width: 250px;
 }
 .percent {
   background: url(./img/10-percent.png) no-repeat 95% 10px/40px;
@@ -30,9 +31,10 @@ section {
   background: url(./img/new.png) no-repeat 5% 10px/40px;
 }
 .newpercent {
-  background: url(./img/new.png) no-repeat 5% 10px/40px, url(./img/10-percent.png) no-repeat 95% 10px/40px;
+  background: url(./img/new.png) no-repeat 5% 10px/40px,
+    url(./img/10-percent.png) no-repeat 95% 10px/40px;
 }
-.photo{
+.photo {
   background-color: white;
   padding: 50px 0;
 }
@@ -42,10 +44,13 @@ section {
   font-weight: 900;
   margin: 15px;
 }
-h3, p, ul {
+h3,
+p,
+ul {
   margin: 15px;
 }
-h3 span, p {
+h3 span,
+p {
   color: rgb(100, 100, 100);
 }
 

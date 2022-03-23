@@ -4,14 +4,15 @@ body {
 main {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 150px;
-  justify-content: center;
+  margin: 0 auto;
+  width: 1100px;
+  justify-content: space-between;
 }
 section {
   display: flex;
   flex-direction: column;
   width: 250px;
-  margin: 10px;
+  margin: 10px 0;
   background-color: #f7f7f7;
   box-shadow: #979797 0px 5px 8px;
 }
