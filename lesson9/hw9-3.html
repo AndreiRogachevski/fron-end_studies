@@ -4,7 +4,148 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/3aaf1b54e3.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Home Work 9-3</title>
+    <style>
+      * {
+        text-transform: capitalize;
+        margin: 0;
+        padding: 0;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      body {
+        background: gainsboro;
+      }
+      form {
+        margin: 30px auto;
+        width: 600px;
+        background-color: #fff;
+      }
+      h2 {
+        width: 100%;
+        padding: 20px;
+        padding-bottom: 0;
+        text-transform: uppercase;
+      }
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+        padding-top: 0;
+      }
+      p {
+        display: flex;
+        flex-direction: column;
+        width: 270px;
+        margin: 10px 0;
+      }
+      label {
+        margin: 10px 0;
+      }
+      input,
+      select {
+        padding: 5px;
+      }
+      input,
+      select,
+      textarea {
+        border: 1px solid grey;
+        border-radius: 4px;
+      }
+      i {
+        margin-right: 5px;
+      }
+      #mail {
+        text-transform: none;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <form action="#">
+      <h2>personal detials</h2>
+      <section>
+        <p>
+          <label for="first-name"
+            ><i class="fa-solid fa-user"></i>first name</label
+          >
+          <input type="text" id="first name" placeholder="first name" />
+        </p>
+        <p>
+          <label for="last-name">last name</label>
+          <input type="text" id="last-name" placeholder="last name" />
+        </p>
+        <p class="address">
+          <label for="address"><i class="fa-solid fa-house"></i>address</label>
+          <textarea name="address" id="address" cols="30" rows="6"></textarea>
+        </p>
+        <div>
+          <p>
+            <label for="country"><i class="fa-solid fa-flag"></i>country</label>
+            <select>
+              <option value="">select country</option>
+              <option value="USA">USA</option>
+              <option value="canada">canada</option>
+              <option value="russia">russian</option>
+              <option value="belarus">belarus</option>
+            </select>
+          </p>
+          <p>
+            <label for="mail"><i class="fa-solid fa-envelope"></i>email</label>
+            <input
+              type="email"
+              name="email"
+              id="mail"
+              placeholder="example@email.com"
+            />
+          </p>
+        </div>
+        <p>
+          <label for="pswrd"><i class="fa-solid fa-lock"></i>password</label>
+          <input
+            type="password"
+            name="password"
+            id="pswrd"
+            placeholder="password"
+          />
+        </p>
+        <p>
+          <label for="cnfpswrd"
+            ><i class="fa-solid fa-rotate-right"></i>confirm password</label
+          >
+          <input
+            type="password"
+            id="confpswrd"
+            placeholder="confirm password"
+          />
+        </p>
+        <p>
+          <label for="pincode"
+            ><i class="fa-solid fa-thumbtack"></i>pinecode</label
+          >
+          <input
+            type="text"
+            name="pincode"
+            id="pincode"
+            placeholder="pincode"
+          />
+        </p>
+        <p>
+          <label for="phone"
+            ><i class="fa-solid fa-mobile-screen-button"></i>contact
+            number</label
+          >
+          <input
+            type="tel"
+            name="phone"
+            id="phone"
+            placeholder="contact number"
+          />
+        </p>
+      </section>
+    </form>
+  </body>
 </html>

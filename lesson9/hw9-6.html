@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/3aaf1b54e3.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Home Work 9-6</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        text-transform: capitalize;
+      }
+      body {
+        background: gainsboro;
+      }
+      form {
+        background: #fff;
+        margin: 30px auto;
+        width: 370px;
+        border-top: 5px solid #f6ba1b;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+        letter-spacing: 1.5px;
+        word-spacing: 2px;
+        padding: 0 15px;
+      }
+      ul:first-of-type {
+        list-style: none;
+        display: flex;
+        align-self: start;
+      }
+      ul:last-of-type {
+        list-style: none;
+      }
+      input,
+      li {
+        padding: 5px;
+        margin: 5px;
+      }
+      div:nth-of-type(2) {
+        display: flex;s
+        /* justify-content: space-between; */
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      section div:first-of-type {
+        display: flex;
+        flex-direction: column;
+        align-content: stretch;
+        justify-content: stretch;
+      }
+      input {
+        align-self: stretch;
+      }
+      section > input {
+        background: #f6ba1b;
+        color: #fff;
+        align-self: stretch;
+        border: none;
+        height: 35px;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <h2>responsive registration form</h2>
+      <section>
+        <div>
+          <input type="text" placeholder="email" />
+          <input
+            type="password"
+            name="pswrd"
+            id="pswrd"
+            placeholder="password"
+          />
+          <input
+            type="password"
+            name="re-pswrd"
+            id="re-pswrd"
+            placeholder="re-type password"
+          />
+        </div>
+        <div>
+          <input type="text" placeholder="frirst name" />
+          <input type="text" placeholder="last name" />
+        </div>
+        <ul>
+          <li>
+            <input type="radio" name="male" id="male" />
+            <label for="male">male</label>
+          </li>
+          <li>
+            <input type="radio" name="female" id="female" />
+            <label for="female">female</label>
+          </li>
+        </ul>
+        <select name="country" id="country">
+          <option value="">Select a country</option>
+          <option value="belarus">Belarus</option>
+          <option value="poland">Poland</option>
+          <option value="ukraine">Ukraine</option>
+          <option value="russian">Russian Federation</option>
+        </select>
+        <ul>
+          <li>
+            <input type="checkbox" name="agree" id="agree" />
+            <label for="agree">I agree with terms and conditions</label>
+          </li>
+          <li>
+            <input type="checkbox" name="news" id="news" />
+            <label for="news">I want to receive the newsletter</label>
+          </li>
+        </ul>
+        <input type="submit" value="register" />
+      </section>
+    </form>
+  </body>
+</html>
