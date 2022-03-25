@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Work 9-4</title>
+    <style>
+      body {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+        color: rgb(121, 121, 121);
+      }
+      form {
+        margin: 0 auto;
+        width: 600px;
+      }
+      h1 {
+        text-transform: uppercase;
+      }
+      section {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .name {
+        display: flex;
+      }
+      input {
+        height: 30px;
+      }
+      .name p input {
+        width: 270px;
+      }
+      .name p:last-of-type {
+        margin-left: 50px;
+      }
+      #mail,
+      #msg {
+        width: 600px;
+      }
+      label {
+        font-weight: bold;
+      }
+      section > input {
+        width: 200px;
+        height: 40px;
+        color: #fff;
+        background: #299be4;
+        border: none;
+        border-radius: 3px;
+      }
+      section > input:hover {
+        background: #1f75aa;
+      }
+      section > input:active {
+        background: #299be4;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <h1>contact us</h1>
+      <p>
+        We`d love to hear from you, please drop us a line if you`ve any query.
+      </p>
+      <section>
+        <div class="name">
+          <p>
+            <label for="first_name">Frist Name</label>
+            <input type="text" id="first_name" />
+          </p>
+          <p>
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" />
+          </p>
+        </div>
+        <p>
+          <label for="miail">Email Address</label>
+          <input type="text" id="mail" />
+        </p>
+        <p>
+          <label for="msg">Message</label>
+          <textarea name="message" id="msg" cols="30" rows="8"></textarea>
+        </p>
+        <input type="submit" value="Submit" />
+      </section>
+    </form>
+  </body>
+</html>

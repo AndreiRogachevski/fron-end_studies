@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Work 9-1</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(116, 116, 116);
+      }
+      form {
+        margin: 0 auto;
+        border: solid rgb(163, 163, 163);
+        width: 600px;
+        padding: 10px;
+      }
+      h2 {
+        margin: 0;
+      }
+      p:last-of-type {
+        display: flex;
+        flex-direction: column;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="#">
+      <h2>Форма обратной связи</h2>
+      <p>
+        <input type="text" id="name" />
+        <label for="name">Ваше имя</label>
+      </p>
+      <p>
+        <input type="email" name="" id="mail" />
+        <label for="mail">Электронная почта</label>
+      </p>
+      <p>
+        <input type="text" id="theme" />
+        <label for="theme">Тема сообщения</label>
+      </p>
+      <p>
+        <label for="textarea"> Текст сообщения: </label>
+        <textarea name="" id="textarea" cols="30" rows="10"></textarea>
+      </p>
+      <input type="submit" value="Отправить" />
+    </form>
+  </body>
+</html>

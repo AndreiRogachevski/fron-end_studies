@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Work 9-5</title>
+    <style>
+      body {
+        background: #00c550;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        color: #808080;
+      }
+      article {
+        margin: 0 auto;
+        background: #fff;
+        width: 400px;
+        margin: 50px auto;
+        padding: 20px;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+        font-size: 2em;
+      }
+      section {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+      }
+      article > p {
+        text-align: center;
+      }
+      a {
+        color: #845ba2;
+      }
+      input,
+      textarea {
+        margin-bottom: 20px;
+        padding: 10px;
+        color: #808080;
+        border: 1px solid #ccc;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+      }
+      section input:last-of-type {
+        background: #00c550;
+        color: #fff;
+        border: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <article>
+      <form action="#">
+        <h1>Colorlib Contact Form</h1>
+        <p>Contact us for custom quote</p>
+        <section>
+          <input type="text" value="Your name" />
+          <input type="email" value="Your Email Address" />
+          <input type="tel" value="Your Phone Number (optional)" />
+          <input type="text" value="Your Web Site (optionak)" />
+          <textarea name="message" id="msg" value="" cols="30" rows="5">
+Type your message here...
+          </textarea>
+          <input type="submit" value="Submit" />
+        </section>
+      </form>
+      <p>Designad by <a href="#">Colorlib</a></p>
+    </article>
+  </body>
+</html>
