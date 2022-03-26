@@ -45,10 +45,7 @@
         padding: 5px;
         margin: 5px 0 5px 0;
       }
-      label {
-      }
-      input,
-      select {
+      input {
         border: 0;
       }
       div:nth-of-type(2) {
@@ -72,19 +69,32 @@
       p input {
         padding-left: 10px;
         width: 100%;
-        padding: 5px;
-        padding-left: 22px;
-        border: 1px solid grey;
+        padding: 10px 7px;
       }
       p {
         display: flex;
         align-items: center;
-        margin-bottom: 5px;
+        margin-bottom: 20px;
+      }
+      i,
+      input {
+        border: 1px solid grey;
       }
       i {
-        position: absolute;
-        padding: 5px;
-        border-left: 1px solid grey;
+        padding: 9.5px 10px;
+        margin-right: -1px;
+      }
+      select {
+        border-radius: 0;
+        margin: 20px 0;
+      }
+      section > input:hover {
+        background-color: hsl(44, 70%, 55%);
+        transition: 0.2s;
+      }
+      section > input:active {
+        background-color: #f6ba1b;
+        transition: 0.2s;
       }
     </style>
   </head>
@@ -94,11 +104,11 @@
       <section>
         <div>
           <p>
-            <i class="fa-solid fa-envelope"></i>
+            <label for="mail"><i class="fa-solid fa-envelope"></i></label>
             <input type="text" id="mail" placeholder="email" />
           </p>
           <p>
-            <i class="fa-solid fa-lock"></i>
+            <label for="pswrd"><i class="fa-solid fa-lock"></i></label>
             <input
               type="password"
               name="pswrd"
@@ -107,7 +117,7 @@
             />
           </p>
           <p>
-            <i class="fa-solid fa-lock"></i>
+            <label for="re-pswrd"><i class="fa-solid fa-lock"></i></label>
             <input
               type="password"
               name="re-pswrd"
@@ -118,11 +128,11 @@
         </div>
         <div>
           <p>
-            <i class="fa-solid fa-user"></i>
+            <label for="firstname"><i class="fa-solid fa-user"></i></label>
             <input type="text" placeholder="frirst name" id="firstname" />
           </p>
           <p>
-            <i class="fa-solid fa-user"></i>
+            <label for="lastname"><i class="fa-solid fa-user"></i></label>
             <input type="text" placeholder="last name" id="lastname" />
           </p>
         </div>
