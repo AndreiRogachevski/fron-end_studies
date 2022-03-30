@@ -1,40 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-        form{
-            counter-reset: but;
-        }
-        div input{
-            counter-increment: but 1;
-            margin: 20px;
-        }
-        div input{
-            content: counter(but)".";
-        }
-
-    </style>
-</head>
-<body>
+    <link rel="stylesheet" href="hw9-2.css" />
+  </head>
+  <body>
     <form action="">
-        <ol>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ol>
-        <div>
-            <input type="reset" value="">
-            <input type="submit" value="">
-            <input type="button" value="">
-        </div>
+      <div>
+        <section class="step">
+          <label for="name">Ваше имя:</label>
+          <input type="text" id="name" value="Irina" />
+        </section>
+        <section class="step">
+          <label for="pswrd">Пароль:</label>
+          <input
+            type="password"
+            name="pswrd"
+            id="pswrd"
+            value="ssdlmvmsdkvmsdmvsmd"
+          />
+        </section>
+        <section>
+          <span>Пол:</span>
+          <div>
+            <label for="male">мужской</label>
+            <input type="radio" name="male" id="male" />
+            <label for="female">женский</label>
+            <input type="radio" name="female" id="female" />
+          </div>
+        </section>
+        <section>
+          <span>Ваши увлечения:</span>
+          <div>
+            <label for="music">Музыка</label>
+            <input type="checkbox" name="music" id="music" />
+            <label for="video">Видео</label>
+            <input type="checkbox" name="video" id="video" />
+            <label for="draw">Рисование</label>
+            <input type="checkbox" name="draw" id="draw" />
+          </div>
+        </section>
+        <section class="step">
+          <label for="city">Ваш город</label>
+          <select name="city" id="city">
+            <option value="nizhnie tagil">Нижний Тагил</option>
+            <option value="nizhnie tagil">Нижний Тагил</option>
+            <option value="nizhnie tagil">Нижний Тагил</option>
+          </select>
+        </section>
+        <section class="step">
+          <label for="description">Кратко о себе</label>
+          <textarea
+            name="description"
+            id="description"
+            cols="30"
+            rows="3"
+            placeholder="краткая информация о ваших увлечениях"
+          ></textarea>
+        </section>
+        <section class="step">
+          <label for="avatar">Аватар</label>
+          <input type="file" name="avatar" id="avatar" />
+        </section>
+      </div>
+      <div>
+        <p><input type="reset" value="Сброс" /></p>
+        <p><input type="submit" value="Подтверждаю" /></p>
+        <p><input type="button" value="Кликни по мне просто так" /></p>
+      </div>
     </form>
-</body>
+  </body>
 </html>

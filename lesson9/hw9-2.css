@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: gainsboro;
+}
+form {
+  margin: 20px auto;
+  padding: 20px 40px;
+  background-color: whitesmoke;
+  width: 450px;
+}
+div:first-child {
+  counter-reset: field;
+}
+section {
+  margin: 20px 0;
+  white-space: nowrap;
+}
+section::before {
+  counter-increment: field 1;
+  content: counter(field) ". ";
+}
+p input {
+  padding: 2px 5px;
+}
+form > div:last-child {
+  counter-reset: button 7;
+  display: flex;
+  justify-content: space-between;
+}
+div > p::before {
+  counter-increment: button 1;
+  content: counter(button) ". ";
+}
+section {
+  display: flex;
+  align-items: center;
+}
+span,
+.step label {
+  width: 35%;
+}
+.step input,
+textarea {
+  width: 59%;
+}
+label[for="discription"] {
+  align-self: center;
+}
+span + div input {
+  margin-right: 7px;
+}
