@@ -1,0 +1,59 @@
+body {
+  margin: 20px auto;
+  width: 1024px;
+}
+body > * {
+  width: 78.125%;
+  margin: 0 auto;
+}
+header {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header h2 {
+  font-weight: 900;
+  text-transform: capitalize;
+  color: #000638;
+  font-size: 24px;
+}
+header nav a {
+  padding: 0 5px;
+  text-decoration: none;
+  color: black;
+  fsize: 18px;
+  text-transform: capitalize;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.mainhead a {
+  padding: 5px 0;
+  display: block;
+  background-color: #000638;
+  border-radius: 3px;
+  color: white;
+  font-size: 14px;
+  width: 112px;
+  text-decoration: none;
+  height: 20px;
+  text-align: center;
+}
+.mainhead h1 {
+  font-size: 46px;
+}
+.mainhead img[src="./Post Thumbnail.jpg"] {
+  width: 100%;
+}
+.mainhead p:last-child {
+  display: flex;
+  align-items: center;
+}
+.mainhead img[src="./image 3.png"] {
+  width: 42px;
+}
+.mainhead span {
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 700;
+}
