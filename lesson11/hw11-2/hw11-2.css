@@ -1,31 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Roboto:wght@400;500&display=swap");
 body {
   margin: 20px auto;
-  width: 1024px;
+  width: 1440px;
 }
 body > * {
-  width: 78.125%;
+  width: 800px;
   margin: 0 auto;
 }
+.ff-merr4,
+li,
+a {
+  font-family: "Merriweather", serif;
+  font-weight: 400;
+}
+.ff-merr7,
+h3 {
+  font-family: "Merriweather", serif;
+  font-weight: 700;
+}
+.ff-merr9 {
+  font-family: "Merriweather", serif;
+  font-weight: 900;
+}
+.ff-rob4,
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+.ff-rob5 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
 header {
-  width: 95%;
+  width: 1100px;
+  margin-top: 35px;
+  margin-bottom: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 header h2 {
-  font-weight: 900;
   text-transform: capitalize;
   color: #000638;
   font-size: 24px;
 }
 header nav a {
   padding: 0 5px;
-  text-decoration: none;
-  color: black;
-  fsize: 18px;
+  font-size: 18px;
   text-transform: capitalize;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .mainhead a {
   padding: 5px 0;
@@ -40,7 +66,9 @@ header nav a {
   text-align: center;
 }
 .mainhead h1 {
+  margin: 10px 0 10px 0;
   font-size: 46px;
+  line-height: 57.82px;
 }
 .mainhead img[src="./Post Thumbnail.jpg"] {
   width: 100%;
