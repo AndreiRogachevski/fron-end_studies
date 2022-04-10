@@ -1,5 +1,6 @@
 {
-    "diffEditor.wordWrap": "on",
-    "editor.wordWrapColumn": 80,
-    "editor.wordWrap": "on"
+  "diffEditor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
+  "editor.wordWrap": "on",
+  "editor.fontFamily": "JetBrains Mono, Consolas, 'Courier New', monospace"
 }
