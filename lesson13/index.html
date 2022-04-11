@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .conteiner {
+        margin: 0 auto;
+        width: 80%;
+      }
+      .conteiner > * {
+        display: flex;
+        gap: 10px;
+      }
+      header div {
+        background-color: orange;
+        width: 50%;
+        min-height: 100px;
+      }
+      main {
+          margin-top: 10px;
+        flex-wrap: wrap;
+      }
+      article {
+        background-color: yellow;
+        width: 100%;
+        min-height: 300px;
+      }
+      section {
+          margin-bottom: 10px;
+          display: flex;
+        width: 100%;
+      }
+      section div {
+        background-color: blue;
+        width: calc(100% / 3);
+        min-height: 200px;
+      }
+      footer div {
+        background-color: gray;
+        width: calc(100% / 4);
+        min-height: 100px;
+      }
+      @media (max-width: 1024px) {
+          .conteiner>*{
+              width: 100%;
+          }
+        header {
+          flex-direction: column;
+        }
+        header div {
+          width: 100%;
+        }
+        section {
+          flex-direction: column;
+        }
+        section div {
+          width: 100%;
+        }
+        section div:nth-child(2){
+            margin: 10px 0;
+        }
+        footer{
+            flex-wrap: wrap;
+        }
+        footer div{
+            width:calc(50% - 5px);
+        }
+        @media (max-width: 768px) {
+            footer{
+                flex-direction: column;
+            }
+            footer div{
+                width: 100%;
+            }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="conteiner">
+      <header>
+        <div></div>
+        <div></div>
+      </header>
+      <main>
+        <article></article>
+        <section>
+          <div></div>
+          <div></div>
+          <div></div>
+        </section>
+      </main>
+      <footer>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </footer>
+    </div>
+  </body>
+</html>
