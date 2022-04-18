@@ -16,7 +16,8 @@
          .logo img {
             width: 70px;
          }
-         .note {
+         .note,
+         ul p {
             font-size: 0.8em;
          }
       </style>
@@ -25,7 +26,7 @@
    <body>
       <div class="container-fluid bg-light">
          <header>
-            <div class="container w-50 mb-5">
+            <div class="container col-7 mb-5">
                <div class="text-center">
                   <div class="py-5 logo d-flex justify-content-center">
                      <img src="./bootstrap.png" alt="" />
@@ -41,7 +42,7 @@
             </div>
          </header>
          <main>
-            <div class="container w-50 mx-auto row">
+            <div class="container col-7 mx-auto row">
                <section class="col-8 py-4">
                   <form>
                      <fieldset class="border-bottom pb-4">
@@ -275,22 +276,40 @@
                      </span>
                   </div>
                   <ul class="list-group pb-3">
-                     <li class="list-group-item">
+                     <li class="list-group-item d-flex justify-content-between">
                         <div>
                            <h6>Product name</h6>
-                           <p>$12</p>
+                           <p class="m-0 text-muted">Breif description</p>
                         </div>
+                        <span class="text-muted">$12</iv>
                      </li>
-                     <li class="list-group-item">
-                        <div class="h6">Second product</div>
+                     <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                           <h6>Second product</h6>
+                           <p class="m-0 text-muted">Breif description</p>
+                        </div>
+                        <span class="text-muted">$8</span>
                      </li>
-                     <li class="list-group-item">
-                        <div class="h6">Third item</div>
+                     <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                           <h6>Third item</h6>
+                           <p class="m-0 text-muted">Breif description</p>
+                        </div>
+                        <span class="text-muted">$5</span>
                      </li>
-                     <li class="list-group-item text-success">
-                        <div class="h6">Promo code</div>
+                     <li
+                        class="list-group-item text-success d-flex justify-content-between"
+                     >
+                        <div>
+                           <h6>Promo code</h6>
+                           <p class="m-0">EXAMPLECODE</p>
+                        </div>
+                        <span>-$5</span>
                      </li>
-                     <li class="list-group-item">Total (USD)</li>
+                     <li class="list-group-item d-flex justify-content-between">
+                        <h6>Total (USD)</h6>
+                        <span class="fw-bold">$20</span>
+                     </li>
                   </ul>
                   <form action="">
                      <div class="input-group mb-3 border p-2">
@@ -313,6 +332,16 @@
                </section>
             </div>
          </main>
+         <footer>
+            <div class="container text-center mt-5">
+               <p class="text-muted">© 2017-2018 Company Name</p>
+               <div class="text-decoration-none">
+                  <a href="#">Privacy</a>
+                  <a href="#">Term</a>
+                  <a href="#">Support</a>
+               </div>
+            </div>
+         </footer>
       </div>
 
       <!-- Optional JavaScript; choose one of the two! -->
