@@ -6,20 +6,66 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>404 Page</title>
       <style>
-         header {
+         @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+         .container {
+            width: 1440px;
+            margin: 0 auto;
             background-color: #959595;
+            font-family: "poppins";
          }
-         header img {
+         header {
+            border: 1px solid #ffffff40;
+         }
+         header,
+         .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+         }
+         header a img {
             width: 245px;
             margin: 30px 50px;
+         }
+         .navbar a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: white;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 22px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+         }
+         main {
+            display: grid;
+            grid-template-rows: repeat(3, 3fr);
+            justify-content: center;
+            align-items: center;
          }
       </style>
    </head>
    <body>
-      <div>
+      <div class="container">
          <header>
             <a href="#"><img src="./Logo Homco 1.png" alt="" /></a>
+            <div class="navbar">
+               <div>
+                  <a href="#">home</a>
+                  <a href="#">about us</a>
+                  <a href="#">our services</a>
+                  <a href="#">our projects</a>
+                  <a href="#">portfolio</a>
+                  <a href="#">pages</a>
+               </div>
+               <img src="./Offcanvas Menu.png" alt="" />
+            </div>
          </header>
+         <main>
+            <h1>error 404</h1>
+            <p>page not found, please go back</p>
+            <button>Order</button>
+         </main>
       </div>
    </body>
 </html>
