@@ -1,0 +1,382 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap");
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  font-family: "poppins";
+}
+.container header {
+  background-color: #959595;
+  border: 1px solid rgba(255, 255, 255, 0.2509803922);
+  display: flex;
+  justify-content: space-between;
+}
+.container header a img {
+  width: 245px;
+  margin: 30px 50px;
+}
+.container header a img:hover {
+  filter: drop-shadow(0px 0px 3px #fff);
+}
+.container header div.navbar ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.container header div.navbar ul li:nth-last-child(3) {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #757575;
+}
+.container header div.navbar ul li a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.container header div.navbar ul li:hover {
+  text-shadow: 0px 0px 3px #fff;
+}
+.container header div.navbar ul li:hover path {
+  filter: drop-shadow(0px 0px 3px #fff);
+}
+.container header div.navbar ul li img:hover {
+  filter: drop-shadow(0px 0px 3px #fff);
+}
+.container section.hero {
+  background: #959595;
+  padding: 100px 50px 100px;
+}
+.container section.hero div.title {
+  background: url(../img/pagehero.png) no-repeat;
+  width: 655px;
+}
+.container section.hero div.title h1 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 90px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.container section.hero div.title p {
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: #ffffff;
+}
+.container main div.content {
+  margin: 100px 50px;
+}
+.container main div.content div.video {
+  margin-bottom: 100px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 30px;
+}
+.container main div.content div.video video {
+  width: 100%;
+  height: 412px;
+  background: #959595 url(../img/playbutton.png) no-repeat 50%;
+}
+.container main div.content div.video h6 {
+  margin: 0 0 15px;
+  font-weight: 900;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #757575;
+}
+.container main div.content div.video h1 {
+  margin: 0 0 15px;
+  font-weight: 900;
+  font-size: 45px;
+  line-height: 68px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #1b1717;
+}
+.container main div.content div.video p {
+  margin: 0 0 30px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: #6e6e6e;
+}
+.container main div.content div.video ul {
+  padding: 0;
+  list-style: none;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #1b1717;
+}
+.container main div.content div.video ul li {
+  margin: 0 0 30px;
+  border-bottom: 1px solid #dadada;
+  display: flex;
+  justify-content: space-between;
+}
+.container main div.content div.secondquestion {
+  margin-bottom: 320px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: 30px;
+}
+.container main div.content div.secondquestion img {
+  width: 100%;
+}
+.container main div.content div.secondquestion h6 {
+  margin: 0 0 15px;
+  font-weight: 900;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #757575;
+}
+.container main div.content div.secondquestion h1 {
+  margin: 0 0 15px;
+  font-weight: 900;
+  font-size: 45px;
+  line-height: 68px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #1b1717;
+}
+.container main div.content div.secondquestion p {
+  margin: 0 0 30px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: #6e6e6e;
+}
+.container main div.content div.secondquestion ul {
+  padding: 0;
+  list-style: none;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #1b1717;
+}
+.container main div.content div.secondquestion ul li {
+  margin: 0 0 30px;
+  border-bottom: 1px solid #dadada;
+  display: flex;
+  justify-content: space-between;
+}
+.container footer {
+  width: 100%;
+  background: #000;
+}
+.container footer div.container {
+  width: 1340px;
+  position: relative;
+}
+.container footer div.container section.action {
+  padding: 103px 114px 30px;
+  margin: 0 auto;
+  width: 1112px;
+  position: absolute;
+  top: -120px;
+  background: #757575;
+}
+.container footer div.container section.action section.support {
+  margin: 0 auto;
+  background: #fff;
+  position: absolute;
+  left: 114px;
+  top: -100px;
+}
+.container footer div.container section.action section.support ul {
+  margin: 0;
+  padding: 30px 114px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+.container footer div.container section.action section.support ul li {
+  width: 200px;
+  height: 110px;
+}
+.container footer div.container section.action h2 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 90px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.container footer div.container section.action button {
+  width: 199px;
+  height: 73px;
+  background: #1b1717;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.container footer div.container nav.footer__nav {
+  padding-top: 325px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  border-bottom: 5px solid #757575;
+}
+.container footer div.container nav.footer__nav section.info {
+  grid-column: 1/5;
+}
+.container footer div.container nav.footer__nav section.info h3 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 38px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.container footer div.container nav.footer__nav section.info p {
+  margin: 15px 0 30px;
+  padding-right: 20px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: #fff;
+}
+.container footer div.container nav.footer__nav section.info ul {
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+.container footer div.container nav.footer__nav section.info ul li {
+  margin-right: 15px;
+}
+.container footer div.container nav.footer__nav section.nav {
+  grid-column: 7/9;
+  column-gap: 15px;
+}
+.container footer div.container nav.footer__nav section.nav h3 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 38px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.container footer div.container nav.footer__nav section.nav ul {
+  padding-left: 20px;
+  list-style-image: url(../img/arrowright.svg);
+}
+.container footer div.container nav.footer__nav section.nav ul li {
+  margin-bottom: 15px;
+}
+.container footer div.container nav.footer__nav section.nav ul li a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: #fff;
+}
+.container footer div.container nav.footer__nav section.contact {
+  grid-column: 10/13;
+}
+.container footer div.container nav.footer__nav section.contact h3 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 38px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #fff;
+}
+.container footer div.container nav.footer__nav section.contact ul {
+  margin-top: 30px;
+  list-style: none;
+  padding-left: 30px;
+}
+.container footer div.container nav.footer__nav section.contact ul li {
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: #fff;
+}
+.container footer div.container nav.footer__nav section.contact ul li:first-of-type {
+  list-style-image: url(../img/mapspot.svg);
+  margin-bottom: 15px;
+}
+.container footer div.container nav.footer__nav section.contact ul li:last-of-type {
+  list-style-image: url(../img/mail.svg);
+}
+.container footer div.container nav.footer__nav section.contact ul li a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: #fff;
+}
+.container footer div.container nav.footer__nav section.contact form label input {
+  border: none;
+}
+.container footer div.container nav.footer__nav section.contact form label input:first-child {
+  margin: 23px 0 15px;
+  padding-left: 10px;
+  height: 67px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  border-bottom: 5px solid #757575;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+}
+.container footer div.container nav.footer__nav section.contact form label input:first-child::placeholder {
+  color: #ffffff;
+}
+.container footer div.container nav.footer__nav section.contact form label input:last-child {
+  margin-bottom: 60px;
+  padding: 25px 52px;
+  height: 73px;
+  background-color: #757575;
+  border: #757575;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: white;
+}
+.container footer div.container section.docs {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+.container footer div.container section.docs div span:nth-of-type(2) {
+  margin: 0 60px;
+}
+
+/*# sourceMappingURL=gallery.css.map */

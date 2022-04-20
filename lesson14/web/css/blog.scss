@@ -48,47 +48,55 @@
       }
     }
   }
+  section.hero {
+    background: #959595;
+    padding: 100px 50px 100px;
+    div.title {
+      background: url(../img/pagehero.png) no-repeat center left/ contain;
+      width: 655px;
+
+      h1 {
+        margin: 0;
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 90px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+      p {
+        margin-top: 15px;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        color: #ffffff;
+      }
+    }
+  }
   main {
-    background-color: #959595;
-    display: grid;
-    grid-template-rows: repeat(3, auto);
-    justify-content: center;
-    align-items: center;
-    h1 {
-      margin: 200px 0 0 0;
-      font-weight: 900;
-      font-size: 100px;
-      line-height: 150px;
-      text-align: center;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: #fff;
-    }
-    p {
-      margin-top: 30px;
-      font-weight: 900;
-      font-size: 25px;
-      line-height: 38px;
-      text-align: center;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      color: #ffffff;
-    }
-    button {
-      margin: 30px auto 420px;
-      width: 200px;
-      height: 73px;
-      color: #fff;
-      background: #757575;
-      font-weight: 600;
-      font-size: 15px;
-      line-height: 22px;
-      text-align: center;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      border: #757575;
-      &:hover {
-        background: #5d5d5d;
+    margin: 100px auto 320px;
+    div.posts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      column-gap: 30px;
+      row-gap: 60px;
+      div.post {
+        max-width: 427px;
+        h4 {
+          font-weight: 900;
+          font-size: 25px;
+          line-height: 38px;
+          letter-spacing: 0.07em;
+          text-transform: uppercase;
+          color: #1b1717;
+        }
+        p {
+          font-weight: 400;
+          font-size: 17px;
+          line-height: 26px;
+          color: #6e6e6e;
+        }
       }
     }
   }
@@ -109,7 +117,7 @@
           margin: 0 auto;
           background: #fff;
           position: absolute;
-          left: calc((1340px - 1112px)/ 2);
+          left: calc((1340px - 1112px) / 2);
           top: -100px;
           ul {
             margin: 0;
