@@ -89,7 +89,10 @@
   height: 412px;
   background: #959595 url(../img/playbutton.png) no-repeat 50%;
 }
-.container main div.content div.video h6 {
+.container main div.content div.video div.text {
+  background: url(../img/logolight.png) no-repeat;
+}
+.container main div.content div.video div.text h6 {
   margin: 0 0 15px;
   font-weight: 900;
   font-size: 17px;
@@ -98,7 +101,7 @@
   text-transform: uppercase;
   color: #757575;
 }
-.container main div.content div.video h1 {
+.container main div.content div.video div.text h1 {
   margin: 0 0 15px;
   font-weight: 900;
   font-size: 45px;
@@ -107,78 +110,70 @@
   text-transform: uppercase;
   color: #1b1717;
 }
-.container main div.content div.video p {
+.container main div.content div.video div.text p {
   margin: 0 0 30px;
   font-weight: 400;
   font-size: 17px;
   line-height: 26px;
   color: #6e6e6e;
 }
-.container main div.content div.video ul {
-  padding: 0;
-  list-style: none;
+.container main div.content div.gallery div.title {
+  background: url(../img/logolight.png) no-repeat;
+}
+.container main div.content div.gallery div.title h6 {
+  margin: 0;
+  padding: 30px 0 15px;
   font-weight: 900;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 17px;
+  line-height: 26px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #757575;
+}
+.container main div.content div.gallery div.title h2 {
+  margin: 0;
+  padding-bottom: 82px;
+  font-weight: 900;
+  font-size: 45px;
+  line-height: 68px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
   color: #1b1717;
 }
-.container main div.content div.video ul li {
-  margin: 0 0 30px;
-  border-bottom: 1px solid #dadada;
-  display: flex;
-  justify-content: space-between;
-}
-.container main div.content div.secondquestion {
-  margin-bottom: 320px;
+.container main div.content div.gallery div.img {
   display: grid;
-  grid-template-columns: 50% 50%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3 1fr);
   gap: 30px;
+  margin-bottom: 320px;
 }
-.container main div.content div.secondquestion img {
-  width: 100%;
+.container main div.content div.gallery div.img img {
+  background: #c4c4c4;
+  height: 350px;
 }
-.container main div.content div.secondquestion h6 {
-  margin: 0 0 15px;
-  font-weight: 900;
-  font-size: 17px;
-  line-height: 26px;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: #757575;
+.container main div.content div.gallery div.img img:first-child {
+  grid-column: 1/6;
 }
-.container main div.content div.secondquestion h1 {
-  margin: 0 0 15px;
-  font-weight: 900;
-  font-size: 45px;
-  line-height: 68px;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: #1b1717;
+.container main div.content div.gallery div.img img:nth-child(2) {
+  grid-column: 6/13;
 }
-.container main div.content div.secondquestion p {
-  margin: 0 0 30px;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 26px;
-  color: #6e6e6e;
+.container main div.content div.gallery div.img img:nth-child(3) {
+  grid-column: 1/5;
 }
-.container main div.content div.secondquestion ul {
-  padding: 0;
-  list-style: none;
-  font-weight: 900;
-  font-size: 20px;
-  line-height: 30px;
-  letter-spacing: 0.07em;
-  text-transform: uppercase;
-  color: #1b1717;
+.container main div.content div.gallery div.img img:nth-child(4) {
+  grid-column: 5/9;
 }
-.container main div.content div.secondquestion ul li {
-  margin: 0 0 30px;
-  border-bottom: 1px solid #dadada;
-  display: flex;
-  justify-content: space-between;
+.container main div.content div.gallery div.img img:nth-child(5) {
+  grid-column: 9/13;
+}
+.container main div.content div.gallery div.img img:nth-child(6) {
+  grid-column: 1/4;
+}
+.container main div.content div.gallery div.img img:nth-child(7) {
+  grid-column: 4/8;
+}
+.container main div.content div.gallery div.img img:nth-child(8) {
+  grid-column: 8/13;
 }
 .container footer {
   width: 100%;
