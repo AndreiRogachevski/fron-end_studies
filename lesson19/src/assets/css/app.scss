@@ -1,0 +1,12 @@
+@import "_tools/variables";
+@import "_tools/mixins";
+
+@import "_base/default";
+@import "_base/fonts";
+@import "_base/header";
+@import "_base/footer";
+@import "index";
+
+h1 {
+  font-family: "Poppins", sans-serif;
+}
