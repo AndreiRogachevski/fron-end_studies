@@ -12,10 +12,25 @@ main {
     font-size: 28px;
     margin-bottom: 40px;
   }
-  video {
-    width: 65%;
-    border-radius: 20px;
-    margin-bottom: 64px;
+  div.video {
+    position: relative;
+    z-index: -1;
+    span {
+      position: absolute;
+      color: #fff;
+      top: 15px;
+      left: 230px;
+      font-family: "Helvetica";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 26px;
+    }
+    video {
+      width: 65%;
+      border-radius: 20px;
+      margin-bottom: 64px;
+    }
   }
   p {
     font-weight: 400;
@@ -23,10 +38,79 @@ main {
     line-height: 140%;
     margin-bottom: 40px;
   }
-  a {
-    background: $primary;
-    color: #fff;
-    padding: 22.5px 60px;
+  button {
+    padding: 0;
+    background: #000;
     border-radius: 8px;
+    border: none;
+    a {
+      border-radius: 8px;
+      display: block;
+      padding: 22.5px 60px;
+      background: $primary;
+      color: #fff;
+      transform: translate3d(-1px, -1px, 0);
+      transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+    }
+    &:hover a {
+      transform: translate3d(-8px, -8px, 0);
+    }
+    &:active a {
+      transform: translate3d(-4px, -4px, 0);
+    }
+  }
+}
+@media (max-width: $breakpoint_tablet) {
+  main {
+    padding: 48px 0;
+    h1 {
+      margin: 0;
+      padding: 0;
+      font-size: 48px;
+      letter-spacing: 0.25px;
+    }
+    p.sub_title {
+      margin: 24px 0 32px;
+    }
+    div.video {
+      span {
+        top: 10px;
+        left: 25px;
+      }
+      video {
+        width: 98.5%;
+        margin-bottom: 48px;
+      }
+    }
+
+    p {
+      margin: 0 0 55px;
+    }
+    a {
+      padding: 22.5px 45px;
+    }
+  }
+  @media (max-width: $breakpoint_mobile) {
+    main {
+      padding: 32px 0;
+      h1 {
+        font-size: 32px;
+      }
+      p.sub_title {
+        font-size: 18px;
+      }
+      div.video {
+        span {
+          top: 5px;
+          left: 15px;
+        }
+      }
+      p {
+        font-size: 16px;
+      }
+      a {
+        padding: 22.5px 32px;
+      }
+    }
   }
 }

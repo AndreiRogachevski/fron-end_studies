@@ -11,7 +11,11 @@ footer {
     justify-content: center;
     align-items: center;
     gap: 24px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
     h4 {
+      font-weight: 400;
       color: $txt_secondary;
       white-space: nowrap;
     }
@@ -41,6 +45,46 @@ footer {
       height: 3px;
       width: 250px;
       background: #fff;
+    }
+  }
+}
+@media (max-width: $breakpoint_tablet) {
+  footer {
+    .nav_footer {
+      padding: 99px 0 48px;
+      position: relative;
+      grid-template-columns: auto auto;
+      &::before {
+        position: absolute;
+        top: 48px;
+        left: 0;
+        width: 50%;
+      }
+      &::after {
+        position: absolute;
+        top: 48px;
+        right: 0;
+        width: 50%;
+      }
+    }
+  }
+  @media (max-width: $breakpoint_mobile) {
+    footer {
+      .nav_footer {
+        display: flex;
+        flex-direction: column;
+        gap: 35px;
+        ul {
+          display: flex;
+          flex-direction: column;
+        }
+        &::before {
+          top: 131px;
+        }
+        &::after {
+          top: 131px;
+        }
+      }
     }
   }
 }

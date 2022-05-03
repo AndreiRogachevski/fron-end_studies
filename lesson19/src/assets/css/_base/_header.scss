@@ -5,27 +5,134 @@ header {
   h2 {
     font-size: 24px;
     margin: 25.5px 0;
+    &:hover {
+      text-shadow: -3px -2px 3px #fff, 0px 0px 6px $primary;
+      color: $primary;
+      transition: all ease 1s;
+      cursor: pointer;
+    }
   }
-  ul {
-    display: flex;
-    gap: 32px;
-    li {
-      a {
-        position: relative;
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          width: 0;
-          height: 1px;
-          color: #000;
-          background: #000;
+  nav {
+    input {
+      display: none;
+    }
+    ul {
+      display: flex;
+      gap: 32px;
+      li {
+        a {
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: #000;
+          }
+          &:hover::before {
+            left: 0;
+            width: 100%;
+            transition: all ease 1s;
+            background: $primary;
+          }
+          &:hover {
+            text-shadow: -3px -2px 3px #fff, 0px 0px 6px $primary;
+            color: $primary;
+          }
         }
-        &:hover::before {
-          left: 0;
-          width: 100%;
-          transition: all ease 0.3s;
+      }
+    }
+  }
+}
+@media (max-width: $breakpoint_tablet) {
+  header {
+    nav {
+      label {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 30px;
+        right: 24px;
+        width: 16px;
+        height: 12px;
+        cursor: pointer;
+        z-index: 1;
+      }
+
+      label > span,
+      label > span::before,
+      label > span::after {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        transition-duration: 0.25s;
+      }
+      label > span::before {
+        content: "";
+        top: -6px;
+      }
+      label > span::after {
+        content: "";
+        top: 6px;
+      }
+      ul {
+        display: flex;
+        position: fixed;
+        visibility: hidden;
+        gap: 20px;
+        top: 0;
+        right: -110%;
+        width: 94.8%;
+        margin: 0;
+        padding: 21px 20px;
+        list-style: none;
+        background-color: #eceff1;
+        box-shadow: 1px 0px 6px rgba(0, 0, 0, 0.2);
+        transition-duration: 0.25s;
+      }
+      li a {
+        display: block;
+        padding: 5px 1px;
+        font-size: 15px;
+        text-decoration: none;
+        transition-duration: 0.25s;
+      }
+      li a:hover {
+        background-color: #cfd8dc;
+      }
+      input[type="checkbox"] {
+        opacity: 0;
+      }
+      input[type="checkbox"]:checked ~ label > span {
+        transform: rotate(45deg);
+      }
+      input[type="checkbox"]:checked ~ label > span::before {
+        top: 0;
+        transform: rotate(0);
+      }
+      input[type="checkbox"]:checked ~ label > span::after {
+        top: 0;
+        transform: rotate(90deg);
+      }
+      input[type="checkbox"]:checked ~ ul {
+        visibility: visible;
+        right: 0;
+      }
+    }
+  }
+  @media (max-width: $breakpoint_mobile) {
+    header {
+      nav {
+        input[type="checkbox"]:checked ~ ul {
+          visibility: visible;
+          right: -20px;
+        }
+        ul {
+          flex-direction: column;
         }
       }
     }
