@@ -1,0 +1,83 @@
+.hero {
+  display: flex;
+  margin: 0 112px 50px 112px;
+  .offer {
+    width: 50%;
+    margin-right: 150px;
+    nav.bread_crumbs {
+      border-bottom: 1px solid #e5e5e5;
+      width: fit-content;
+      span {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15px;
+        line-height: 22px;
+        color: rgba(214, 212, 212, 0.88);
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+        &:first-child {
+          color: #b00000;
+          border-bottom: 1px solid #b00000;
+          position: relative;
+        }
+      }
+    }
+    h1 {
+      font-family: "Poppins";
+      font-weight: 700;
+      font-size: 64px;
+      line-height: 78px;
+    }
+    p {
+      width: 80%;
+      font-family: "Inter";
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      letter-spacing: 0.05em;
+      font-style: normal;
+      color: #808080;
+      margin-bottom: 60px;
+    }
+    div {
+      display: inline-block;
+      a {
+        border-radius: 8px;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+      }
+      &.account {
+        a {
+          padding: 12px 13.5px;
+          background: #b00000;
+          color: #fff;
+          box-shadow: 0px 0px 64px rgba(176, 0, 0, 0.3);
+          margin-right: 24px;
+        }
+      }
+      &.plan {
+        a {
+          padding: 12px 18px;
+          color: #000;
+          border: 1px solid #000;
+        }
+      }
+    }
+  }
+  .photo {
+    position: relative;
+    img {
+      &:last-child {
+        position: absolute;
+        z-index: 3;
+        right: -25px;
+        top: 63px;
+      }
+    }
+  }
+}

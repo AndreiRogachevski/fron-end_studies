@@ -1,0 +1,42 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 100px;
+  padding: 0 112px;
+  div {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+  a {
+    text-decoration: none;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 22px;
+    color: #000;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  div.logo {
+    a {
+      margin-left: 32px;
+    }
+  }
+  div.contact {
+    a {
+      &:first-child {
+        border-right: 1px solid #dad8d8;
+        padding-right: 32px;
+      }
+      &:last-child::before {
+        content: url(/assets/img/phone.svg);
+        position: relative;
+        top: 5px;
+      }
+    }
+  }
+}
