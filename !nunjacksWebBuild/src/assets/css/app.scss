@@ -1,0 +1,10 @@
+@import "_tools/variables";
+@import "_tools/mixins";
+
+
+@import "_base/default";
+@import "_base/fonts";
+
+h1{
+    font-family: 'Poppins', sans-serif;
+}
