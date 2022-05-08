@@ -13,14 +13,6 @@ Example:
 @include font-face('Roboto', '../fonts/RobotoBold', 700, null, woff2 woff);
 **/
 
-@include font-face(
-  "Open-Sans",
-  "../fonts/open-sans-v28-latin-regular",
-  null,
-  null,
-  woff2 woff
-);
-// @include font-face("Trebuchet", "../fonts/trebuc", null, null, woff2 woff);
 @include font-face("Trebuchet", "../fonts/TrebuchetMS", null, null, woff2 woff);
 @include font-face(
   "Trebuchet",
@@ -29,3 +21,11 @@ Example:
   null,
   woff2 woff
 );
+@include font-face(
+  "Open-Sans",
+  "../fonts/open-sans-v28-latin-regular",
+  null,
+  null,
+  woff2 woff
+);
+// @include font-face("Trebuchet", "../fonts/trebuc", null, null, woff2 woff);
