@@ -50,6 +50,7 @@ header {
       width: 475px;
       &::placeholder {
         color: #929292;
+        font-family: "Trebuchet";
         font-weight: 400;
         font-size: 12px;
         line-height: 14px;
@@ -121,7 +122,6 @@ header {
             &:hover {
               background-color: $accent;
               transition: 0.25s;
-
               i {
                 svg {
                   path {
@@ -132,21 +132,23 @@ header {
               ul {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(8, 49px);
-                width: 1111px - 255px;
+                grid-template-rows: 44px repeat(7, 49px);
+                white-space: nowrap;
                 height: 100%;
                 top: 0;
                 left: 255px;
                 visibility: visible;
                 background-color: #fffbf8;
                 border-left: 2px solid #2a2a2a42;
+                box-shadow: $shadow-active;
                 transition-duration: 0.25s;
                 li {
                   padding: 15px 30px;
                   &:first-child {
                     grid-column: 1/4;
+                    cursor: default;
                   }
-                  &:hover {
+                  &:not(:first-child):hover {
                     background-color: $accent;
                     transition: 0.25s;
                   }
