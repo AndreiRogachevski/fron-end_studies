@@ -1,0 +1,232 @@
+.carusel {
+  display: flex;
+  &__item {
+  }
+}
+.card {
+  position: relative;
+  &__text {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    color: #fff;
+  }
+
+  // .card__sub-title
+
+  &__sub-title {
+  }
+
+  // .card__title
+
+  &__title {
+  }
+
+  // .card__button
+
+  &__button {
+  }
+}
+.catalog {
+  // .catalog__title
+
+  &__title {
+  }
+
+  // .catalog__items
+
+  &__items {
+  }
+
+  // .catalog__item
+
+  &__item {
+  }
+}
+.title {
+}
+.game-card {
+  // .game-card__text
+
+  &__text {
+    // .game-card__text_active
+
+    &_active {
+    }
+  }
+}
+.shop {
+  // .shop__items
+
+  &__items {
+  }
+
+  // .shop__old-price
+
+  &__old-price {
+  }
+}
+.shop-title {
+}
+.shop-offer {
+  // .shop-offer__img
+
+  &__img {
+  }
+
+  // .shop-offer__subscribe
+
+  &__subscribe {
+  }
+
+  // .shop-offer__subscribe-item
+
+  &__subscribe-item {
+  }
+
+  // .shop-offer__title
+
+  &__title {
+  }
+
+  // .shop-offer__price
+
+  &__price {
+  }
+
+  // .shop-offer__bascket-button
+
+  &__bascket-button {
+  }
+
+  // .shop-offer__buy-button
+
+  &__buy-button {
+  }
+}
+.vip-shop {
+}
+.vip-title {
+}
+.events {
+  // .events__title
+
+  &__title {
+  }
+
+  // .events__box
+
+  &__box {
+  }
+
+  // .events__button
+
+  &__button {
+  }
+}
+.box-event {
+  // .box-event__text
+
+  &__text {
+  }
+
+  // .box-event__title
+
+  &__title {
+  }
+
+  // .box-event__subscribe
+
+  &__subscribe {
+  }
+
+  // .box-event__timestamp
+
+  &__timestamp {
+  }
+}
+.info {
+  // .info__title
+
+  &__title {
+  }
+
+  // .info__box
+
+  &__box {
+  }
+
+  // .info__button
+
+  &__button {
+  }
+}
+.box-information {
+  // .box-information__title
+
+  &__title {
+  }
+
+  // .box-information__text
+
+  &__text {
+  }
+}
+.about {
+  // .about__title
+
+  &__title {
+  }
+
+  // .about__text
+
+  &__text {
+  }
+}
+.contact {
+  // .contact__side
+
+  &__side {
+  }
+
+  // .contact__title
+
+  &__title {
+  }
+
+  // .contact__adress
+
+  &__adress {
+  }
+
+  // .contact__work-time
+
+  &__work-time {
+  }
+
+  // .contact__form
+
+  &__form {
+  }
+}
+.form-contact {
+  // .form-contact__title
+
+  &__title {
+  }
+
+  // .form-contact__label
+
+  &__label {
+  }
+
+  // .form-contact__input
+
+  &__input {
+  }
+
+  // .form-contact__textarea
+
+  &__textarea {
+  }
+}
