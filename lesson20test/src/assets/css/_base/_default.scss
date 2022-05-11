@@ -8,6 +8,13 @@
   font-family: "Trebuchet";
   font-weight: 700;
   font-size: 16px;
+  &::placeholder {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #2a2a2a;
+    opacity: 0.33;
+  }
 }
 body {
   .page-wrapper {
