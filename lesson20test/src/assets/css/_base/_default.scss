@@ -1,10 +1,10 @@
-:root {
+:root * {
   margin: 0;
   padding: 0;
   list-style: none;
   text-decoration: none;
   outline: none;
-  color: $primary;
+  // color: $primary;
   font-family: "Trebuchet";
   font-weight: 700;
   font-size: 16px;
@@ -13,5 +13,6 @@ body {
   .page-wrapper {
     width: 1600px;
     margin: 0 auto;
+    background: rgba(54, 54, 54, 0.04);
   }
 }
