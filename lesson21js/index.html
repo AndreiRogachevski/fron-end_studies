@@ -7,17 +7,21 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- <script>
-      let a = prompt("сумма");
-      let b = prompt("месяцы");
-      console.log("прибыль в месяц", (c = (a * (5 / 100)) / 12), "$");
-      console.log("прибыль за весь срок", (d = c * b), "$");
-      console.log("общая сумма за весь срок", d + +a, "$");
-    </script> -->
     <script>
-      let a = 5678;
-      // n % 10, (n = n / 10) % 10, (n = n / 10) % 10, (n = n / 10) % 10;
-      console.log((b = a % 10), c = (a / 10 - b /10) % 10, a/100 % 10);
+      // ЗАДАЧА №1
+      let a = prompt("сумма вклада");
+      let b = prompt("срок депозита в месяцах");
+      console.log('ЗАДАЧА №1')
+      console.log("доход в месяц", (c = (a * (5 / 100)) / 12), "$");
+      console.log("доход за весь срок", (d = c * b), "$");
+      console.log("общая сумма дохода за весь срок", d + +a, "$");
+    </script>
+    <script>
+      // ЗАДАЧА №2
+      let n = 5678;
+      console.log(' ')
+      console.log('ЗАДАЧА №2')
+      console.log((b = n % 10), c = (n / 10 - b / 10) % 10, d = (n / 100 - (b / 100 + c / 10)) % 10, e = (n / 1000 - (b / 1000 + c / 100 + d / 10)) % 10);
     </script>
   </body>
 </html>
