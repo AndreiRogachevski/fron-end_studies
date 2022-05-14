@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap");
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  font-family: "poppins";
+}
+.container header {
+  background-color: #959595;
+  border: 1px solid rgba(255, 255, 255, 0.2509803922);
+  display: flex;
+  justify-content: space-between;
+}
+.container header a img {
+  width: 245px;
+  margin: 30px 50px;
+}
+.container header a img:hover {
+  filter: drop-shadow(0px 0px 3px #fff);
+}
+.container header div.navbar ul {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.container header div.navbar ul li:nth-child(3) {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #757575;
+}
+.container header div.navbar ul li a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: white;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.container header div.navbar ul li:hover {
+  text-shadow: 0px 0px 3px #fff;
+}
+.container header div.navbar ul li:hover path {
+  filter: drop-shadow(0px 0px 3px #fff);
+}
+.container header div.navbar ul li img:hover {
+  filter: drop-shadow(0px 0px 3px #fff);
+}
+.container section.hero {
+  background: #959595;
+  padding: 100px 50px 100px;
+}
+.container section.hero div.title {
+  background: url(../img/pagehero.png) no-repeat center left/contain;
+  width: 655px;
+}
+.container section.hero div.title h1 {
+  margin: 0;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 90px;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.container section.hero div.title p {
+  margin-top: 15px;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: #ffffff;
+}
+.container main content section.home-services {
+  display: flex;
+  flex-direction: row;
+}
+.container main content section.home-services div {
+  background: #000;
+}
+.container main content section.home-services div h3 {
+  font-weight: 900;
+  font-size: 25px;
+  line-height: 38px;
+  letter-spacing: 0.07em;
+  color: #fff;
+}
+.container main content section.home-services div p {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+}
+
+/*# sourceMappingURL=our_services.css.map */

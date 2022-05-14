@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap");
+.container {
+  width: 1440px;
+  margin: 0 auto;
+  font-family: "poppins";
+  header {
+    background-color: #959595;
+    border: 1px solid #ffffff40;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+    a {
+      img {
+        width: 245px;
+        margin: 30px 50px;
+        &:hover {
+          filter: drop-shadow(0px 0px 3px #fff);
+        }
+      }
+    }
+    div.navbar {
+      ul {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        list-style: none;
+        li {
+          &:nth-child(3) {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            background-color: #757575;
+          }
+          a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: white;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            line-height: 22px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+          }
+          &:hover {
+            text-shadow: 0px 0px 3px #fff;
+            // filter: drop-shadow(0px 0px 3px #fff);
+            path {
+              filter: drop-shadow(0px 0px 3px #fff);
+            }
+          }
+
+          img {
+            &:hover {
+              filter: drop-shadow(0px 0px 3px #fff);
+            }
+          }
+        }
+      }
+    }
+  }
+  section.hero {
+    background: #959595;
+    padding: 100px 50px 100px;
+    div.title {
+      background: url(../img/pagehero.png) no-repeat center left/ contain;
+      width: 655px;
+      h1 {
+        margin: 0;
+        font-weight: 900;
+        font-size: 60px;
+        line-height: 90px;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+      p {
+        margin-top: 15px;
+        font-weight: 400;
+        font-size: 17px;
+        line-height: 26px;
+        color: #ffffff;
+      }
+    }
+  }
+  main {
+    content {
+      section.home-services {
+        display: flex;
+        flex-direction: row;
+        div {
+          background: #000;
+          h3 {
+            font-weight: 900;
+            font-size: 25px;
+            line-height: 38px;
+            letter-spacing: 0.07em;
+            color: #fff;
+          }
+          p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 17px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+}
