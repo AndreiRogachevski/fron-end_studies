@@ -75,25 +75,33 @@
   line-height: 26px;
   color: #ffffff;
 }
-.container main content section.home-services {
+.container main .content {
+  margin: 100px 79px;
+}
+.container main .content .home-services {
   display: flex;
   flex-direction: row;
 }
-.container main content section.home-services div {
+.container main .content .home-services div {
+  padding: 30px;
   background: #000;
 }
-.container main content section.home-services div h3 {
+.container main .content .home-services div:nth-child(2n+2) {
+  background: #757575;
+}
+.container main .content .home-services div h3 {
   font-weight: 900;
   font-size: 25px;
   line-height: 38px;
   letter-spacing: 0.07em;
   color: #fff;
 }
-.container main content section.home-services div p {
+.container main .content .home-services div p {
   font-style: normal;
   font-weight: 400;
   font-size: 17px;
   line-height: 26px;
+  color: #FFF;
 }
 
 /*# sourceMappingURL=our_services.css.map */

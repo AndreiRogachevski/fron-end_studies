@@ -86,11 +86,16 @@
     }
   }
   main {
-    content {
-      section.home-services {
+    .content {
+      margin: 100px 79px;
+      .home-services {
         display: flex;
         flex-direction: row;
         div {
+          padding: 30px;
+          &:nth-child(2n + 2) {
+            background: #757575;
+          }
           background: #000;
           h3 {
             font-weight: 900;
@@ -104,7 +109,9 @@
             font-weight: 400;
             font-size: 17px;
             line-height: 26px;
+            color: #FFF;
           }
+          
         }
       }
     }
