@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // TASK #1
+      let n = +prompt("num of row?");
+      m = +prompt('amount of "AAA"?');
+      a = "AAA";
+      b = "BBB";
+      str = "";
+      l = "";
+      for (r = 1; r <= n; r++) {
+        if (r % 2) {
+          str = a;
+        } else {
+          str = b;
+        }
+        for (c = 1; c <= m; c++) {
+          if (r % 2){
+            if (c % 2){
+              str +=b;
+            } else{
+              str +=a + b;
+            }
+          } else {
+            if (c % 2){
+              str +=a;
+            } else{
+              str +=b + a;
+            }
+          }
+        }
+        console.log(str);
+      }
+    </script>
+  </body>
+</html>
