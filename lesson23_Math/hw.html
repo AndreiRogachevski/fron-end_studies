@@ -8,39 +8,102 @@
   </head>
   <body>
     <script>
-      // TASK #1
-      let n = +prompt("num of row?");
-      m = +prompt('amount of "AAA"?');
-      a = "AAA";
-      b = "BBB";
-      str1 = a + b;
-      str2 = b + a;
-      l = "";
-      for (r = 1; r <= n; r++) {
-        p = "";
-        l2 = "";
-        if (r % 2) {
-          l = str1;
-          for (c = 1; c <= m; c++) {
-            if (r % 2) {
-              p = p + str1;
-            } else {
-              p = p + str2;
-            }
-          }
-          console.log(p);
-        } else {
-          l = str2;
-          for (c = 1; c <= m; c++) {
-            if (r % 2) {
-              l2 = l2 + str1;
-            } else {
-              l2 = l2 + str2;
-            }
-          }
-          console.log(l2);
-        }
-      }
+      // // TASK #1
+      // let n = +prompt("num of row?");
+      // m = +prompt('amount of "AAA"?');
+      // a = "AAA";
+      // b = "BBB";
+      // str1 = a + b;
+      // str2 = b + a;
+      // l = "";
+      // for (r = 1; r <= n; r++) {
+      //   p = "";
+      //   l2 = "";
+      //   if (r % 2) {
+      //     l = str1;
+      //     for (c = 1; c <= m; c++) {
+      //       if (r % 2) {
+      //         p = p + str1;
+      //       } else {
+      //         p = p + str2;
+      //       }
+      //     }
+      //     console.log(p);
+      //   } else {
+      //     l = str2;
+      //     for (c = 1; c <= m; c++) {
+      //       if (r % 2) {
+      //         l2 = l2 + str1;
+      //       } else {
+      //         l2 = l2 + str2;
+      //       }
+      //     }
+      //     console.log(l2);
+      //   }
+      // }
+
+      // // TASK #2
+      // let row = +prompt("num of row?");
+      // col = row * 2;
+      // for (r = 1; r <= row; r++) {
+      //   h = "";
+      //   for (c = 1; c <= col; c++) {
+      //     if(r==1||r==row||c==1||c==col){
+      //       h += 'A'
+      //     } else {
+      //       h += "B";
+      //     }
+      //   }
+      //   console.log(h);
+      // }
+
+      // // TASK #3
+      // let min = 578;
+      //     max = 10024;
+      // result = Math.floor(Math.random() * (max - min + 1) ) + min;
+      // console.log(result);
+      // result1 = Math.floor(Math.random() * (max - min + 1) ) + min;
+      // console.log(result1);
+      // result2 = Math.floor(Math.random() * (max - min + 1) ) + min;
+      // console.log(result2);
+
+      // // TASK #4
+      // let min = Math.min(4, -2, 5, 19, -130, 0, 10);
+      // let max = Math.max(4, -2, 5, 19, -130, 0, 10);
+      // console.log('MIN', min);
+      // console.log('MAX', max);
+
+      // // TASK# 5
+      // // ??????????
+      // let a = +prompt("First Number?");
+      // b = +prompt("Second Number?");
+      // if (a < b) {
+      //   c = b - a;
+      // } else {
+      //   c = a - b;
+      // }
+      // console.log("Модуль разности - ", Math.abs(c));
+
+      // // TASK #6
+      // let n = +prompt('Введите нечётное число');
+      //   if (n%2){
+      //     height = Math.ceil(n/2);
+      //     for (h=1;h<=height;h++){
+      //       a='';
+      //       for(w=1;w<=n;w++){
+      //         if (h==height||h+(height)>w){
+      //           if(w<height-(h-1)){
+      //             a+='-';
+      //           } else a+='+';
+      //         } else {
+      //         a+='-';
+      //         }
+      //       } 
+      //       console.log(a);
+      //     }
+      //   } else {
+      //     alert ('Число должно быть нечётным!')
+      //   }
     </script>
   </body>
 </html>
