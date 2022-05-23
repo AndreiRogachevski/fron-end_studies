@@ -8,39 +8,39 @@
   </head>
   <body>
     <script>
-      // // TASK #1
-      // let n = +prompt("num of row?");
-      // m = +prompt('amount of "AAA"?');
-      // a = "AAA";
-      // b = "BBB";
-      // str1 = a + b;
-      // str2 = b + a;
-      // l = "";
-      // for (r = 1; r <= n; r++) {
-      //   p = "";
-      //   l2 = "";
-      //   if (r % 2) {
-      //     l = str1;
-      //     for (c = 1; c <= m; c++) {
-      //       if (r % 2) {
-      //         p = p + str1;
-      //       } else {
-      //         p = p + str2;
-      //       }
-      //     }
-      //     console.log(p);
-      //   } else {
-      //     l = str2;
-      //     for (c = 1; c <= m; c++) {
-      //       if (r % 2) {
-      //         l2 = l2 + str1;
-      //       } else {
-      //         l2 = l2 + str2;
-      //       }
-      //     }
-      //     console.log(l2);
-      //   }
-      // }
+      // TASK #1
+      let n = +prompt("num of row?");
+      m = +prompt('amount of "AAA"?');
+      a = "AAA";
+      b = "BBB";
+      str1 = a + b;
+      str2 = b + a;
+      l = "";
+      for (r = 1; r <= n; r++) {
+        p = "";
+        l2 = "";
+        if (r % 2) {
+          l = str1;
+          for (c = 1; c <= m; c++) {
+            if (r % 2) {
+              p = p + str1;
+            } else {
+              p = p + str2;
+            }
+          }
+          console.log(p);
+        } else {
+          l = str2;
+          for (c = 1; c <= m; c++) {
+            if (r % 2) {
+              l2 = l2 + str1;
+            } else {
+              l2 = l2 + str2;
+            }
+          }
+          console.log(l2);
+        }
+      }
 
       // // TASK #2
       // let row = +prompt("num of row?");
