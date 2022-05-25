@@ -7,12 +7,13 @@
   // circle(2)
 
   // TASK #2
-  function discount(price) {
+  function calcDiscountPrice(price) {
     let percent = 0.035;
-    let result = price - price * percent;
-    return result;
+    let discount = price * percent;
+    let result = price - discount;
+    return result.toFixed(2);
   }
-  let result = discount(100);
+  let result = calcDiscountPrice(99);
   console.log(result);
 
   // // TASK #3
