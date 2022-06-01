@@ -28,4 +28,93 @@
   //   str = str.slice(0, i) + " " + str.slice(i);
   // }
   // console.log(str);
+
+  // // TASK#3
+  // let str =
+  //   "Lorem ipsum123 dolor 123 sit amet, co1nsec856989tetur adipis7cing elit, sed d6o eiusmod temp567or incid6idunt ut l65abore et123 dolore magn256a aliqua. Ut enim4 ad minim veniam, quis nostrud";
+  // x = 0;
+  // for (i = 0; i < str.length; i++) {
+  //   if (str[i] === " ") {
+  //     continue;
+  //   } else if (isFinite(+str[i])) {
+  //     x++;
+  //   }
+  // }
+  // console.log(x);
+
+  // // TASK#4
+  // let str = 'Lorem ipsum dolor  sit amet, consectetur';
+  // function backword(str) {
+  //   let n = '';
+  //   for (i=str.length-1;i>=0;i--){
+  //     n += str[i];
+  //   }
+  //   console.log(n);
+  // }
+  // backword(str);
+
+  // // TASK#5
+  // let word = "abcddcba";
+  // function backword(word) {
+  //   let back = word;
+  //   let n = "";
+  //   for (i = word.length - 1; i >= 0; i--) {
+  //     n += word[i];
+  //   }
+  //   if (word == n) {
+  //     console.log("Читается");
+  //   } else {
+  //     console.log("Не читается");
+  //   }
+  // }
+  // backword(word);
+
+  // TASK#6
+  let str =
+    "Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco   laboris nisi ut aliquip ex ea commodo consequat. Duis aute    irure dolor in reprehenderit   in voluptate velit esse   cillum dolore eu fugiat nulla pariatur.    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
+    // s = "";
+    function first(i = 0) {
+    f = "";
+    for (; i < str.length; i++) {
+      f += str[i];
+      if (str[i] === " ") {
+        break;
+      }
+    }
+    return f;
+  }
+  // function second(i = f.length) {
+  //   for (; i < str.length; i++) {
+  //     s += str[i];
+  //     if (str[i] === " ") {
+  //       break;
+  //     }
+  //   }
+  //   console.log(s);
+  // }
+  fw = first();
+  // for (i = 0; i < str.length; i += fw.length) {
+  //   sw = first(i = str.indexOf(fw) + fw.length);
+  //   if(fw<=sw){
+  //     fw = sw;
+  //   } else {
+  //     continue
+  //   }
+  // }
+  console.log(fw);
+  // console.log(fw);
+  // console.log(sw);
+
+  // // TASK#7
+  // let str = "abdc asdff asdfa asdffggg bdfdb";
+  // for (i = 0; i < str.length; i++) {
+  //   fl = str[i];
+  //   sl = str.indexOf(fl, i + 1);
+  //   w = str.slice(i, sl + 1);
+  //   if (w.includes(" ")) {
+  //     continue;
+  //   } else if (w.length>3){    //больше чего?
+  //     console.log(w);
+  //   }
+  // }
 </script>
