@@ -1,1 +1,47 @@
-<script></script>
+<script>
+  // function Student(name, numGroup, graid) {
+  //   this.name = name;
+  //   this.numGroup = numGroup;
+  //   this.graid = graid;
+  //   this.arround = function () {
+  //     return this.graid.reduce((a, b) => a + b) / this.graid.length;
+  //   };
+  //   this.isPerfect = function () {
+  //     return this.graid.every((e) => e >= 4);
+  //   };
+  //   this.show = function () {
+  //     console.log(`${this.name} - ${this.numGroup}`);
+  //   };
+  // }
+  // const student1 = new Student("Smith Q. W.", "g1", [1, 2, 3, 4, 5]);
+  // const student2 = new Student("Smith W. E.", "g1", [4, 5, 5, 4, 5]);
+  // const student3 = new Student("Smith E. R.", "g1", [5, 2, 3, 4, 5]);
+  // const student4 = new Student("Smith R. T.", "g2", [4, 4, 4, 4, 5]);
+  // const student5 = new Student("Smith T. Y.", "g2", [1, 2, 3, 4, 5]);
+
+  // let students = [student1, student2, student3, student4, student5];
+
+  // console.log(students);
+  // students.forEach((s) => console.log(s.arround()));
+  // students.sort((a, b) => a.arround() - b.arround());
+  // students.filter((s) => s.isPerfect()).forEach((s) => s.show());
+
+  function Train(dist, numTrain, time) {
+    this.dist = dist;
+    this.numTrain = numTrain;
+    this.time = time;
+  }
+  const train1 = new Train("A", 301, "12.30");
+  const train2 = new Train("B", 304, "12.30");
+  const train3 = new Train("C", 303, "12.30");
+  const train4 = new Train("D", 302, "12.30");
+  const train5 = new Train("F", 305, "12.30");
+
+  let trains = [train1, train2, train3, train4, train5];
+  trains.sort((a, b) => a.numTrain - b.numTrain);
+  console.log(trains);
+  function info (numTrain){
+
+console.log(``);
+  }
+</script>
