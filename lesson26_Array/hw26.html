@@ -1,129 +1,129 @@
 <script>
-  // // TASK #1
-  // console.log("\tTASK #1");
-  // let arr01 = [];
-  // n01 = 6;
-  // for (i = 0; i < n01; i++) {
-  //   if (i == 0 || i == n01 - 1) {
-  //     arr01[i] = 1;
-  //   } else {
-  //     arr01[i] = 0;
-  //   }
-  // }
-  // console.log(arr01);
+  // TASK #1
+  console.log("\tTASK #1");
+  let arr01 = [];
+  n01 = 6;
+  for (i = 0; i < n01; i++) {
+    if (i == 0 || i == n01 - 1) {
+      arr01[i] = 1;
+    } else {
+      arr01[i] = 0;
+    }
+  }
+  console.log(arr01);
 
-  // // TASK #2
-  // console.log("\tTASK #2");
-  // let arr02 = [];
-  // n02 = 6;
-  // for (i = 0; i < n02; i++) {
-  //   if (!(i % 2)) {
-  //     arr02[i] = 0;
-  //   } else {
-  //     arr02[i] = 1;
-  //   }
-  // }
-  // console.log(arr02);
+  // TASK #2
+  console.log("\tTASK #2");
+  let arr02 = [];
+  n02 = 6;
+  for (i = 0; i < n02; i++) {
+    if (!(i % 2)) {
+      arr02[i] = 0;
+    } else {
+      arr02[i] = 1;
+    }
+  }
+  console.log(arr02);
 
-  // // TASK #3
-  // console.log("\tTASK #3");
-  // let arr03 = [];
-  // n03 = 12;
-  // for (i = 0; i < n03; i++) {
-  //   if (!(i % 2)) {
-  //     arr03[i] = i % 5;
-  //   } else {
-  //     arr03[i] = 1;
-  //   }
-  // }
-  // console.log(arr03);
+  // TASK #3
+  console.log("\tTASK #3");
+  let arr03 = [];
+  n03 = 12;
+  for (i = 0; i < n03; i++) {
+    if (!(i % 2)) {
+      arr03[i] = i % 5;
+    } else {
+      arr03[i] = 1;
+    }
+  }
+  console.log(arr03);
 
-  // // TASK #4
-  // console.log("\tTASK #4");
-  // let arr04 = [2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  // n04 = 0;
-  // m04 = 0;
-  // for (let i of arr04) {
-  //   if (i % arr04[0] == 0) {
-  //     n04++;
-  //   }
-  //   if (i % (arr04.length - 1) == 0) {
-  //     m04++;
-  //   }
-  // }
-  // if (n04 > m04) {
-  //   console.log(`На первый: ${n04}`);
-  // } else if (m04 > n04) {
-  //   console.log(`На последний: ${m04}`);
-  // } else {
-  //   console.log("Одинаково");
-  // }
+  // TASK #4
+  console.log("\tTASK #4");
+  let arr04 = [2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  n04 = 0;
+  m04 = 0;
+  for (let i of arr04) {
+    if (i % arr04[0] == 0) {
+      n04++;
+    }
+    if (i % (arr04.length - 1) == 0) {
+      m04++;
+    }
+  }
+  if (n04 > m04) {
+    console.log(`На первый: ${n04}`);
+  } else if (m04 > n04) {
+    console.log(`На последний: ${m04}`);
+  } else {
+    console.log("Одинаково");
+  }
 
-  // // TASK #5
-  // console.log("\tTASK #5");
-  // let arr05 = [2, 11, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  // n05 = 0;
-  // for (i = 0; i < arr05.length; i++) {
-  //   if (arr05[i] > n05) {
-  //     n05 = arr05[i];
-  //   }
-  // }
-  // console.log(n05);
+  // TASK #5
+  console.log("\tTASK #5");
+  let arr05 = [2, 11, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  n05 = 0;
+  for (i = 0; i < arr05.length; i++) {
+    if (arr05[i] > n05) {
+      n05 = arr05[i];
+    }
+  }
+  console.log(n05);
 
-  // // TASK #6
-  // console.log("\tTASK #6");
-  // let arr06 = [2, 11, 1, 3, 4, 5, 6, 7, 8, 9, 10];
-  // n06 = 0;
-  // m06 = Infinity;
-  // for (i = 0; i < arr06.length; i++) {
-  //   if (arr06[i] > n06) {
-  //     n06 = arr06[i]; //Большее
-  //   }
-  //   if (arr06[i] < m06) {
-  //     m06 = arr06[i]; //Меньшее
-  //   }
-  // }
-  // console.log(n06 + m06);
+  // TASK #6
+  console.log("\tTASK #6");
+  let arr06 = [2, 11, 1, 3, 4, 5, 6, 7, 8, 9, 10];
+  n06 = 0;
+  m06 = Infinity;
+  for (i = 0; i < arr06.length; i++) {
+    if (arr06[i] > n06) {
+      n06 = arr06[i]; //Большее
+    }
+    if (arr06[i] < m06) {
+      m06 = arr06[i]; //Меньшее
+    }
+  }
+  console.log(n06 + m06);
 
-  // // TASK #7
-  // console.log("\tTASK #7");
-  // let arr07 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  // if (arr07[0] < arr07[arr07.length - 1]) {
-  //   console.log("Массив возрастающий");
-  // } else if (arr07[0] > arr07[arr07.length - 1]) {
-  //   console.log("Массив убывающий");
-  // }
+  // TASK #7
+  console.log("\tTASK #7");
+  let arr07 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  if (arr07[0] < arr07[arr07.length - 1]) {
+    console.log("Массив возрастающий");
+  } else if (arr07[0] > arr07[arr07.length - 1]) {
+    console.log("Массив убывающий");
+  }
 
-  // // TASK #8
-  // console.log("\tTASK #8 ???");
-  // let arr08 = [2, 11, 1, 3, 4, 5, 6, 7, 8, 9, 10];
-  // n08 = 0;
-  // m08 = Infinity;
-  // for (i = 0; i < arr08.length; i++) {
-  //   if (arr08[i] > n08) {
-  //     n08 = arr08[i];
-  //   }
-  //   if (arr08[i] < m08) {
-  //     m08 = arr08[i];
-  //   }
-  // }
+  // TASK #8
+  console.log("\tTASK #8 ???"); //????????????
+  let arr08 = [2, 11, 1, 3, 4, 5, 6, 7, 8, 9, 10];
+  n08 = 0;
+  m08 = Infinity;
+  for (i = 0; i < arr08.length; i++) {
+    if (arr08[i] > n08) {
+      n08 = arr08[i];
+    }
+    if (arr08[i] < m08) {
+      m08 = arr08[i];
+    }
+  }
 
-  // // TASK #9
-  // console.log("\tTASK #9");
-  // let arr09 = [1, 2, 3, 4, 5];
-  // arr09.pop();
-  // arr09.shift();
-  // console.log(arr09);
+  // TASK #9
+  console.log("\tTASK #9");
+  let arr09 = [1, 2, 3, 4, 5];
+  arr09.pop();
+  arr09.shift();
+  console.log(arr09);
 
-  // // TASK #10
-  // console.log("\tTASK #10");
-  // let arr10 = [1, 2, 3, 4, 5];
-  // console.log(`${arr10}`);
-  // arr10.reverse();
-  // console.log(`Reverse ${arr10}`);
+  // TASK #10
+  console.log("\tTASK #10");
+  let arr10 = [1, 2, 3, 4, 5];
+  console.log(`${arr10}`);
+  arr10.reverse();
+  console.log(`Reverse ${arr10}`);
 
   // TASK #11
-  console.log("\tTASK #11");
+  console.log("\tTASK #11"); //???????????
   let arr11 = [1, 2, -2, 3, 4, 5];
   arr11n = [];
   n11 = 0;

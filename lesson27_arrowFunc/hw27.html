@@ -1,37 +1,44 @@
 <script>
-  // // TASK #1
-  // let str =
-  //   "Lorem ipsum123 dolor 123 sit amet, co1nsec856989tetur adipis7cing elit, sed d6o eiusmod temp567or incid6idunt ut l65abore et123 dolore magn256a aliqua. Ut enim4 ad minim veniam, quis nostrud";
-  // numbers = str.split("").filter((e) => isFinite(e) && !e.includes(" "));
-  // sum = numbers.reduce((a, b) => +a + +b);
-  // product = numbers.reduce((a, b) => +a * +b);
-  // console.log(numbers.length);
-  // console.log(sum);
-  // console.log(product);
+  // TASK #1
+  let str =
+    "Lorem ipsum123 dolor 123 sit amet, co1nsec856989tetur adipis7cing elit, sed d6o eiusmod temp567or incid6idunt ut l65abore et123 dolore magn256a aliqua. Ut enim4 ad minim veniam, quis nostrud";
+  numbers = str.split("").filter((e) => isFinite(e) && !e.includes(" "));
+  sum = numbers.reduce((a, b) => +a + +b);
+  product = numbers.reduce((a, b) => +a * +b);
+  console.log(numbers.length);
+  console.log(sum);
+  console.log(product);
 
-  // // TASK #2
-  // let word = "abcddcba";
-  // revers = word.split("").reverse().join("");
-  // word == revers
-  //   ? console.log(`Слово ${word} полиндром`)
-  //   : console.log(`Слово ${word} НЕ полиндром`);
+  // TASK #2
+  let word = "abcddcba";
+  revers = word.split("").reverse().join("");
+  word == revers
+    ? console.log(`Слово ${word} полиндром`)
+    : console.log(`Слово ${word} НЕ полиндром`);
 
-  // // TASK #3
-  // let str =
-  //   "Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco   laboris nisi ut aliquip ex ea commodo consequat. Duis aute    irure dolor in reprehenderit   in voluptate velit esse   cillum dolore eu fugiat nulla pariatur.    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
-  // word = str
-  //   .replaceAll("  ", " ")
-  //   .split(" ")
-  //   .reduce((a, b) => (a.length > b.length ? a : b));
-  // console.log(word);
+  // TASK #3
+  let str1 =
+    "Lorem ipsum dolor  sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco   laboris nisi ut aliquip ex ea commodo consequat. Duis aute    irure dolor in reprehenderit   in voluptate velit esse   cillum dolore eu fugiat nulla pariatur.    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum";
+  word = str1
+    .replaceAll("  ", " ")
+    .replaceAll(",", " ")
+    .replaceAll(".", " ")
+    .split(" ")
+    .reduce((a, b) => (a.length > b.length ? a : b));
+  console.log(`Самое длинное слово: ${word}`);
 
-  // // TASK#4
-  // let str = "abdc asdff asdfa asdffggg bdfdb";
-  // newStr = str.split(' ').filter(e=> e[0]==e[e.length-1])
-  // console.log(newStr);
+  // TASK#4
+  let str2 = "abdc asdff asdfa asdffggg bdfdb";
+  newStr = str2
+    .split(" ")
+    .filter((e) => e[0] === e[e.length - 1])
+    .join(", ");
+  console.log(newStr);
 
   // TASK #5
-  let arr = [1, 2, 3, 4, 12, 6, 7, 8, 9,];
-  newArr = arr.filter(e=>e%3==0).reduce((a,b)=>a>b?a:b);
+  let arr = [1, 2, 3, 4, 12, 6, 7, 8, 9];
+  newArr = arr
+    .filter((e, i) => i % 2 === 0 && e % 3 == 0)
+    .reduce((a, b) => (a > b ? a : b));
   console.log(newArr);
 </script>
