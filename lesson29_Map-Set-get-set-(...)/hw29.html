@@ -1,0 +1,60 @@
+<script>
+  // // TASK #1
+  // let arr = [[1, 2, 3], [4, 5], [6]];
+  // newArr = arr.flat().reduce((a, b) => a + b);
+  // console.log(arr);
+  // console.log(newArr);
+
+  // TASK #2
+  /*
+  Задача 2
+* Создайте объект User c полями firstName, lastName, year(год рождения)
+* Реализуйте геттер, который возвращает полное имя пользователя
+* Реализутей геттер age на основе года рождения пользователя
+* Создайте массив из 10 пользователей
+* Добавьте возможность вывода пользователей старше определенного возраста n, 
+упорядоченых в алфовитном порядке в обратном направлении
+* Добавьте возможность удаления пользователей младше определенного возраста n
+*/
+  function User(firstName, lastName, year) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.year = year;
+
+    Object.defineProperty(this, "fullName", {
+      get() {
+        return this.firstName + " " + this.lastName;
+      },
+    });
+    Object.defineProperty(this, "age", {
+      get() {
+        let today = new Date().getFullYear();
+        return today - this.year;
+      },
+    });
+  }
+  let user1 = new User("Boby", "Jenerik", 2000);
+  let user2 = new User("Marry", "Jenerik", 1986);
+  let user3 = new User("John", "Jenerik", 1989);
+  let user4 = new User("Fred", "Jenerik", 2013);
+  let user5 = new User("Liza", "Jenerik", 2018);
+  let arr = [user1, user2, user3, user4, user5];
+  function call(n) {
+    let newArr = arr
+      .filter((arr) => arr.age >= n)
+      .sort((a, b) => (a.firstName > b.firstName ? 1 : -1))
+      .reverse();
+    console.log(newArr);
+  }
+  function rem(n) {
+    arr = arr.filter((arr) => arr.age >= n);
+    console.log(arr);
+  }
+  console.log(user1);
+  console.log(user1.fullName);
+  console.log(user1.age);
+  console.log(user3.age);
+  call(18);
+  rem(18);
+  console.log(arr);
+</script>
