@@ -1,0 +1,91 @@
+<script>
+  /*
+      Задача 1
+    #Создайте объект shape и его наследников circle, rectangle.
+    #Oбъект shape содержит метод draw()
+      (выводит название фигуры и ее цвет) и переменную хранящую цвет.
+    #Oбъект rectangle содержит свойство хранящее длины двух его сторон
+    #Oбъект circle содержит свойство radius
+    #Oбъекты circle, rectangle содержат координаты точек.
+    #Создать массив содержащий эти фигуры.
+    #В цикле нарисовать их (вызвать метод draw).*/
+  // let shape = {
+  //   color: "red",
+  //   draw() {
+  //     console.log(`${this.name}, ${this.color}}`);
+  //   },
+  // };
+  // let circle = Object.create(shape, {
+  //   name: {
+  //     value: "circle",
+  //   },
+  //   point: {
+  //     value: { x: 1 },
+  //   },
+  // });
+  // let rectangle = Object.create(shape, {
+  //   name: {
+  //     value: "rectangle",
+  //   },
+  //   point: {
+  //     value: { x: 3, y: 2 },
+  //   },
+  // });
+  // let arr = [circle, rectangle];
+
+  // circle.draw();
+  // rectangle.draw();
+  /*
+    Задача 2
+    #Реализуйте функции конструктор для Student и Aspirant,
+      аспирант отличается от студента наличием некой научной работы.
+    #Student содержит свойства:
+    #firstName
+    #lastName
+    #group
+    #averageMark (содержащую среднюю оценку).
+    #Aspirant имеет дополнительное свойство work
+    #Создать метод getScholarship() для Student, который возвращает
+      сумму стипендии. Если средняя оценка студента больше или
+      равна 5, то сумма 100, иначе 80.
+    #Переопределить этот метод в Aspirant. Если средняя оценка
+      аспиранта равна 5, то сумма 200, иначе 180.
+    #Создать несколько объектов типа Student и Aspirant.
+      Создать массив содержащий объекты Student и Aspirant.
+      Вызвать метод getScholarship() для каждого элемента массива.
+    */
+  function Student(firstName, lastName, group, averageMark) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.group = group;
+    this.averageMark = averageMark;
+    this.getScholarship = () => {
+      if (this.averageMark >= 5) {
+        return 100;
+      } else {
+        return 80;
+      }
+    };
+  }
+
+  function Aspirant(firstName, lastName, group, averageMark, work) {
+    Student.call(this, firstName, lastName, group, averageMark);
+    this.work = work;
+    this.getScholarship = () => {
+      if (this.averageMark >= 5) {
+        return 200;
+      } else {
+        return 180;
+      }
+    };
+  }
+  Object.setPrototypeOf(Aspirant, Student);
+  // Object.setPrototypeOf(Aspirant.prototype, Student.prototype);
+  let student = new Student("Bob", "Smith", "A111", 5.5);
+  let student1 = new Student("Jim", "Dick", "A131", 4);
+  let aspirant = new Aspirant("John", "Fork", "A222", 6, "JavaScript");
+  let aspirant1 = new Aspirant("Marry", "Pork", "A232", 8, "PHP");
+  let arr1 = [student, student1, aspirant, aspirant1];
+  console.log(arr1);
+  console.log(arr1.forEach((e) => console.log(e.getScholarship())));
+</script>
