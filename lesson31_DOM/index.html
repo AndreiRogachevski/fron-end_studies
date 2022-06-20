@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 300px;
+        margin: 0 auto;
+      }
+      img {
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="" alt="" />
+    <script>
+      const image = [
+        "https://i.natgeofe.com/n/46b07b5e-1264-42e1-ae4b-8a021226e2d0/domestic-cat_thumb_square.jpg",
+        "https://www.rd.com/wp-content/uploads/2021/01/GettyImages-1175550351.jpg",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu3tEgn2kIQ0UeDx0-0QSjl_ccw0gMxrhZNvVHjHzYKwyjkFtpNnWwBoc53JPofJxEqWs&usqp=CAU",
+      ];
+      const img = document.body.querySelector("img");
+      img.src =
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cat_November_2010-1a.jpg/1200px-Cat_November_2010-1a.jpg";
+      n = 0;
+      setInterval(() => {
+        img.src = image[n];
+        n++;
+        if (n === image.length) {
+          n = 0;
+        }
+      }, 2500);
+    </script>
+  </body>
+</html>
