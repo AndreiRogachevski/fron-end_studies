@@ -69,7 +69,6 @@
   }
 
   function Aspirant(firstName, lastName, group, averageMark, work) {
-    Student.call(this, firstName, lastName, group, averageMark);
     this.work = work;
     this.getScholarship = () => {
       if (this.averageMark >= 5) {
@@ -78,14 +77,13 @@
         return 180;
       }
     };
+    Aspirant.prototype = Student;
   }
-  Object.setPrototypeOf(Aspirant, Student);
-  // Object.setPrototypeOf(Aspirant.prototype, Student.prototype);
   let student = new Student("Bob", "Smith", "A111", 5.5);
   let student1 = new Student("Jim", "Dick", "A131", 4);
   let aspirant = new Aspirant("John", "Fork", "A222", 6, "JavaScript");
   let aspirant1 = new Aspirant("Marry", "Pork", "A232", 8, "PHP");
   let arr1 = [student, student1, aspirant, aspirant1];
   console.log(arr1);
-  console.log(arr1.forEach((e) => console.log(e.getScholarship())));
+  arr1.forEach((e) => console.log(e.getScholarship()));
 </script>
