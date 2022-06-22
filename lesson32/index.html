@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // //task1
+      // const ul = document.createElement("ul");
+      // document.body.prepend(ul);
+      // for (let index = 1; index <= 100; index++) {
+      //   const li = document.createElement("li");
+      //   ul.append(li);
+      //   li.textContent = `Item ${index}`
+      // }
+
+      // //task2
+      // const article = document.createElement("article");
+      // const h3 = document.createElement("h3");
+      // h3.textContent = 'Title'
+      // const p = document.createElement("p");
+      // p.textContent = 'Content'
+      // const ol = document.createElement("ol");
+      // const footer = document.createElement("footer");
+      // const a = document.createElement("a");
+
+      // document.body.prepend(article);
+      // article.append(h3);
+      // article.append(p);
+      // article.append(ol);
+      // for (let index = 1; index <= 2; index++) {
+      //   const li = document.createElement("li");
+      //   ol.append(li);
+      //   li.textContent = index;
+      // }
+      // article.append(footer);
+      // footer.prepend(a);
+      // a.textContent = "author";
+      // a.href = "google.com";
+
+      //task3
+      fetch("https://jsonplaceholder.typicode.com/todos")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          const ul = document.createElement("ul");
+          document.body.prepend(ul);
+          data.forEach((el) => {
+            const li = document.createElement("li");
+            ul.append(li);
+            const span = document.createElement("span");
+            li.append(span);
+            span.textContent = el.id;
+            const p = document.createElement("p");
+            li.append(p);
+            p.textContent = el.title;
+            const input = document.createElement("input");
+            input.type = "checkbox";
+            if (el.completed) {
+              input.checked = true;
+            }
+            li.append(input);
+          });
+
+          console.log(ul.children);
+          
+          // console.log(ul.children);
+          // const timer = setInterval(() => {
+          //   if (ul.children.length > 0) {
+          //     const index = Math.floor(Math.random() * ul.children.length);
+          //     ul.children.item(index).remove();
+          //   } else {
+          //     clearInterval(timer);
+          //   }
+          //   console.log(ul.children.length);
+          // }, 500);
+        });
+    </script>
+  </body>
+</html>
