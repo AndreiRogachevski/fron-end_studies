@@ -1,12 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        width: 110vw;
+        height: 100vh;
+      }
+      div {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        background-color: crimson;
+        /* transition: all 0.5s ease; */
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <ul></ul>
+    <button>add</button>
+    <script>
+      const btn = document.body.querySelector("button");
+      const ul = document.body.querySelector("ul");
+      function crLi() {
+        const li = document.createElement("li");
+        li.textContent = "item";
+        ul.append(li);
+      }
+      btn.addEventListener("click", crLi);
+      ul.addEventListener("contextmenu", (e) => {
+        e.preventDefault();
+        if (e.target.tagName == "LI") {
+          e.target.remove();
+        }
+      });
+    </script> -->
+
+    <div></div>
+    <script>
+      const div = document.body.querySelector("div");
+      // div.addEventListener("mouseover", (e) => {
+      //   let currentPositionX = div.style.left ? div.style.left : 0;
+      //   currentPositionX = Number.parseInt(currentPositionX)
+      //   div.style.left = +currentPositionX + 20 + "px";
+      //   let currentPositionY = div.style.top ? div.style.top : 0;
+      //   currentPositionY = Number.parseInt(currentPositionY)
+      //   div.style.top = +currentPositionY + 20 + "px";
+      // });
+      // // div.addEventListener("mouseout", (e) => {
+      // //   div.style.left = "0px";
+      // //   div.style.top = "0px";
+      // // });
+      document.body.addEventListener("mousemove", (e) => {
+        div.style.left = e.clientX + "px";
+        div.style.top = e.clientY + "px";
+      });
+    </script>
+  </body>
 </html>

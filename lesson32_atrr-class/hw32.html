@@ -56,7 +56,7 @@
       const table = document.createElement("table");
       document.body.prepend(table);
       let k = 5;
-      let n = 3;
+      let n = 4;
       for (let indexK = 1; indexK <= k; indexK++) {
         const tr = document.createElement("tr");
         table.append(tr);
@@ -74,6 +74,35 @@
       }
       table.style.borderCollapse = "collapse";
       table.style.float = "right";
+
+      // const tr = document.body.querySelectorAll("tr");
+      // tr.forEach((element) => {
+      //   element.addEventListener("click", (e) => {
+      //     if (e.target.tagName == "TD") {
+      //       element.style.backgroundColor = "grey";
+      //       e.target.style.backgroundColor = "";
+
+      //       // e.target.previousSibling.style.backgroundColor = "grey";
+      //     }
+      //   });
+      //   element.addEventListener("contextmenu", (e) => {
+      //     e.preventDefault();
+      //     if (e.target.tagName == "TD") {
+      //       element.style.backgroundColor = "white";
+      //     }
+      //   });
+      // });
+      table.addEventListener("click", (e) => {
+        if (e.target.tagName === "TD") {
+          const tr = e.target.closest("tr");
+          // console.log(tr.children);
+          Array.from(tr.children).forEach((td) => {
+            if (td !== e.target) {
+              td.style.backgroundColor = "grey";
+            }
+          });
+        }
+      });
     </script>
   </body>
 </html>
