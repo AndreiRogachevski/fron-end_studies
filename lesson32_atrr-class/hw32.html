@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function insTo(tag,dir) {
+      //   const nm = document.createElement(`${tag}`)
+      //   dir.append(nm)
+      // }
+      const header = document.createElement("header");
+      document.body.prepend(header);
+      const nav = document.createElement("nav");
+      header.append(nav);
+      const ul = document.createElement("ul");
+      nav.append(ul);
+      ul.className = "head-menu";
+      for (let index = 1; index <= 4; index++) {
+        let li = document.createElement("li");
+        ul.append(li);
+        li.textContent = `page` + index;
+      }
+      const main = document.createElement("main");
+      header.after(main);
+      main.className = "container";
+      const article = document.createElement("article");
+      main.append(article);
+      const h1 = document.createElement("h1");
+      article.append(h1);
+      h1.textContent = "title";
+      const p = document.createElement("p");
+      article.append(p);
+      p.textContent = "content";
+      const aside = document.createElement("aside");
+      main.append(aside);
+      aside.className = "sidebar";
+      const ul1 = document.createElement("ul");
+      aside.append(ul1);
+      for (let index = 1; index <= 3; index++) {
+        let li = document.createElement("li");
+        ul1.append(li);
+        li.textContent = `page` + index;
+      }
+      const footer = document.createElement("footer");
+      main.after(footer);
+      const p1 = document.createElement("p");
+      footer.append(p1);
+      p1.innerHTML = "copyright <b>text</b>";
+      // insTo(nav,header)
+      // insTo(ul,nav)
+
+      const table = document.createElement("table");
+      document.body.prepend(table);
+      let k = 5;
+      let n = 3;
+      for (let indexK = 1; indexK <= k; indexK++) {
+        const tr = document.createElement("tr");
+        table.append(tr);
+        for (let indexN = 1; indexN <= n; indexN++) {
+          const td = document.createElement("td");
+          tr.append(td);
+          td.textContent = `${indexN}-${indexK}`;
+          td.style.border = "3px solid black";
+          td.style.height = "30px";
+          td.style.width = "100px";
+          td.style.textAlign = "center";
+          td.style.fontSize = "30px";
+          td.style.letterSpacing = "5px";
+        }
+      }
+      table.style.borderCollapse = "collapse";
+      table.style.float = "right";
+    </script>
+  </body>
+</html>
