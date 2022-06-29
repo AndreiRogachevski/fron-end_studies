@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        text-transform: uppercase;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      const button = document.createElement("button");
+      document.body.prepend(button);
+      let n = 0;
+      button.textContent = `number ${n++}`;
+      button.addEventListener("click", () => {
+        button.textContent = `number ${n++}`;
+      });
+      const button1 = document.createElement("button");
+      button.after(button1);
+      button1.textContent = `Hidde ME!`;
+      button1.addEventListener("click", () => {
+        button1.style.display = "none";
+        setInterval(() => {
+          button1.style.display = "";
+        }, 2000);
+      });
+      const div = document.createElement("div");
+      button1.after(div);
+      div.style.cssText = `
+      width:300px;
+      height: 300px;
+      border: 2px solid black;
+      position: absolute;
+      top:50px;
+      left:50px
+      display: grid;      
+      grid-template-columns: 1fr 1fr;
+      `;                                    /*??????????*/
+      div.style.display = 'grid'
+      // const butt = div.querySelectorAll('button')
+      // butt.forEach((e)=> e.style.textTransform = 'uppercase')
+      const btnUp = document.createElement("button");
+      div.append(btnUp);
+      btnUp.textContent = "up";
+      btnUp.style.gridColumn = '1/3'
+      btnUp.onclick = () => {
+        let topN = div.offsetTop;
+        div.style.top = topN - 10 + "px";
+      };
+      const btnLeft = document.createElement("button");
+      div.append(btnLeft);
+      btnLeft.textContent = "Left";
+      btnLeft.onclick = () => {
+        let leftN = div.offsetLeft;
+        div.style.left = leftN - 10 + "px";
+      };
+      const btnRight = document.createElement("button");
+      div.append(btnRight);
+      btnRight.textContent = "Right";
+      btnRight.onclick = () => {
+        let leftN = div.offsetLeft;
+        div.style.left = leftN + 10 + "px";
+      };
+      const btnDown = document.createElement("button");
+      div.append(btnDown);
+      btnDown.textContent = "Down";
+      btnDown.style.gridColumn = '1/3'
+      btnDown.onclick = () => {
+        let topN = div.offsetTop;
+        div.style.top = topN + 10 + "px";
+      };
+    </script>
+  </body>
+</html>
