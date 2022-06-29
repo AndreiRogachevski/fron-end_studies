@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .toggle {
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" name="newForm">
+      <input type="text" name="text" />
+      <input type="submit" name="subBtn" />
+      <input type="submit" name="clearBtn" value="clean" />
+    </form>
+    <br />
+    <script>
+      const form = document.forms.newForm;
+      const inputText = form.elements.text;
+      const inputClearBtn = form.elements.clearBtn;
+      const inputBtn = form.elements.subBtn;
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        inputText.value = "";
+      });
+      inputBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        let text = inputText.value;
+        inputText.value = text.split("").reverse().join("");
+      });
+    </script>
+    <input type="checkbox" name="check" id="" />
+    <input type="text" name="first" /><span>&</span
+    ><input type="text" name="second" />=
+    <p></p>
+    <button>click</button>
+    <script>
+      const first = document.body.querySelector('input[name="first"]');
+      const second = document.body.querySelector('input[name="second"]');
+      const checkbox = document.body.querySelector('input[name="check"]');
+      const tagP = document.body.querySelector("p");
+      const button = document.body.querySelector("button");
+      button.addEventListener("click", (e) => {
+        let a = +first.value;
+        let b = +second.value;
+        tagP.textContent = checkbox.checked ? a + b : a - b;
+      });
+    </script>
+    <br />
+    <br />
+    <input type="text" name="url" id="url" />
+    <input type="button" value="insert" />
+    <script>
+      const input = document.body.querySelector('input[name="url"]');
+      const btn = document.body.querySelector('input[value="insert"]');
+      btn.addEventListener("click", (e) => {
+        const img = document.createElement("img");
+        img.style.cssText = `
+        width:100px;
+        height:auto;
+        display:flex`;
+        btn.after(img);
+        img.src = input.value;
+        let arrImg = [];
+        arrImg.push(img.src);
+      });
+    </script>
+    <input type="text" name="liText" id="" />
+    <input type="button" value="place LI" />
+    <ul></ul>
+    <script>
+      const input1 = document.body.querySelector('input[name="liText"]');
+      const btn1 = document.body.querySelector('input[value="place LI"]');
+      const ul = document.body.querySelector("ul");
+      btn1.addEventListener("click", (e) => {
+        const li = document.createElement("li");
+        li.textContent = input1.value;
+        ul.append(li);
+        input1.value = "";
+        ul.addEventListener("click", (e) => {
+          // const li = document.body.querySelector('li')
+          if (e.target.tagName === li) {
+            e.target.classList.toggle("toggle");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
