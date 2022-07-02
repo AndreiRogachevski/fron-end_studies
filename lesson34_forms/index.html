@@ -78,12 +78,13 @@
       const ul = document.body.querySelector("ul");
       btn1.addEventListener("click", (e) => {
         const li = document.createElement("li");
+        li.style = 'cursor: pointer'
         li.textContent = input1.value;
         ul.append(li);
         input1.value = "";
         ul.addEventListener("click", (e) => {
-          // const li = document.body.querySelector('li')
-          if (e.target.tagName === li) {
+          console.log(e.target.tagName);
+          if (e.target.tagName === 'LI') {
             e.target.classList.toggle("toggle");
           }
         });
