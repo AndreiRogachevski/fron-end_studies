@@ -12,17 +12,17 @@
       crossorigin="anonymous"
     />
     <style>
-      body{
+      body {
         margin: auto;
         width: 90vw;
         display: flex;
         gap: 50px;
       }
-      form[name='form']{
+      form[name="form"] {
         margin-top: 30px;
         flex: 1 1 200px;
       }
-      div.container{
+      div.container {
         flex: 1 1 400px;
       }
     </style>
@@ -79,21 +79,27 @@
       const url = form.elements.url;
       const submit = form.elements.submit;
       const div = document.body.querySelector("div");
-      let arrImg = [];
       submit.addEventListener("click", (e) => {
         e.preventDefault();
         let img = document.createElement("img");
         img.src = url.value;
+        let arrImg = [];
         arrImg.push(img);
         div.append(img);
         url.value = "";
         let last = arrImg[arrImg.length - 1];
-        last.onerror = function () {
-          div.append(
-            (document.createElement("span").textContent = "ОШИБКА ЗАГРУЗКИ")
-          );
+        last.onload = function () {
+          if (this.width <= 1) {
+            errorAlert();
+          }
         };
+        last.onerror = errorAlert;
       });
+      function errorAlert() {
+        div.append(
+          (document.createElement("p").textContent = "ОШИБКА ЗАГРУЗКИ")
+        );
+      }
     </script>
     <!-- TASK3 -->
     <div class="container mt-5">
