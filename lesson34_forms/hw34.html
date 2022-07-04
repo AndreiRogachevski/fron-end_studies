@@ -172,7 +172,7 @@
         li.textContent = inputText.value;
         if (li.textContent.length < 10) {
           alert("Длина задачи короткая");
-          return;
+          return false;
         }
         const checked = Array.from(select.options).filter(
           (option) => option.selected

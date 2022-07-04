@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <form action="" name="form">
+      <select name="select" id="">
+        <option value="">1</option>
+        <option value="">2</option>
+        <option value="">3</option>
+        <option value="">4</option>
+        <option value="">5</option>
+        <option value="">6</option>
+        <option value="">7</option>
+        <option value="">8</option>
+        <option value="">9</option>
+        <option value="">10</option>
+      </select>
+      <input type="number" name="number" id="" />
+      <input type="submit" name="submit" value="Submit" />
+    </form>
+    <script>
+      const form = document.forms[0];
+      const button = form.submit;
+      let input = form.number;
+      let select = form.select;
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+        select.selectedIndex = Number.parseInt(input.value) - 1;
+      });
+    </script>
+    <form action="" name="form1">
+      <select name="countries" id="">
+        <option value="country1">Country1</option>
+        <option value="country2">Country2</option>
+        <option value="country3">Country3</option>
+      </select>
+    </form>
+    <script>
+      const form1 = document.forms[1];
+      const selectCountreis = form1.countries;
+      const object = {
+        country1: ["city1-1", "city1-2"],
+        country2: ["city2-1", "city2-2"],
+        country3: ["city3-1", "city3-2"],
+      };
+      let selectCities = document.createElement("select");
+      selectCities.hidden = true;
+      form1.append(selectCities);
+      selectCountreis.addEventListener("change", () => {
+        selectCities.hidden = false;
+        selectCities.innerHTML = "";
+        const country = selectCountreis.value;
+        const cities = object[country];
+        cities.forEach((city) => {
+          const option = new Option(city, city);
+          selectCities.append(option);
+        });
+      });
+    </script>
+    <script>
+      var data = [
+        {
+          name: "Julie Fox",
+          phone: "(346) 816-5478",
+          email: "ridiculus.mus.donec@icloud.couk",
+          address: "3328 Est, Rd.",
+          list: "13",
+          country: "Indonesia",
+          region: "Arequipa",
+          postalZip: "74784-897",
+          text: "sapien. Aenean massa. Integer vitae nibh. Donec est mauris, rhoncus",
+          numberrange: "7",
+          currency: "$65.92",
+          alphanumeric: "URI46GBM7HW",
+        },
+        {
+          name: "Colorado Conrad",
+          phone: "1-832-235-1146",
+          email: "quis@hotmail.com",
+          address: "Ap #604-6074 Dictum Rd.",
+          list: "13",
+          country: "Belgium",
+          region: "Provence-Alpes-Côte d'Azur",
+          postalZip: "Y8B 4S7",
+          text: "tempor lorem, eget mollis lectus pede et risus. Quisque libero",
+          numberrange: "1",
+          currency: "$63.25",
+          alphanumeric: "VCY15OZB1PE",
+        },
+        {
+          name: "Colorado Schwartz",
+          phone: "(865) 677-6185",
+          email: "felis@protonmail.org",
+          address: "805-8453 Tortor Rd.",
+          list: "5",
+          country: "Brazil",
+          region: "Delhi",
+          postalZip: "58-687",
+          text: "felis purus ac tellus. Suspendisse sed dolor. Fusce mi lorem,",
+          numberrange: "0",
+          currency: "$43.98",
+          alphanumeric: "ODS82WHT2GJ",
+        },
+        {
+          name: "Aquila Noel",
+          phone: "(498) 798-9121",
+          email: "ullamcorper@protonmail.com",
+          address: "P.O. Box 344, 6145 Orci, St.",
+          list: "3",
+          country: "Pakistan",
+          region: "Novgorod Oblast",
+          postalZip: "43178",
+          text: "neque vitae semper egestas, urna justo faucibus lectus, a sollicitudin",
+          numberrange: "4",
+          currency: "$18.71",
+          alphanumeric: "MCE72GDR8QO",
+        },
+        {
+          name: "Alec Lawrence",
+          phone: "1-298-556-6112",
+          email: "adipiscing@google.com",
+          address: "Ap #972-5724 Nunc. Rd.",
+          list: "11",
+          country: "Mexico",
+          region: "Alajuela",
+          postalZip: "2153",
+          text: "imperdiet ornare. In faucibus. Morbi vehicula. Pellentesque tincidunt tempus risus.",
+          numberrange: "8",
+          currency: "$13.86",
+          alphanumeric: "TZR28ZCF4GH",
+        },
+      ];
+      const table = document.createElement("table");
+      const thead = document.createElement("thead");
+      const tbody = document.createElement("tbody");
+      const tr = document.createElement("tr");
+      document.body.append(table);
+      table.append(thead);
+      table.append(tbody);
+      let headers = Object.keys(data[0]);
+      thead.append(tr);
+      headers.map((headers) => {
+        const th = document.createElement("th");
+        th.textContent = headers;
+        tr.append(th);
+      });
+      renderTable(data);
+      function renderTable(rows) {
+        tbody.innerHTML = "";
+        rows.forEach((row) => {
+          const tr = document.createElement("tr");
+          tbody.append(tr);
+          headers.forEach((headers) => {
+            const td = document.createElement("td");
+            td.textContent = row[headers];
+            tr.append(td);
+          });
+        });
+      }
+    </script> -->
+    <form action="" name="form1">
+      <input type="text" name="" id="" />
+      <input type="text" name="" id="" />
+      <!-- <input type="text" name="" id="" /> -->
+    </form>
+    <form action="" name="form2">
+      <input type="text" name="" id="" />
+      <input type="text" name="" id="" />
+      <!-- <input type="text" name="" id="" /> -->
+    </form>
+    <form action="" name="form3">
+      <input type="text" name="" id="" />
+      <input type="text" name="" id="" />
+      <!-- <input type="text" name="" id="" /> -->
+    </form>
+    <button>button</button>
+    <script>
+      const button = document.querySelector("button");
+      const forms = Array.from(document.forms);
+      const nums = [];
+      button.addEventListener("click", (e) => {
+        forms.forEach((form) => {
+          const inputs = Array.from(form.elements);
+          nums.push(...inputs.map((input) => Number.parseInt(input.value)));
+        });
+        const summ = nums.reduce((acc, n) => acc + n, 0);
+        alert(summ);
+      });
+    </script>
+  </body>
+</html>
