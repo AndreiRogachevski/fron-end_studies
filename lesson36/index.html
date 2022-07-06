@@ -1,12 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    input {
+      display: block;
+    }
+
+    .container {
+      width: 98vw;
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+    }
+
+    .container div {
+      width: 15px;
+      height: 15px;
+      border: 1px solid black;
+      color: rgb(240, 248, 255);
+      color: w;
+    }
+  </style>
 </head>
+
 <body>
-  
+  <!-- <form action="">
+    <label for="name">name</label>
+    <input type="text" id="name" name="name">
+    <label for="age">age</label>
+    <input type="text" id="age" name="age">
+    <label for="password">password</label>
+    <input type="password" id="password" name="password">
+    <label for="passwordConfirm">passwordConfirm</label>
+    <input type="password" id="passwordConfirm" name="passwordConfirm">
+    <label for="checkbox">checkbox</label>
+    <input type="checkbox" id="checkbox" name="checkbox">
+    <input type="submit" value="Submit">
+  </form>
+  <ul></ul>
+  <script>
+    const form = document.forms[0];
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const errors = []
+      const name = this.elements.name;
+      if (name.value.length <= 5) {
+        errors.push('Name должено быть больше 5 символов')
+      }
+      if (name.value.includes(' ')) {
+        errors.push('Name не должно содержать пробелов')
+      }
+      const age = this.elements.age.value;
+      if (age.includes(' ')) {
+        errors.push('age не должно содержать пробелов')
+      }
+      if (!Number(age)) {
+        errors.push('возраст должен быть число')
+      } else if (Number(age) < 18) {
+        errors.push('возраст должен больше 18')
+      }
+      const password = this.elements.password.value;
+      const passwordConfirm = this.elements.passwordConfirm.value;
+      console.log(password);
+      console.log(passwordConfirm);
+      if (password !== passwordConfirm) {
+        errors.push('пароли не совпадают')
+      }
+      const check = this.elements.checkbox;
+      if (!check.checked) {
+        errors.push('поставте галочку')
+      }
+
+      const ul = document.querySelector('ul');
+      ul.innerHTML = '';
+      const lis = errors.map(error => {
+        const li = document.createElement('li');
+        li.textContent = error;
+        return li;
+      })
+      ul.append(...lis)
+    })
+  </script> -->
+  <div class="container">
+    <script>
+      const container = document.querySelector('.container')
+      for (x = 1; x <= 1500; x++) {
+        const div = document.createElement('div');
+        container.append(div);
+      }
+      function getColor(min = 0, max = 255) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      const divs = [];
+      container.addEventListener('mouseover', function (event) {
+        if (event.target.tagName === 'DIV') {
+          let a = getColor();
+          let b = getColor();
+          let c = getColor();
+          if (divs.length > 50) {
+            const last = divs.pop();
+            last.style.backgroundColor = '';
+          }
+          event.target.style.backgroundColor = `rgb(${a},${b},${c})`;
+          divs.unshift(event.target);
+          // event.relatedTarget.style.backgroundColor = ''
+        }
+      })
+      container.addEventListener('mouseout', (e) => {
+        event.target.style.backgroundColor = ''
+      })
+    </script>
 </body>
+
 </html>
