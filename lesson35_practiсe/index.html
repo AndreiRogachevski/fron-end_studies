@@ -182,13 +182,16 @@
     <script>
       const button = document.querySelector("button");
       const forms = Array.from(document.forms);
+      console.log(forms);
       const nums = [];
       button.addEventListener("click", (e) => {
         forms.forEach((form) => {
           const inputs = Array.from(form.elements);
+          console.log(inputs);
           nums.push(...inputs.map((input) => Number.parseInt(input.value)));
         });
-        const summ = nums.reduce((acc, n) => acc + n, 0);
+        let summ = nums.reduce((acc, n) => acc + n, 0);
+        if (isNaN(summ)) summ = 0;
         alert(summ);
       });
     </script>

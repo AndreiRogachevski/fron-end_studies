@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let data = [
+        {
+          name: "Imogene Travis",
+          phone: "1-538-781-9743",
+          email: "sapien.molestie@aol.net",
+          address: "Ap #300-3637 Mollis. Avenue",
+          list: "9",
+          country: "Belgium",
+          currency: "$71.71",
+          alphanumeric: "TBX31YHT8TB",
+          numberrange: "5",
+          region: "Australian Capital Territory",
+          text: "pharetra. Nam ac nulla. In tincidunt congue turpis. In condimentum.",
+          postalZip: "51512",
+        },
+        {
+          name: "Inga Sykes",
+          phone: "(795) 883-7021",
+          email: "at.auctor@hotmail.ca",
+          address: "P.O. Box 744, 2283 Tellus St.",
+          list: "7",
+          country: "South Africa",
+          currency: "$22.58",
+          alphanumeric: "UCC07HVB7UR",
+          numberrange: "7",
+          region: "Rio Grande do Sul",
+          text: "nec, euismod in, dolor. Fusce feugiat. Lorem ipsum dolor sit",
+          postalZip: "625275",
+        },
+        {
+          name: "Brenda Nash",
+          phone: "1-704-530-5135",
+          email: "sed.diam@yahoo.org",
+          address: "Ap #343-1101 Molestie St.",
+          list: "11",
+          country: "Philippines",
+          currency: "$15.25",
+          alphanumeric: "ELM47SET7BO",
+          numberrange: "8",
+          region: "Piura",
+          text: "turpis. Nulla aliquet. Proin velit. Sed malesuada augue ut lacus.",
+          postalZip: "11806",
+        },
+        {
+          name: "Ivana Jacobs",
+          phone: "1-516-717-5236",
+          email: "vitae.odio@aol.net",
+          address: "132-7088 Nec Avenue",
+          list: "7",
+          country: "Mexico",
+          currency: "$55.73",
+          alphanumeric: "HLW56RWU3EU",
+          numberrange: "7",
+          region: "Hòa Bình",
+          text: "ante blandit viverra. Donec tempus, lorem fringilla ornare placerat, orci",
+          postalZip: "11721",
+        },
+        {
+          name: "Buckminster Mendez",
+          phone: "(637) 375-7422",
+          email: "nunc.ac@icloud.ca",
+          address: "P.O. Box 332, 1595 Euismod Ave",
+          list: "1",
+          country: "Canada",
+          currency: "$16.89",
+          alphanumeric: "RFV22WVG8WT",
+          numberrange: "9",
+          region: "Mecklenburg-Vorpommern",
+          text: "nibh. Phasellus nulla. Integer vulputate, risus a ultricies adipiscing, enim",
+          postalZip: "35259",
+        },
+      ];
+      const table = document.createElement("table");
+      table.className = "table  table-striped";
+      const tbody = document.createElement("tbody");
+      const thead = document.createElement("thead");
+      document.body.append(table);
+      table.append(thead);
+      table.append(tbody);
+      const headers = Object.keys(data[0]);
+      const tr = document.createElement("tr");
+      thead.append(tr);
+      headers.forEach((header) => {
+        const th = document.createElement("th");
+        th.textContent = header;
+        tr.append(th);
+        th.style.cursor = "default";
+      });
+
+      renderTable(data);
+
+      function renderTable(rows) {
+        tbody.innerHTML = "";
+        rows.forEach((row) => {
+          const tr = document.createElement("tr");
+          tbody.append(tr);
+          headers.forEach((header) => {
+            const td = document.createElement("td");
+            td.textContent = row[header];
+            tr.append(td);
+          });
+        });
+      }
+
+      const sort = {
+        propertyName: "",
+        order: true,
+      };
+      console.log(sort.propertyName);
+      thead.addEventListener("click", function (event) {
+        if (event.target.tagName === "TH") {
+          const sortBy = event.target.textContent;
+          if (sort.propertyName === sortBy) {
+            sort.order = !sort.order;
+          } else {
+            sort.order = true;
+          }
+          sort.propertyName = sortBy;
+          console.log(sort.propertyName);
+          data.sort((a, b) => {
+            console.log(a[sortBy]);
+            if (a[sortBy] > b[sortBy]) {
+              return 1;
+            } else if (a[sortBy] < b[sortBy]) {
+              return -1;
+            }
+            return 0;
+          });
+          if (!sort.order) {
+            data = data.reverse();
+          }
+          renderTable(data);
+        }
+      });
+    </script>
+  </body>
+</html>
