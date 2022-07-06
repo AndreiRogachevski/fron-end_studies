@@ -1,0 +1,52 @@
+<script>
+  // function Train(dest, numTrain, time) {
+  //   this.dest = dest;
+  //   this.numTrain = numTrain;
+  //   this.time = time;
+  //   this.show = function (numTrain) {
+  //     console.log(this);
+  //   }
+  // }
+  // const t1 = new Train("A", 301, 1130);
+  // console.log(Object.getOwnPropertyDescriptor(t1, numTrain));
+
+  // let user = { name: 'John' }
+  //  let descriptor =  Object.defineProperties(user, 'name',);
+  // console.log(descriptor);
+
+  let arr = [1, 32, 2, 44, 12, 3, 3457, 5434, 212, 1, 2]
+  let one = new Set(arr);
+  let dub = arr.length - one.size;
+  console.log(one.size);
+  console.log(dub);
+
+  function Traingl(a, b, c) {
+    this.a = a;
+    this.b = b;
+    this.c = c;
+    this.test = function () {
+      if (a + b > c) {
+        return 'это треугольник'
+      } else { 'это не треугольник' }
+    }
+    Object.defineProperty(this, "p", {
+      get: function () {
+        return this.a + this.b + this.c;
+      }
+    })
+    Object.defineProperty(this, "s", {
+      get: function () {
+        let po = (this.a + this.b + this.c) / 2;
+        return Math.sqrt(po * (po - this.a) * (po - this.b)(po - this.c));
+      }
+    })
+
+
+  }
+  const tr = new Traingl(2, 2, 3)
+  console.log(tr);
+  console.log(tr.test());
+  console.log(tr.p);
+  console.log(tr.s);
+
+</script>
