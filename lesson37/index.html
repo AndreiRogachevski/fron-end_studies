@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 300px;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // const promise = new Promise(function (resolve, reject) {
+    //   setTimeout(() => {
+    //     let result = Math.random();
+    //     if (result >= 0.5) { resolve(result) }
+    //     else {
+    //       reject(result)
+    //     }
+    //   },1000)
+    // })
+    // promise.then(result => {
+    //   console.log(result);
+    // }).catch((result) => {
+    //   console.log('error');
+    // })
+
+    // const promise = new Promise(function (resolve, reject) {
+    //   let img = document.createElement('img')
+    //   img.src = 'https://jobycodirect.com/images/items/dreamstime.jpg'
+    //   img.onload = () => { resolve(img) }
+    //   img.onerror = reject
+    // })
+    // promise.then(img => {
+    //   document.body.append(img)
+    // })
+    //   .catch(img => {
+    //     console.log('error');
+    //   })
+
+    let urls = [
+      'https://cdn.jpegmini.com/user/images/slider_puffin_jpegmini_mobile.jpg',
+      'https://png.pngtree.com/png-clipart/20190402/ourlarge/pngtree-cute-hand-painted-giant-panda-elements-png-image_891882.jpg',
+      'https://jobycodirect.com/images/items/dreamstime.jpg'
+    ]
+    function loadImages(url) {
+      return new Promise(function (resolve, reject) {
+        let img = document.createElement('img')
+        img.src = url
+        img.onload = () => { resolve(img) }
+        img.onerror = reject
+        /* OR */
+        // const image = new Image()
+        // image.src = url
+        // image.addEventListener('load', function () {
+        //   resolve(this)
+        // })
+        // image.addEventListener('error', reject)
+      })
+    }
+    // urls.forEach(item => loadImages(item)
+    //   .then(img => {
+    //     document.body.append(img)
+    //   })
+    //   .catch(img => {
+    //     console.log('error');
+    //   })
+    // )
+    const array = urls.map(item => loadImages(item))
+    Promise.all(array)
+      .then(imgs => {
+        imgs.forEach(img => document.body.append(img))
+      })
+      .catch(() => alert('error'))
+
+  </script>
+</body>
+
+</html>

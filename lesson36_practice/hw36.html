@@ -1,162 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Calculator</title>
-    <style>
-      .container {
-        padding: 30px;
-        width: 400px;
-        margin: 30px auto;
-        background-color: rgb(68, 192, 192);
-        box-shadow: 1px 1px 5px black, inset 3px 3px 10px 0px rgb(255, 255, 255),
-          inset -1px -1px 5px rgb(61, 61, 61);
-        font-size: 21px;
-        font-weight: bolder;
-      }
-      span {
-        display: block;
-        width: 100%;
-        min-height: 50px;
-        max-height: 50px;
-        font-size: 40px;
-        background-color: rgb(100, 235, 190);
-        box-shadow: inset -1px -1px 5px rgb(255, 255, 255),
-          inset 1px 1px 5px rgb(61, 61, 61);
-        text-align: end;
-        overflow: hidden;
-        margin-bottom: 30px;
-      }
-      .buttons {
-        display: grid;
-        gap: 10px;
-        grid-template-columns: 300px auto;
-        grid-template-rows: 34px auto;
-        cursor: pointer;
-      }
-      .buttons div {
-        padding: 5px;
-        box-shadow: 1px 1px 5px black, inset 3px 3px 5px rgb(255, 255, 255),
-          inset -1px -1px 5px rgb(133, 133, 133);
-        border-radius: 5px;
-        background-color: aqua;
-      }
-      .buttons div:active {
-        background-color: rgb(0, 197, 197);
-        box-shadow: inset -1px -1px 5px rgb(255, 255, 255),
-          inset 1px 1px 5px rgb(61, 61, 61);
-        transition: all 0.3s ease;
-      }
-      .settings {
-        display: flex;
-        gap: 10px;
-      }
-      .settings div {
-        align-self: center;
-        flex: 2 1 48px;
-        text-align: center;
-      }
-      .numbers {
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-      .numbers div {
-        flex: 1 1 26%;
-        text-align: center;
-      }
-      .operators {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-      .operators div {
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <article class="container">
-      <span></span>
-      <section class="buttons">
-        <section class="settings">
-          <div>AC</div>
-          <div>(</div>
-          <div>)</div>
-          <div>MS</div>
-          <div>MR</div>
-          <div>MC</div>
-        </section>
-        <section class="operators">
-          <div>/</div>
-          <div>*</div>
-          <div>-</div>
-          <div>+</div>
-          <div>=</div>
-        </section>
-        <section class="numbers">
-          <div>9</div>
-          <div>8</div>
-          <div>7</div>
-          <div>6</div>
-          <div>5</div>
-          <div>4</div>
-          <div>3</div>
-          <div>2</div>
-          <div>1</div>
-          <div>0</div>
-        </section>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculator</title>
+  <style>
+    .container {
+      padding: 30px;
+      width: 400px;
+      margin: 30px auto;
+      background-color: rgb(68, 192, 192);
+      box-shadow: 1px 1px 5px black, inset 3px 3px 10px 0px rgb(255, 255, 255),
+        inset -1px -1px 5px rgb(61, 61, 61);
+      font-size: 21px;
+      font-weight: bolder;
+    }
+
+    span {
+      display: block;
+      width: 100%;
+      min-height: 50px;
+      max-height: 50px;
+      font-size: 40px;
+      background-color: rgb(100, 235, 190);
+      box-shadow: inset -1px -1px 5px rgb(255, 255, 255),
+        inset 1px 1px 5px rgb(61, 61, 61);
+      text-align: end;
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: 300px auto;
+      grid-template-rows: 34px auto;
+      cursor: pointer;
+    }
+
+    .buttons div {
+      padding: 5px;
+      box-shadow: 1px 1px 5px black, inset 3px 3px 5px rgb(255, 255, 255),
+        inset -1px -1px 5px rgb(133, 133, 133);
+      border-radius: 5px;
+      background-color: aqua;
+    }
+
+    .buttons div:active {
+      background-color: rgb(0, 197, 197);
+      box-shadow: inset -1px -1px 5px rgb(255, 255, 255),
+        inset 1px 1px 5px rgb(61, 61, 61);
+      transition: all 0.3s ease;
+    }
+
+    .settings {
+      display: flex;
+      gap: 10px;
+    }
+
+    .settings div {
+      align-self: center;
+      flex: 2 1 48px;
+      text-align: center;
+    }
+
+    .numbers {
+      display: flex;
+      flex-direction: row-reverse;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .numbers div {
+      flex: 1 1 26%;
+      text-align: center;
+    }
+
+    .operators {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .operators div {
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <article class="container">
+    <span></span>
+    <section class="buttons">
+      <section class="settings">
+        <div>AC</div>
+        <div>(</div>
+        <div>)</div>
+        <div>MS</div>
+        <div>MR</div>
+        <div>MC</div>
       </section>
-    </article>
-    <script>
-      const container = document.body.querySelector(".container");
-      let memory;
-      container.addEventListener("click", function (event) {
-        const span = document.body.querySelector("span");
-        let lastSign = span.textContent[span.textContent.length - 1];
-        // if (lastSign === "-" || "+" || "*" || "/") {
-        //   span.textContent.replace(lastSign, event.target.textContent);
-        // }
-        switch (event.target.textContent) {
-          case "AC":
-            span.textContent = "";
-            break;
-          case "=":
-            span.textContent = eval(span.textContent);
-            break;
-          case "MS":
-            memory = span.textContent;
-            break;
-          case "MR":
-            span.textContent += memory;
-            break;
-          case "MC":
-            memory = "";
-            break;
-          // case "-" === lastSign:
-          // case "+" === lastSign:
-          // case "/" === lastSign:
-          // case "*" === lastSign:
-          //   // if (lastSign === "-" || "+" || "*" || "/") {
-          //     span.textContent.replace(lastSign, event.target.textContent);
-          //     break;
-          //   // }
-          default:
-            if (event.target.tagName === "DIV") {
-              span.textContent += event.target.textContent;
-            }
-        }
-      });
-      const buttons = document.body.querySelector(".buttons");
-      buttons.addEventListener("mousedown", (event) => {
-        event.preventDefault();
-      });
-      buttons.addEventListener("dblclick", (event) => {
-        event.preventDefault();
-      });
-    </script>
-  </body>
+      <section class="operators">
+        <div>/</div>
+        <div>*</div>
+        <div>-</div>
+        <div>+</div>
+        <div>=</div>
+      </section>
+      <section class="numbers">
+        <div>9</div>
+        <div>8</div>
+        <div>7</div>
+        <div>6</div>
+        <div>5</div>
+        <div>4</div>
+        <div>3</div>
+        <div>2</div>
+        <div>1</div>
+        <div>0</div>
+      </section>
+    </section>
+  </article>
+  <script>
+    const container = document.body.querySelector(".container");
+    let memory;
+    container.addEventListener("click", function (event) {
+      const span = document.body.querySelector("span");
+      let lastSign = span.textContent[span.textContent.length - 1];
+      switch (event.target.textContent) {
+        case "AC":
+          span.textContent = "";
+          break;
+        case "=":
+          if (span.textContent.includes('/0')) {
+            break
+          }
+          span.textContent = eval(span.textContent);
+          break;
+        case "MS":
+          memory = span.textContent;
+          break;
+        case "MR":
+          span.textContent += memory ?? '';
+          break;
+        case "MC":
+          memory = "";
+          break;
+        default:
+          if (lastSign === "-" || "+" || "*" || "/") {
+            span.textContent.replace(lastSign, event.target.textContent);
+          }
+          if (event.target.tagName === "DIV") {
+            span.textContent += event.target.textContent;
+          }
+      }
+    });
+    const buttons = document.body.querySelector(".buttons");
+    buttons.addEventListener("mousedown", (event) => {
+      event.preventDefault();
+    });
+    buttons.addEventListener("dblclick", (event) => {
+      event.preventDefault();
+    });
+  </script>
+</body>
+
 </html>
