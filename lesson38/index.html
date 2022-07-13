@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {
+      width: 50px;
+      height: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <ul></ul>
+  <form action="" name="form">
+    <input type="text" name="name">
+    <input type="url" name="img">
+    <textarea name="body" id="" cols="30" rows="10"></textarea>
+    <input type="submit" value="submit">
+  </form>
+  <script>
+    fetch('http://192.168.0.200:3000/messages')
+      .then(respons => respons.json())
+      .then(show => {
+        show.forEach(element => {
+          const li = document.createElement('li');
+          const img = document.createElement('img');
+          img.src = element.img;
+          li.append(img);
+          const span = document.createElement('span')
+          span.textContent = `Name: ${element.name}; Message: ${element.message}`;
+          li.append(span)
+          document.body.querySelector('ul').append(li)
+        })
+      })
+    const form = document.forms[0];
+    const submit = document.body.querySelector('input[type="submit"]')
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const data = {
+        name: form.elements.name.value,
+        img: form.elements.img.src,
+        message: form.elements.body.value,
+      };
+      const response = await fetch('http://192.168.0.200:3000/messages', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data),
+      })
+      const json = await response.json();
+    }
+    )
+  </script>
+</body>
+
+</html>
