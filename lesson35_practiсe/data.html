@@ -88,6 +88,8 @@
       table.append(thead);
       table.append(tbody);
       const headers = Object.keys(data[0]);
+      console.log(data);
+      console.log(headers);
       const tr = document.createElement("tr");
       thead.append(tr);
       headers.forEach((header) => {
