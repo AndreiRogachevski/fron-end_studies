@@ -13,13 +13,35 @@
   </head>
   <body>
     <div class="container">
-      <div class="d-none align-items-center">
+      <div class="d-flex justify-content-center align-items-center">
         <strong>Loading...</strong>
         <div
           class="spinner-border ml-auto"
           role="status"
           aria-hidden="true"
         ></div>
+      </div>
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-secondary">1</button>
+        <button type="button" class="btn btn-secondary">2</button>
+        <button type="button" class="btn btn-secondary">3</button>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header bg-danger">
+            <h5 class="modal-title" id="exampleModalLabel">ERROR</h5>
+          </div>
+          <div class="modal-body">...</div>
+        </div>
       </div>
     </div>
     <script
@@ -28,21 +50,22 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      const modalSwitch = new bootstrap.Modal(
+        document.body.querySelector("#exampleModal")
+      );
       function loadData() {
-        const spinner = document.body.querySelector('div[class="container"]');
-        spinner.classList.add = "d-flex";
+        const wrapper = document.body.querySelector('div[class="container"]');
+        const spinner = document.body.querySelector("div > div");
         fetch("https://dummyjson.com/users")
           .then((respons) => respons.json())
           .then((users) => users.users)
           .then((show) => {
-            const div = document.createElement("div");
-            spinner.after(div);
             const table = document.createElement("table");
             table.className =
               "table table-responsive-sm table-sm table-bordered table-striped";
             const tbody = document.createElement("tbody");
             const thead = document.createElement("thead");
-            div.append(table);
+            spinner.after(table);
             table.append(thead);
             table.append(tbody);
             const headers = Object.keys(show[0]);
@@ -56,25 +79,29 @@
               th.style.cursor = "default";
             });
             renderTable(show);
-            function renderTable(rows) {
+            // let amount = (num) => {
+            //   return [num * 10 - 10, num * 10];
+            // };
+            function renderTable(rows, amount = 1) {
               tbody.innerHTML = "";
-              rows.forEach((row) => {
-                const tr = document.createElement("tr");
-                tbody.append(tr);
-                headers.forEach((header) => {
-                  const td = document.createElement("td");
-                  td.className = "text-truncate";
-                  td.style.maxWidth='150px'
-                  td.textContent = row[header];
-                  tr.append(td);
-                });
+              rows.forEach((row, index) => {
+                if (index < amount * 10 && index > amount * 10 - 11) {
+                  const tr = document.createElement("tr");
+                  tbody.append(tr);
+                  headers.forEach((header) => {
+                    const td = document.createElement("td");
+                    td.className = "text-truncate";
+                    td.style.maxWidth = "550px";
+                    td.textContent = row[header];
+                    tr.append(td);
+                  });
+                }
               });
             }
             const sort = {
               propertyName: "",
               order: true,
             };
-            console.log(sort.propertyName);
             thead.addEventListener("click", function (event) {
               if (event.target.tagName === "TH") {
                 const sortBy = event.target.textContent;
@@ -84,7 +111,6 @@
                   sort.order = true;
                 }
                 sort.propertyName = sortBy;
-                console.log(sort.propertyName);
                 show.sort((a, b) => {
                   console.log(a[sortBy]);
                   if (a[sortBy] > b[sortBy]) {
@@ -100,10 +126,20 @@
                 renderTable(show);
               }
             });
+            const selectBtn = document.body.querySelector(".btn-group");
+            selectBtn.addEventListener("click", (event) => {
+              if (event.target.tagName === "BUTTON") {
+                let btnAmount = +event.target.textContent;
+                renderTable(show, btnAmount);
+              }
+            });
           })
-          .finally(() => {
-            spinner.classList.add = "d-none";
-          });
+          .catch((e) => {
+            const modalBody = document.body.querySelector(".modal-body");
+            modalBody.textContent = e;
+            modalSwitch.show();
+          })
+          .finally(() => (spinner.className = "d-none"));
       }
       loadData();
     </script>
