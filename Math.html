@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: cadetblue;
+        font-size: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      form {
+        margin: 200px;
+        display: grid;
+        place-items: center;
+      }
+      span {
+        width: 100px;
+        height: 100px;
+      }
+      input {
+        padding: 15px;
+        box-sizing: border-box;
+        width: 300px;
+        height: 100px;
+        font-size: 70px;
+        font-family: Arial, Helvetica, sans-serif;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <div class="example">
+        <span class="firstNum"></span>
+        <span class="multiply">X</span>
+        <span class="secondNum"></span>
+      </div>
+      <input
+        type="number"
+        class="equals"
+        name="equals"
+        autofocus
+        autocomplete="off"
+      />
+      <div class="result"></div>
+    </form>
+    <script>
+      function randomNum(min = 1, max = 10) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+      const firstNum = document.body.querySelector(".firstNum");
+      firstNum.textContent = randomNum();
+      const secondNum = document.body.querySelector(".secondNum");
+      secondNum.textContent = randomNum();
+      const equals = document.body.querySelector(".equals");
+      const result = document.body.querySelector(".result");
+      const form = document.forms[0];
+      form.addEventListener("keypress", async (event) => {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          if (
+            parseInt(equals.value) ===
+            firstNum.textContent * secondNum.textContent
+          ) {
+            result.textContent = "правильно!";
+          } else {
+            result.textContent = "попробуй ещё!)";
+          }
+          setTimeout(function () {
+            window.location.reload();
+          }, 1500);
+        }
+      });
+    </script>
+  </body>
+</html>
