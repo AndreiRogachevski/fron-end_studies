@@ -88,22 +88,26 @@
                   tbody.append(tr);
                   headers.forEach((header) => {
                     const td = document.createElement("td");
-                    td.className = "text-truncate";
-                    td.style.maxWidth = "550px";
-                    if (user[header].toString() === `[object Object]`) {
+                    // td.style.minWidth = "130px";
+                    tbody.className = "text-truncate";
+                    if (header === "image") {
+                      td.innerHTML = `<img src=${user[header]}>`;
+                    } else if (user[header].toString() === `[object Object]`) {
                       const [...value] = Object.entries(user[header]);
-                      console.log([...value]);
                       [...value].forEach((item) => {
-                        console.log(item);
-                        item.forEach((subItem) => {
-                          console.log(subItem);
-                          td.textContent += `${subItem}`;
-                        });
+                        if (td.textContent !== "") {
+                          td.textContent += "; ";
+                        }
+                        // td.textContent += `${item[0]}: ${item[1]}`;
+                        td.innerHTML += `<tr><th>${item[0]}</th><td>${item[1]}</td></tr>`;
+                        console.log(td.innerHTML);
+                        item.forEach((subItem) => {});
                       });
                     } else {
                       td.textContent = user[header];
                     }
                     tr.append(td);
+                    console.log(td);
                   });
                 }
               });
