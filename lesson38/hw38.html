@@ -10,9 +10,15 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <style>
+      img {
+        width: 150px;
+        height: auto;
+      }
+    </style>
   </head>
   <body>
-    <div class="container">
+    <div>
       <div class="d-flex justify-content-center align-items-center">
         <strong>Loading...</strong>
         <div
@@ -80,6 +86,10 @@
             //   console.log("a");
             //   console.log(showUsers[0].address.toString() === "[object Object]");
             // }
+            // function enterObjValue(obj) {
+            //   const values = Object.entries(this[1]);
+            //   td.innerHTML += `${this[0]}: ${this[1]};<br>`;
+            // }
             function renderTable(users, amount = 1) {
               tbody.innerHTML = "";
               users.forEach((user, index) => {
@@ -88,26 +98,44 @@
                   tbody.append(tr);
                   headers.forEach((header) => {
                     const td = document.createElement("td");
-                    // td.style.minWidth = "130px";
+                    // td.style.maxWidth = "160px";
+                    if (
+                      header !== "birthDate" &&
+                      header !== "phone" &&
+                      header !== "ssn"&&
+                      header !== "ein"
+                    ) {
+                      td.style.whiteSpace = "pre-wrap";
+                    }
                     tbody.className = "text-truncate";
                     if (header === "image") {
                       td.innerHTML = `<img src=${user[header]}>`;
                     } else if (user[header].toString() === `[object Object]`) {
-                      const [...value] = Object.entries(user[header]);
-                      [...value].forEach((item) => {
-                        if (td.textContent !== "") {
-                          td.textContent += "; ";
-                        }
-                        // td.textContent += `${item[0]}: ${item[1]}`;
-                        td.innerHTML += `<tr><th>${item[0]}</th><td>${item[1]}</td></tr>`;
-                        console.log(td.innerHTML);
-                        item.forEach((subItem) => {});
+                      const values = Object.entries(user[header]);
+                      values.forEach((value) => {
+                        if (value[1].toString() === `[object Object]`) {
+                          const objValues = Object.entries(value[1]);
+                          td.innerHTML += `${value[0]} - <br>`;
+                          objValues.forEach((item) => {
+                            if (item[1].toString() === `[object Object]`) {
+                              const innerValues = Object.entries(item[1]);
+                              td.innerHTML += `${item[0]}:<br>`;
+                              innerValues.forEach((innerValue) => {
+                                td.innerHTML += `${innerValue[0]}: ${innerValue[1]}<br>`;
+                              });
+                            } else
+                              td.innerHTML += `${item[0]}: ${item[1]};<br>`;
+                          });
+                        } else td.innerHTML += `${value[0]}: ${value[1]};<br>`;
                       });
                     } else {
+                      // if (header === "userAgent") {
+                      //   console.log(typeof td.textContent);
+                      //   user[header].replaceAll(") ", ")\n");
+                      // }
                       td.textContent = user[header];
                     }
                     tr.append(td);
-                    console.log(td);
                   });
                 }
               });
