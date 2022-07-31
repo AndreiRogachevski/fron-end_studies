@@ -15,19 +15,36 @@
         width: 150px;
         height: auto;
       }
+      .switchColums {
+        display: inline-block;
+      }
+      form {
+        display: inline-block;
+      }
     </style>
   </head>
   <body>
-    <div>
-      <div class="d-flex justify-content-center align-items-center">
-        <strong>Loading...</strong>
-        <div
-          class="spinner-border ml-auto"
-          role="status"
-          aria-hidden="true"
-        ></div>
-      </div>
-      <div class="btn-group" role="group" aria-label="Basic example"></div>
+    <div class="btn-group" role="group" aria-label="Basic example"></div>
+    <div class="switchColums">
+      <label for="customRange2" class="form-label">Columms</label>
+      <input type="range" class="form-range" min="1" max="" id="customRange2" />
+    </div>
+    <form role="search">
+      <input
+        class="form-control"
+        type="search"
+        placeholder="Search"
+        aria-label="Search"
+        name="search"
+      />
+    </form>
+    <div class="spinner d-flex justify-content-center align-items-center">
+      <strong>Loading...</strong>
+      <div
+        class="spinner-border ml-auto"
+        role="status"
+        aria-hidden="true"
+      ></div>
     </div>
     <div
       class="modal fade"
@@ -57,7 +74,7 @@
       );
       function loadData() {
         const wrapper = document.body.querySelector('div[class="container"]');
-        const spinner = document.body.querySelector("div > div");
+        const spinner = document.body.querySelector(".spinner");
         fetch("https://dummyjson.com/users")
           .then((respons) => respons.json())
           .then((data) => data.users)
@@ -71,47 +88,52 @@
             table.append(thead);
             table.append(tbody);
             const headers = Object.keys(showUsers[0]);
-            const tr = document.createElement("tr");
-            thead.append(tr);
-            headers.forEach((header) => {
-              const th = document.createElement("th");
-              th.className = "text-center";
-              th.textContent = header;
-              tr.append(th);
-              th.style.cursor = "default";
-            });
+            const switchColums = document.body.querySelector(".switchColums");
+            const columsRange = switchColums.querySelector("input");
+            const columsNumber = switchColums.querySelector("label");
+            columsRange.max = headers.length;
+            const changeHeaders = headers.slice(0, columsRange.value);
             renderTable(showUsers);
-            // console.log(showUsers[0].address.toString());
-            // if (showUsers[0].address.toString() === `[object Object]`) {
-            //   console.log("a");
-            //   console.log(showUsers[0].address.toString() === "[object Object]");
-            // }
-            // function enterObjValue(obj) {
-            //   const values = Object.entries(this[1]);
-            //   td.innerHTML += `${this[0]}: ${this[1]};<br>`;
-            // }
+            switchColums.addEventListener("change", (event) => {
+              if (event.target.tagName === "INPUT") {
+                renderTable(showUsers);
+              }
+            });
             function renderTable(users, amount = 1) {
+              thead.innerHTML = "";
+              const tr = document.createElement("tr");
+              thead.append(tr);
+              for (let index = 0; index < columsRange.value; index++) {
+                const th = document.createElement("th");
+                th.className = "text-center";
+                th.textContent = changeHeaders[index];
+                tr.append(th);
+                th.style.cursor = "default";
+              }
+              columsNumber.textContent = `Colums ${columsRange.value}`;
               tbody.innerHTML = "";
               users.forEach((user, index) => {
                 if (index < amount * 10 && index > amount * 10 - 11) {
                   const tr = document.createElement("tr");
                   tbody.append(tr);
-                  headers.forEach((header) => {
+                  for (let index = 0; index < columsRange.value; index++) {
                     const td = document.createElement("td");
-                    // td.style.maxWidth = "160px";
                     if (
-                      header !== "birthDate" &&
-                      header !== "phone" &&
-                      header !== "ssn"&&
-                      header !== "ein"
+                      changeHeaders[index] !== "birthDate" &&
+                      changeHeaders[index] !== "phone" &&
+                      changeHeaders[index] !== "ssn" &&
+                      changeHeaders[index] !== "ein"
                     ) {
                       td.style.whiteSpace = "pre-wrap";
                     }
                     tbody.className = "text-truncate";
-                    if (header === "image") {
-                      td.innerHTML = `<img src=${user[header]}>`;
-                    } else if (user[header].toString() === `[object Object]`) {
-                      const values = Object.entries(user[header]);
+                    if (changeHeaders[index] === "image") {
+                      td.innerHTML = `<img src=${user[changeHeaders[index]]}>`;
+                    } else if (
+                      user[changeHeaders[index]].toString() ===
+                      `[object Object]`
+                    ) {
+                      const values = Object.entries(user[changeHeaders[index]]);
                       values.forEach((value) => {
                         if (value[1].toString() === `[object Object]`) {
                           const objValues = Object.entries(value[1]);
@@ -129,14 +151,13 @@
                         } else td.innerHTML += `${value[0]}: ${value[1]};<br>`;
                       });
                     } else {
-                      // if (header === "userAgent") {
-                      //   console.log(typeof td.textContent);
-                      //   user[header].replaceAll(") ", ")\n");
-                      // }
-                      td.textContent = user[header];
+                      td.textContent = user[changeHeaders[index]];
                     }
                     tr.append(td);
-                  });
+                    // if (!td.textContent.includes(search.value)) {
+                    //   td.parentElement.remove();
+                    // }
+                  }
                 }
               });
             }
@@ -179,6 +200,21 @@
               if (event.target.tagName === "BUTTON") {
                 let btnAmount = +event.target.textContent;
                 renderTable(showUsers, btnAmount);
+              }
+            });
+            const form = document.forms[0];
+            const search = form.elements.search;
+            form.addEventListener("keypress", (event) => {
+              if (event.key === "Enter") {
+                event.preventDefault();
+                console.log(users);
+                const tdValues = document.body.querySelectorAll("td");
+                const trValues = document.body.querySelectorAll("tr");
+                tdValues.forEach((tdItem) => {
+                  if (!tdItem.textContent.includes(search.value)) {
+                    tdItem.parentElement.remove();
+                  }
+                });
               }
             });
           })
