@@ -24,11 +24,14 @@
     </style>
   </head>
   <body>
+    <!-- Кнопки страниц -->
     <div class="btn-group" role="group" aria-label="Basic example"></div>
+    <!-- Переключатель кол-во колонок -->
     <div class="switchColums">
       <label for="customRange2" class="form-label">Columms</label>
       <input type="range" class="form-range" min="1" max="" id="customRange2" />
     </div>
+    <!-- Кнопка Поиска -->
     <form role="search">
       <input
         class="form-control"
@@ -36,8 +39,10 @@
         placeholder="Search"
         aria-label="Search"
         name="search"
+        autocomplete="off"
       />
     </form>
+    <!-- Спиннер -->
     <div class="spinner d-flex justify-content-center align-items-center">
       <strong>Loading...</strong>
       <div
@@ -46,6 +51,7 @@
         aria-hidden="true"
       ></div>
     </div>
+    <!-- Окно ошибок -->
     <div
       class="modal fade"
       id="exampleModal"
@@ -93,7 +99,10 @@
             const columsNumber = switchColums.querySelector("label");
             columsRange.max = headers.length;
             const changeHeaders = headers.slice(0, columsRange.value);
+            const form = document.forms[0];
+            const search = form.elements.search;
             renderTable(showUsers);
+            // Переключатель кол-во столбцов
             switchColums.addEventListener("change", (event) => {
               if (event.target.tagName === "INPUT") {
                 renderTable(showUsers);
@@ -103,6 +112,7 @@
               thead.innerHTML = "";
               const tr = document.createElement("tr");
               thead.append(tr);
+              // Создание заголовков
               for (let index = 0; index < columsRange.value; index++) {
                 const th = document.createElement("th");
                 th.className = "text-center";
@@ -112,10 +122,10 @@
               }
               columsNumber.textContent = `Colums ${columsRange.value}`;
               tbody.innerHTML = "";
+              // Вывод данных юзера
               users.forEach((user, index) => {
                 if (index < amount * 10 && index > amount * 10 - 11) {
                   const tr = document.createElement("tr");
-                  tbody.append(tr);
                   for (let index = 0; index < columsRange.value; index++) {
                     const td = document.createElement("td");
                     if (
@@ -153,14 +163,28 @@
                     } else {
                       td.textContent = user[changeHeaders[index]];
                     }
+                    tbody.append(tr);
                     tr.append(td);
-                    // if (!td.textContent.includes(search.value)) {
-                    //   td.parentElement.remove();
+                    // Array.from(tbody.children).forEach((tr) => {
+                    //   console.log(tr.children);
+                    //   if (
+                    //     Array.from(tr.children).some((tdItem) => {
+                    //       console.log(tdItem.textContent);
+                    //       !tdItem.textContent.includes(search.value);
+                    //     })
+                    //   ) {
+                    //     tr.style.display = "none";
+                    //   }
+                    // });
+                    // if (!td.innerHTML.includes(search.value)) {
+                    //   console.log(tr);
+                    //   tr.style.display = "none";
                     // }
                   }
                 }
               });
             }
+            // Создание кнопок страниц
             const selectBtn = document.body.querySelector(".btn-group");
             for (let i = 1; i <= Math.ceil(showUsers.length / 10); i++) {
               const button = document.createElement("button");
@@ -173,6 +197,7 @@
               propertyName: "",
               order: true,
             };
+            // Сортировка
             thead.addEventListener("click", function (event) {
               if (event.target.tagName === "TH") {
                 const sortBy = event.target.textContent;
@@ -196,27 +221,67 @@
                 renderTable(showUsers);
               }
             });
+            // Перключение страниц
             selectBtn.addEventListener("click", (event) => {
               if (event.target.tagName === "BUTTON") {
                 let btnAmount = +event.target.textContent;
                 renderTable(showUsers, btnAmount);
               }
             });
-            const form = document.forms[0];
-            const search = form.elements.search;
-            form.addEventListener("keypress", (event) => {
-              if (event.key === "Enter") {
-                event.preventDefault();
-                console.log(users);
-                const tdValues = document.body.querySelectorAll("td");
-                const trValues = document.body.querySelectorAll("tr");
-                tdValues.forEach((tdItem) => {
-                  if (!tdItem.textContent.includes(search.value)) {
-                    tdItem.parentElement.remove();
-                  }
-                });
-              }
-            });
+
+            // Поиск
+
+            // form.addEventListener("input", (event) => {
+            //   if (event.key === "Enter") {
+            //     event.preventDefault();
+            //   }
+            //   let filter, tr, td, i, txtValue;
+            //   filter = search.value.toUpperCase();
+            //   tr = tbody.getElementsByTagName("tr");
+            //   for (i = 0; i < tr.length; i++) {
+            //     td = tr[i].getElementsByTagName("td");
+            //     for (tdItem = 0; tdItem < td.length; tdItem++) {
+            //       txtValue = td[tdItem].textContent || td[tdItem].innerText;
+            //       if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            //         tr[i].style.display = "";
+            //       } else {
+            //         tr[i].style.display = "none";
+            //       }
+            //     }
+            //     console.log(tr);
+            //     // if (td) {
+            //     // }
+            //   }
+            //   // console.log(search.value);
+            //   // console.log(tr);
+            //   // console.log(Array.from(tr.children));
+            //   // Array.from(tbody.children).forEach((trItem) => {
+            //   //   if (
+            //   //     Array.from(trItem.children).some((tdItem) => {
+            //   //       let tr = tbody.getElementsByTagName("tr")
+            //   //       console.log(tr);
+            //   //       // console.log(search.value);
+            //   //       // console.log(!tdItem.textContent.includes(search.value));
+            //   //       !tdItem.textContent.includes(search.value);
+            //   //     })
+            //   //   ) {
+            //   //     trItem.style.display = "none";
+            //   //     // console.log(tbody.childElementCount);
+            //   //     // console.log(tbody.children);
+            //   //   }
+            //   // });
+            //   // // renderTable(showUsers);
+            //   // console.log(users);
+            //   // const tdValues = document.body.querySelectorAll("td");
+            //   // const trValues = document.body.querySelectorAll("tr");
+            //   // console.log(showUsers);
+            //   // tdValues.forEach((tdItem) => {
+            //   //   if (!tdItem.textContent.includes(search.value)) {
+            //   //     tdItem.parentElement.style.display = "none";
+            //   //   }
+            //   // });
+            //   // }
+            // });
           })
           .catch((e) => {
             const modalBody = document.body.querySelector(".modal-body");
