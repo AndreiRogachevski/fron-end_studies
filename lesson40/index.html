@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    let date = Date.now();
+    console.log(date);
+    const bDay = Date.parse('Aug 2, 1989');
+    console.log(bDay);
+    let result = (date - bDay) / (1000 * 60 * 60 * 24);
+    console.log('Мне дней: ' + Math.ceil(result) + ' дней');
+    console.log('-------------------');
+    //через 12000 дней
+    let dateTask2 = new Date(1989, 7, 2)
+    console.log(dateTask2);
+    let dayPast = 20000;
+    let futYears = dateTask2.setDate(dateTask2.getDate() + dayPast)
+    console.log('Будет ' + dateTask2);
+    //01.01.01
+    console.log('------------------------------');
+    let pastDate = new Date(0001, 00, 01)
+    pastDate.setFullYear(01);
+    console.log(pastDate.toLocaleDateString('ru-RU', { weekday: 'long' }));
+    let options = { weekday: 'long' };
+    console.log(new Intl.DateTimeFormat('en-US', options).format(pastDate));
+    console.log(pastDate.getDay());
+    //left to BDay
+    console.log('-----------------------');
+    let nextBDay = Date.parse('Aug 2, 2023')
+    console.log(Math.ceil((nextBDay-date) / (1000 * 60 * 60 * 24)));
+    //left to end day
+  </script>
+</body>
+
+</html>
