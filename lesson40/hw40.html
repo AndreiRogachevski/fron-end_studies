@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>TASK 1</h3>
+    <time class="dateT1"></time>
+    <time class="monthT1"></time>
+    <time class="yearT1"></time>
+    <time class="dayT1"></time>
+    <h3>TASK 2</h3>
+    <time class="dayT2"></time>
+    <h3>TASK 3</h3>
+    <time class="dayT3"></time>
+    <h3>TASK 4</h3>
+    <time class="dayT4"></time>
+    <h3>TASK 5</h3>
+    <time class="dayT5"></time>
+
+    <script>
+      // task 1
+      const dateNow = new Date();
+      document.querySelector(".dateT1").innerHTML =
+        "День: " + dateNow.getDate() + "<br>";
+      document.querySelector(".monthT1").innerHTML =
+        "Месяц: " + dateNow.toLocaleString("ru-RU", { month: "long" }) + "<br>";
+      document.querySelector(".yearT1").innerHTML =
+        "Год: " + dateNow.getFullYear() + "<br>";
+      document.querySelector(".dayT1").innerHTML =
+        "День недели: " + dateNow.toLocaleString("ru-RU", { weekday: "long" });
+
+      // task 2
+      const pastDay = new Date(2005, 2, 10);
+      document.querySelector(".dayT2").textContent =
+        "День недели: " + pastDay.toLocaleString("ru-RU", { weekday: "long" });
+
+      // task 3
+      const daysPast = Math.floor(dateNow.getTime() / (1000 * 60 * 60 * 24));
+      document.querySelector(".dayT3").textContent =
+        "Деней с начала UNIX эпоих: " + daysPast;
+
+      // task 4
+      const firstDate = Date.parse("march 1, 1988");
+      const secondDate = Date.parse("march 5, 2015");
+      const diffHours = (secondDate - firstDate) / (1000 * 60 * 60);
+      document.querySelector(".dayT4").textContent =
+        "Между 1 марта 1988 года и 8 марта 2015 года: " +
+        diffHours +
+        " часов разницы";
+
+      // task 5
+      const endOfDay = new Date(dateNow).setHours(24, 0, 0);
+      const leftSeconds = (endOfDay - dateNow.getTime()) / 1000;
+      document.querySelector(".dayT5").textContent =
+        "Осталось до конца дня: " + leftSeconds + " секунды";
+
+      // task 6
+      console.log("----- task6 -----");
+      const arr1 = [1, 2, 3, 1, 2, 5, 6, 3];
+      const newArr = new Set(arr1);
+      console.log(newArr);
+      // OR
+      console.log("   ----- OR -----");
+      const newArr1 = arr1.filter((item, pos) => {
+        if (arr1.indexOf(item) !== pos) {
+          false;
+        } else {
+          return item;
+        }
+      });
+      console.log(newArr1);
+
+      // task 7
+      console.log("----- task7 -----");
+      const arr2 = [1, 1, 1, 2, 2, 3, 4, 5, 5, 5, 6, 6, 7, 8];
+      arr2.forEach((element, index) => {
+        if (
+          arr2.includes(element) &&
+          arr2.includes(element, index + 1) &&
+          arr2.includes(element, index + 2)
+        ) {
+          arr2.splice(index, 1);
+        }
+      });
+      console.log(arr2);
+
+      // task 8
+      console.log("----- task8 -----");
+      const arr3 = [1, 3, 5];
+      const arr4 = [1, 2, 3, 4, 5, 6];
+      const arr4Filtred = arr4.filter(function (i) {
+        if (arr3.includes(i)) {
+          return false;
+        }
+        return i;
+      });
+      console.log(arr4Filtred);
+
+      // task 9
+      console.log("----- task9 -----");
+      console.log("*1*");
+      const str =
+        "Объектно-ориентированное   программирование (ООП) —   методология программирования, основанная на   представлении программы в виде совокупности    объектов, каждый из которых является   экземпляром определённого класса, а классы    образуют иерархию наследования";
+      const splitStr = str.toLowerCase().split(/ |,/);
+      function longestWord(str) {
+        const longWord = splitStr.reduce((acc, curr) => {
+          if (curr.length > acc.length) {
+            return curr;
+          } else {
+            return acc;
+          }
+        });
+        return longWord;
+      }
+      console.log("Самое длинное слово: " + longestWord(str));
+      console.log("*2*");
+
+      let obj = {};
+      const lowerCaseStr = str.toLowerCase();
+      for (let i = 0; i < lowerCaseStr.length; i++) {
+        if (!obj[lowerCaseStr[i]]) {
+          obj[lowerCaseStr[i]] = 1;
+        } else {
+          obj[lowerCaseStr[i]]++;
+        }
+      }
+      let maxLetter = 0;
+      let maxLetterValue;
+      for (let iter in obj) {
+        if (obj[iter] > maxLetter && iter !== " ") {
+          maxLetter = obj[iter];
+          maxLetterValue = iter;
+        }
+      }
+      console.log(
+        "Буква '" +
+          maxLetterValue +
+          "' встречается чаще всего: " +
+          maxLetter +
+          " раз"
+      );
+      console.log("*3*");
+      console.log("*4*");
+      // console.log(splitStr);
+      const WordsWhithA = splitStr.filter(function (element, index) {
+        console.log(element.includes("a"));
+        if (element.includes("a") && element.includes("a", index + 1)) {
+          return element;
+        }
+      });
+      console.log(WordsWhithA);
+      console.log("*5*");
+      console.log("*6*");
+    </script>
+  </body>
+</html>

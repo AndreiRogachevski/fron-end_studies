@@ -1,5 +1,7 @@
 {
     "editor.tabSize": 2,
     "prettier.tabWidth": 2,
-    "emmet.triggerExpansionOnTab": true
+    "emmet.triggerExpansionOnTab": true,
+    "editor.fontFamily": "Cascadian Code, Consolas, 'Courier New', monospace",
+    "editor.fontLigatures": true
 }
