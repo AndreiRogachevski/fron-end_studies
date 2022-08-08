@@ -145,16 +145,35 @@
       );
       console.log("*3*");
       console.log("*4*");
-      // console.log(splitStr);
-      const WordsWhithA = splitStr.filter(function (element, index) {
-        console.log(element.includes("a"));
-        if (element.includes("a") && element.includes("a", index + 1)) {
+      const WordsWhithA = splitStr.filter((element, index) => {
+        if (element.includes("а", element.indexOf("а") + 1)) {
           return element;
         }
       });
       console.log(WordsWhithA);
       console.log("*5*");
+      //Вывести текст, составленный из первых букв всех слов содержащих букву «и»
+      const firstLetterStr = splitStr
+        .filter((e, i) => {
+          if (e.includes("и")) {
+            return e[0];
+          }
+        })
+        .map((e) => {
+          return e[0];
+        })
+        .join("");
+      console.log(firstLetterStr);
       console.log("*6*");
+      //Вывести слова, в которых нет повторяющихся букв
+      const doubleLetter = splitStr.filter((e) => {
+        markForLoop: for (let i = 0; i < e.length; i++) {
+          if (!e.includes(e[i], i + 1)) {
+            return e;
+          } else break markForLoop;
+        }
+      });
+      console.log(doubleLetter);
     </script>
   </body>
 </html>
