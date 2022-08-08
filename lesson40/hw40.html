@@ -105,7 +105,7 @@
       console.log("*1*");
       const str =
         "Объектно-ориентированное   программирование (ООП) —   методология программирования, основанная на   представлении программы в виде совокупности    объектов, каждый из которых является   экземпляром определённого класса, а классы    образуют иерархию наследования";
-      const splitStr = str.toLowerCase().split(/ |,/);
+      const splitStr = str.toLowerCase().split(' ');
       function longestWord(str) {
         const longWord = splitStr.reduce((acc, curr) => {
           if (curr.length > acc.length) {
