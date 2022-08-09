@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body * {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
   </head>
   <body>
     <h3>TASK 1</h3>
@@ -24,47 +30,47 @@
     <script>
       // task 1
       const dateNow = new Date();
-      document.querySelector(".dateT1").innerHTML =
-        "День: " + dateNow.getDate() + "<br>";
-      document.querySelector(".monthT1").innerHTML =
-        "Месяц: " + dateNow.toLocaleString("ru-RU", { month: "long" }) + "<br>";
-      document.querySelector(".yearT1").innerHTML =
-        "Год: " + dateNow.getFullYear() + "<br>";
-      document.querySelector(".dayT1").innerHTML =
-        "День недели: " + dateNow.toLocaleString("ru-RU", { weekday: "long" });
+      document.querySelector('.dateT1').innerHTML =
+        'День: ' + dateNow.getDate() + '<br>';
+      document.querySelector('.monthT1').innerHTML =
+        'Месяц: ' + dateNow.toLocaleString('ru-RU', { month: 'long' }) + '<br>';
+      document.querySelector('.yearT1').innerHTML =
+        'Год: ' + dateNow.getFullYear() + '<br>';
+      document.querySelector('.dayT1').innerHTML =
+        'День недели: ' + dateNow.toLocaleString('ru-RU', { weekday: 'long' });
 
       // task 2
       const pastDay = new Date(2005, 2, 10);
-      document.querySelector(".dayT2").textContent =
-        "День недели: " + pastDay.toLocaleString("ru-RU", { weekday: "long" });
+      document.querySelector('.dayT2').textContent =
+        'День недели: ' + pastDay.toLocaleString('ru-RU', { weekday: 'long' });
 
       // task 3
       const daysPast = Math.floor(dateNow.getTime() / (1000 * 60 * 60 * 24));
-      document.querySelector(".dayT3").textContent =
-        "Деней с начала UNIX эпоих: " + daysPast;
+      document.querySelector('.dayT3').textContent =
+        'Деней с начала UNIX эпоих: ' + daysPast;
 
       // task 4
-      const firstDate = Date.parse("march 1, 1988");
-      const secondDate = Date.parse("march 5, 2015");
+      const firstDate = Date.parse('march 1, 1988');
+      const secondDate = Date.parse('march 5, 2015');
       const diffHours = (secondDate - firstDate) / (1000 * 60 * 60);
-      document.querySelector(".dayT4").textContent =
-        "Между 1 марта 1988 года и 8 марта 2015 года: " +
+      document.querySelector('.dayT4').textContent =
+        'Между 1 марта 1988 года и 8 марта 2015 года: ' +
         diffHours +
-        " часов разницы";
+        ' часов разницы';
 
       // task 5
       const endOfDay = new Date(dateNow).setHours(24, 0, 0);
       const leftSeconds = (endOfDay - dateNow.getTime()) / 1000;
-      document.querySelector(".dayT5").textContent =
-        "Осталось до конца дня: " + leftSeconds + " секунды";
+      document.querySelector('.dayT5').textContent =
+        'Осталось до конца дня: ' + leftSeconds + ' секунды';
 
       // task 6
-      console.log("----- task6 -----");
+      console.log('----- task6 -----');
       const arr1 = [1, 2, 3, 1, 2, 5, 6, 3];
       const newArr = new Set(arr1);
       console.log(newArr);
       // OR
-      console.log("   ----- OR -----");
+      console.log('   ----- OR -----');
       const newArr1 = arr1.filter((item, pos) => {
         if (arr1.indexOf(item) !== pos) {
           false;
@@ -75,7 +81,7 @@
       console.log(newArr1);
 
       // task 7
-      console.log("----- task7 -----");
+      console.log('----- task7 -----');
       const arr2 = [1, 1, 1, 2, 2, 3, 4, 5, 5, 5, 6, 6, 7, 8];
       arr2.forEach((element, index) => {
         if (
@@ -89,7 +95,7 @@
       console.log(arr2);
 
       // task 8
-      console.log("----- task8 -----");
+      console.log('----- task8 -----');
       const arr3 = [1, 3, 5];
       const arr4 = [1, 2, 3, 4, 5, 6];
       const arr4Filtred = arr4.filter(function (i) {
@@ -101,10 +107,10 @@
       console.log(arr4Filtred);
 
       // task 9
-      console.log("----- task9 -----");
-      console.log("*1*");
+      console.log('----- task9 -----');
+      console.log('*1*');
       const str =
-        "Объектно-ориентированное   программирование (ООП) —   методология программирования, основанная на   представлении программы в виде совокупности    объектов, каждый из которых является   экземпляром определённого класса, а классы    образуют иерархию наследования";
+        'Объектно-ориентированное   программирование (ООП) —   методология программирования, основанная на   представлении программы в виде совокупности    объектов, каждый из которых является   экземпляром определённого класса, а классы    образуют иерархию наследования';
       const splitStr = str.toLowerCase().split(/ |,/);
       function longestWord(str) {
         const longWord = splitStr.reduce((acc, curr) => {
@@ -116,8 +122,8 @@
         });
         return longWord;
       }
-      console.log("Самое длинное слово: " + longestWord(str));
-      console.log("*2*");
+      console.log('Самое длинное слово: ' + longestWord(str));
+      console.log('*2*');
 
       let obj = {};
       const lowerCaseStr = str.toLowerCase();
@@ -131,7 +137,7 @@
       let maxLetter = 0;
       let maxLetterValue;
       for (let iter in obj) {
-        if (obj[iter] > maxLetter && iter !== " ") {
+        if (obj[iter] > maxLetter && iter !== ' ') {
           maxLetter = obj[iter];
           maxLetterValue = iter;
         }
@@ -141,30 +147,48 @@
           maxLetterValue +
           "' встречается чаще всего: " +
           maxLetter +
-          " раз"
+          ' раз'
       );
-      console.log("*3*");
-      console.log("*4*");
+      console.log('*3*');
+      const vowels = ['а', 'е', 'ё', 'и', 'о', 'у', 'ы', 'э', 'ю', 'я'];
+      let map = new Map();
+      splitStr.forEach((element) => {
+        if (
+          element.includes(
+            vowels.forEach((e) => {
+              return e;
+            })
+          )
+        ) {
+          if (!map.has(element)) {
+            map.set(element, 1);
+          } else {
+            map.set(element, 1);
+          }
+        }
+      });
+      console.log(map);
+      console.log('*4*');
       const WordsWhithA = splitStr.filter((element, index) => {
-        if (element.includes("а", element.indexOf("а") + 1)) {
+        if (element.includes('а', element.indexOf('а') + 1)) {
           return element;
         }
       });
       console.log(WordsWhithA);
-      console.log("*5*");
+      console.log('*5*');
       //Вывести текст, составленный из первых букв всех слов содержащих букву «и»
       const firstLetterStr = splitStr
         .filter((e, i) => {
-          if (e.includes("и")) {
+          if (e.includes('и')) {
             return e[0];
           }
         })
         .map((e) => {
           return e[0];
         })
-        .join("");
+        .join('');
       console.log(firstLetterStr);
-      console.log("*6*");
+      console.log('*6*');
       //Вывести слова, в которых нет повторяющихся букв
       const doubleLetter = splitStr.filter((e) => {
         markForLoop: for (let i = 0; i < e.length; i++) {
