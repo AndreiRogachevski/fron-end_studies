@@ -7,18 +7,30 @@
     <title>Document</title>
     <style>
       body {
-        background-color: cadetblue;
+        background-color: rgb(0, 12, 68);
         font-size: 100px;
         font-family: Arial, Helvetica, sans-serif;
       }
       form {
-        margin: 200px;
+        margin-top: calc(50vh - 120px);
         display: grid;
         place-items: center;
+      }
+      form::after {
+        content: '';
+        background: url(https://previews.123rf.com/images/9george/9george1707/9george170700438/82113680-math-linear-mathematics-education-circle-background-with-geometrical-plots-seamless-background-doodl.jpg);
+        opacity: 0.3;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        z-index: -1;
       }
       span {
         width: 100px;
         height: 100px;
+        color: rgb(223 255 96);
       }
       input {
         padding: 15px;
@@ -30,11 +42,17 @@
         border: none;
         border-radius: 20px;
         outline: none;
+        color: rgb(0, 12, 68);
+        background: rgb(223 255 96);
+        text-align: center;
       }
       input::-webkit-outer-spin-button,
       input::-webkit-inner-spin-button {
         -webkit-appearance: none;
         margin: 0;
+      }
+      .result {
+        color: rgb(223 255 96);
       }
     </style>
   </head>
@@ -55,28 +73,35 @@
       <div class="result"></div>
     </form>
     <script>
+      // document.body.style.backgroundImage =
+      //   'url(https://t3.ftcdn.net/jpg/04/05/80/88/360_F_405808828_lwfcYW72K3i3IsZQayyHg9kEqHpRrrET.jpg)';
+      // document.body.style.backgroundImage =
+      //   'url(https://s.pfst.net/2015.08/817687288060497ceb1251f1b3d2034367c5074cd84_b.jpg)';
+      // document.body.style.backgroundImage =
+      //   'url(https://previews.123rf.com/images/9george/9george1707/9george170700438/82113680-math-linear-mathematics-education-circle-background-with-geometrical-plots-seamless-background-doodl.jpg)';
+
       function randomNum(min = 1, max = 10) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;
       }
-      const firstNum = document.body.querySelector(".firstNum");
+      const firstNum = document.body.querySelector('.firstNum');
       firstNum.textContent = randomNum();
-      const secondNum = document.body.querySelector(".secondNum");
+      const secondNum = document.body.querySelector('.secondNum');
       secondNum.textContent = randomNum();
-      const equals = document.body.querySelector(".equals");
-      const result = document.body.querySelector(".result");
+      const equals = document.body.querySelector('.equals');
+      const result = document.body.querySelector('.result');
       const form = document.forms[0];
-      form.addEventListener("keypress", async (event) => {
-        if (event.key === "Enter") {
+      form.addEventListener('keypress', async (event) => {
+        if (event.key === 'Enter') {
           event.preventDefault();
           if (
             parseInt(equals.value) ===
             firstNum.textContent * secondNum.textContent
           ) {
-            result.textContent = "правильно!";
+            result.textContent = 'правильно!';
           } else {
-            result.textContent = "попробуй ещё!)";
+            result.textContent = 'попробуй ещё!)';
           }
           setTimeout(function () {
             window.location.reload();
