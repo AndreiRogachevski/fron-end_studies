@@ -12,21 +12,21 @@
       'use strict';
       const canvas = document.body.querySelector('canvas');
       const ctx = canvas.getContext('2d');
-      forest(20, 120);
+      forest(20, 200);
       function forest(x, y) {
-        for (let i = 1; i <= 8; i++) {
-          let rand = Math.random() * (10 - 5) + 5;
-          tree(x + i * 50, y + i * rand);
+        for (let i = 1; i <= 5; i++) {
+          let rand = Math.random() * (50 - 10) + 10;
+          tree(x + i * 80, y + i * rand);
         }
       }
       function tree(x, y) {
         for (let i = 1; i <= 3; i++) {
-          triangle(x, y + i * 26);
+          triangle(x, y - i * 50);
           ctx.beginPath();
-          ctx.moveTo(x - 10, y + 108);
-          ctx.lineTo(x - 10, y + 125);
-          ctx.lineTo(x + 10, y + 125);
-          ctx.lineTo(x + 10, y + 108);
+          ctx.moveTo(x - 12, y + 10.8);
+          ctx.lineTo(x - 12, y + 50);
+          ctx.lineTo(x + 12, y + 50);
+          ctx.lineTo(x + 12, y + 10.8);
           ctx.fillStyle = 'brown';
           ctx.fill();
         }
@@ -34,9 +34,11 @@
       function triangle(x, y) {
         ctx.beginPath();
         ctx.moveTo(x, y);
-        ctx.lineTo(x + 50, y + 30);
-        ctx.lineTo(x - 50, y + 30);
+        ctx.lineTo(x + 80, y + 60);
+        ctx.lineTo(x - 80, y + 60);
+        ctx.lineTo(x, y);
         ctx.strokeStyle = 'black';
+        ctx.stroke();
         ctx.fillStyle = 'green';
         ctx.fill();
         ctx.closePath();
