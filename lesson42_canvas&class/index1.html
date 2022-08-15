@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="700" height="700"></canvas>
+    <script>
+      'use strict';
+
+      // class
+      class Student {
+        constructor(firstName, lastName, group, averageMark) {
+          this.firstName = firstName;
+          this.lastName = lastName;
+          this.group = group;
+          this.averageMark = averageMark;
+        }
+        getScholarship() {
+          if (this.averageMark >= 5) {
+            return 100;
+          }
+          return 80;
+        }
+      }
+      class Aspirant extends Student {
+        getScholarship() {
+          if (this.averageMark >= 5) {
+            return 200;
+          }
+          return 180;
+        }
+      }
+      let stud1 = new Student('Dik', 'Pick', 'a123', 4);
+      let stud2 = new Student('Sam', 'Antha', 'a122', 5);
+      let stud3 = new Student('Walter', 'Melon', 'a123', 6);
+
+      let asp1 = new Aspirant('Bob', 'D`One', 'b123', 4);
+      let asp2 = new Aspirant('Rob', 'D`Ane', 'b122', 5);
+      let asp3 = new Aspirant('Blob', 'D`Ene', 'b123', 6);
+
+      let arr = [stud1, stud2, stud3, asp1, asp2, asp3];
+      arr.forEach((e) => {
+        console.log(e);
+        console.log(e.getScholarship());
+      });
+
+      // canvas
+
+      const canvas = document.body.querySelector('canvas');
+      const ctx = canvas.getContext('2d');
+
+      // stars
+      drawStar(150, 0, 5, 50, 25, '#3cb371', 'grey', 20);
+      drawStar(300, -150, 16, 50, 20, '#ff7f50', '#ff7f50', 0);
+      drawStar(300, 50, 8, 50, 20, '#87ceea', 'grey', 5);
+      drawStar(400, -50, 16, 40, 50, '#fed700', 'grey', 5);
+      function drawStar(
+        cx,
+        cy,
+        spikes,
+        outerRadius,
+        innerRadius,
+        fillColor,
+        strokeColor,
+        strokeWidth
+      ) {
+        ctx.save();
+        ctx.rotate((Math.PI / 90) * 20);
+        let rot = (Math.PI / 2) * 3;
+        let x = cx;
+        let y = cy;
+        let step = Math.PI / spikes;
+        ctx.beginPath();
+        ctx.moveTo(cx, cy - outerRadius);
+        for (let i = 0; i < spikes; i++) {
+          x = cx + Math.cos(rot) * outerRadius;
+          y = cy + Math.sin(rot) * outerRadius;
+          ctx.lineTo(x, y);
+          rot += step;
+
+          x = cx + Math.cos(rot) * innerRadius;
+          y = cy + Math.sin(rot) * innerRadius;
+          ctx.lineTo(x, y);
+          rot += step;
+        }
+        ctx.lineTo(cx, cy - outerRadius);
+        ctx.closePath();
+        ctx.lineWidth = strokeWidth;
+        ctx.strokeStyle = strokeColor;
+        ctx.stroke();
+        ctx.fillStyle = fillColor;
+        ctx.fill();
+        ctx.restore();
+      }
+
+      // forest
+      forest(20, 400);
+      function forest(x, y) {
+        for (let i = 1; i <= 5; i++) {
+          let rand = Math.random() * (50 - 10) + 10;
+          tree(x + i * 80, y + i * rand);
+        }
+      }
+      function tree(x, y) {
+        for (let i = 1; i <= 3; i++) {
+          triangle(x, y - i * 50);
+          ctx.beginPath();
+          ctx.moveTo(x - 12, y + 10.8);
+          ctx.lineTo(x - 12, y + 50);
+          ctx.lineTo(x + 12, y + 50);
+          ctx.lineTo(x + 12, y + 10.8);
+          ctx.fillStyle = 'brown';
+          ctx.fill();
+        }
+      }
+      function triangle(x, y) {
+        ctx.beginPath();
+        ctx.moveTo(x, y);
+        ctx.lineTo(x + 80, y + 60);
+        ctx.lineTo(x - 80, y + 60);
+        ctx.lineTo(x, y);
+        ctx.stroke();
+        ctx.fillStyle = 'green';
+        ctx.fill();
+      }
+    </script>
+  </body>
+</html>
