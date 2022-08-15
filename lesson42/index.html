@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas width="1000" height="1000"></canvas>
+    <script>
+      "use strict";
+      // Task 1
+      class Car {
+        constructor(mark, numCil, pow) {
+          this.mark = mark;
+          this.numCil = numCil;
+          this.pow = pow;
+        }
+        printCar() {
+          console.log(
+            `Марка: ${this.mark}, число цилиндров: ${this.numCil}, мощьность: ${this.pow}`
+          );
+        }
+      }
+      class Lorry extends Car {
+        constructor(mark, numCil, pow, cargo) {
+          super(mark, numCil, pow);
+          this.cargo = cargo;
+        }
+        printLorry() {
+          console.log(
+            `Марка: ${this.mark}, число цилиндров: ${this.numCil}, мощьность: ${this.pow}, грузоподёмность ${this.cargo}`
+          );
+        }
+        get mark() {
+          return this._mark;
+        }
+        set mark(value) {
+          this._mark = value;
+        }
+        get cargo() {
+          return this._cargo;
+        }
+        set cargo(value) {
+          this._cargo = value;
+        }
+      }
+      const fiat = new Car("fiat", 6, 300);
+      fiat.printCar();
+      const man = new Lorry("MAN", 6, 500, 2);
+      man.printLorry();
+      man.mark = "Ford";
+      man.cargo = 3;
+      man.printLorry();
+
+      // Task 2
+      const canvas = document.body.querySelector("canvas");
+      const ctx = canvas.getContext("2d");
+      for (let i = 1; i <= 5; i++) {
+        tree(i * 150, 500 * Math.random() * (2.5 - 2) + 2);
+      }
+      function tree(x, y) {
+        for (let index = 1; index <= 3; index++) {
+          triangl(x, y - index * 50);
+          ctx.beginPath();
+          ctx.moveTo(x - 20, y + 20);
+          ctx.lineTo(x - 20, y + 60);
+          ctx.lineTo(x + 20, y + 60);
+          ctx.lineTo(x + 20, y + 20);
+          ctx.fill();
+        }
+      }
+      function triangl(x, y) {
+        ctx.moveTo(x, y);
+        ctx.beginPath();
+        ctx.lineTo(x + 80, y + 70);
+        ctx.lineTo(x - 80, y + 70);
+        ctx.lineTo(x, y);
+        ctx.fill();
+        ctx.closePath();
+      }
+    </script>
+  </body>
+</html>

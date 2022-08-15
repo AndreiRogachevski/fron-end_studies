@@ -39,7 +39,7 @@
 
   <body>
     <form>
-      <label for="year">Year</label>
+      <label for="year">Год</label>
       <input type="number" name="year" id="year" />
     </form>
     <div class="container"></div>
@@ -107,7 +107,7 @@
           container.append(div);
           const h3 = document.createElement('h3');
           const days = new Date(year, month - 1, 1);
-          h3.textContent = days.toLocaleString('default', { month: 'long' });
+          h3.textContent = days.toLocaleString('ru-RU', { month: 'long' });
           h3.style.textTransform = 'uppercase';
           div.append(h3);
           const ul = document.createElement('ul');
