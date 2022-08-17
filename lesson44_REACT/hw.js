@@ -16,15 +16,15 @@ class NumButton extends React.Component {
 class HideButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { att: undefined };
+    this.state = { hide: undefined };
   }
   click() {
     this.setState((state) => ({
-      att: hidden,
+      state.hide='hidden'
     }));
   }
   render() {
-    return <button onClick={() => this.click()}>Hide Me</button>;
+    return <button {hide} onClick={() => this.click()}>Hide Me</button>;
   }
 }
 const root = ReactDOM.createRoot(document.getElementById('home-work'));
