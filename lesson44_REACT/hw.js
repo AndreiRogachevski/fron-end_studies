@@ -2,12 +2,12 @@
 class NumButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { num: props.message };
+    this.state = { num: 0 };
   }
   increment() {
-    this.setState((state) => ({
-      num: parseInt(state.num) + 1,
-    }));
+    this.setState({
+      num: this.state.num + 1,
+    });
   }
   render() {
     return <button onClick={() => this.increment()}>{this.state.num}</button>;
@@ -36,7 +36,7 @@ class HideButton extends React.Component {
 const root = ReactDOM.createRoot(document.getElementById('home-work'));
 root.render(
   <React.Fragment>
-    <NumButton message="0" />
+    <NumButton />
     <HideButton />
   </React.Fragment>
 );
