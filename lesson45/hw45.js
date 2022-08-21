@@ -1,3 +1,49 @@
+// TASK 1
+
+class MoveDiv extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      x: 0,
+      y: 0,
+    };
+  }
+  moveDiv = (e) => {
+    let y = this.state.y;
+    let x = this.state.x;
+    if (e.target.innerHTML === 'вверх') {
+      y -= 10;
+    }
+    if (e.target.innerHTML === 'вниз') {
+      y += 10;
+    }
+    if (e.target.innerHTML === 'вправо') {
+      x += 10;
+    }
+    if (e.target.innerHTML === 'влево') {
+      x -= 10;
+    }
+    this.setState({
+      x,
+      y,
+    });
+  };
+  render() {
+    return (
+      <div
+        className="arrow-div"
+        style={{ top: this.state.y, left: this.state.x }}
+        onClick={this.moveDiv}
+      >
+        <button>вверх</button>
+        <button>влево</button>
+        <button>вправо</button>
+        <button>вниз</button>
+      </div>
+    );
+  }
+}
+
 // TASK 2
 
 const images = [
@@ -12,28 +58,35 @@ class Image extends React.Component {
     super(props);
     this.state = {
       arrayImg: props.arrayImg,
-      img: '',
+      numImg: 0,
+      // img: '',
     };
   }
-  componentDidMount() {
-    this.setState({
-      img: this.state.arrayImg[0],
-    });
-  }
-  // changeImg() {
-  //   for (let index = 0; index < images.length; index++) {
-  //     const element = images[index];
-  //   }
+  changeImg = () => {
+    let numImg = this.state.numImg;
+    numImg === this.state.arrayImg.length - 1 ? (numImg = 0) : (numImg += 1);
+    this.setState({ numImg });
+  };
+  // componentDidMount() {
   //   this.setState({
-  //     img: element,
+  //     img: this.state.arrayImg[this.state.numImg],
   //   });
   // }
-
   render() {
-    <img src={this.state.img} alt="img" />;
-    console.log(this.state.img);
+    return (
+      <img
+        src={this.state.arrayImg[this.state.numImg]}
+        alt="img"
+        onClick={this.changeImg}
+      />
+    );
   }
 }
 
 const root = ReactDOM.createRoot(document.querySelector('#home-work-45'));
-root.render(<Image arrayImg={images} />);
+root.render(
+  <React.Fragment>
+    <MoveDiv />
+    <Image arrayImg={images} />
+  </React.Fragment>
+);

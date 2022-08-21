@@ -5,6 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      .arrow-div {
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+      button:first-child {
+        grid-column: 2/3;
+        grid-row: 1/2;
+      }
+      button:nth-child(2) {
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+      button:nth-child(3) {
+        grid-column: 3/4;
+        grid-row: 2/3;
+      }
+      button:last-child {
+        grid-column: 2/3;
+        grid-row: 3/4;
+      }
+      img {
+        margin: 150px 0 0 300px;
+      }
+    </style>
   </head>
   <body>
     <div id="home-work-45"></div>
@@ -18,10 +47,5 @@
     ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script src="hw45.js" type="text/babel"></script>
-    <!-- <img
-      src="https://cdn.pixabay.com/photo/2019/10/15/13/40/winter-4551699_960_720.jpg"
-      ,
-      alt="img"
-    />; -->
   </body>
 </html>
