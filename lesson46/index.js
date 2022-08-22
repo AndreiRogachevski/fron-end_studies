@@ -1,56 +1,70 @@
 class List extends React.Component {
   constructor(props) {
     super(props);
-    const arrItems = [];
-    for (let index = 1; index <= 15; index++) {
-      arrItems.push(index);
+    const items = [];
+    for (let index = 0; index <= 15; index++) {
+      items.push(index);
     }
     this.state = {
-      // numLi: 5,
-      arrItems,
+      // numLi: 0,
+      // items: [],
+      items,
     };
   }
   addLi = () => {
+    const items = [...this.state.items, this.state.numLi];
     this.setState(() => ({
-      arrItems: [...this.state.arrItems, this.state.numLi],
+      items,
       numLi: ++this.state.numLi,
     }));
   };
-  // change(index) {
-  //   const arrItems = this.state.arrItems.map((num, i) => {
-  //     i === index ? num + '!' : num;
-  //   });
-  //   console.log(arrItems);
-  //   this.setState({ arrItems });
-  // }
-  sum(index) {
-    let first = index !== 0 ? this.state.arrItems[index - 1] : 0;
-    let second =
-      index !== this.state.arrItems.length - 1
-        ? this.state.arrItems[index + 1]
-        : 0;
-    const arrItems = this.state.arrItems.map((item, i) => {
-      i === index ? first + second : item;
+  change(index) {
+    const items = this.state.items.map((num, i) => {
+      i === index ? (num += '!') : num;
+      return num;
     });
-    console.log(this.state.arrItems);
-    console.log(arrItems);
-    this.setState({ arrItems });
+    this.setState({ items });
   }
+  // sum(index) {
+  //   let first = index !== 0 ? this.state.items[index - 1] : 0;
+  //   let second =
+  //     index !== this.state.items.length - 1 ? this.state.items[index + 1] : 0;
+  //   const items = this.state.items.map((item, i) => {
+  //     i === index ? (item = first + second) : item;
+  //     return item;
+  //   });
+
+  //   this.setState({ items });
+  // }
+  multiplication(event, index) {
+    event.preventDefault();
+    let first = index !== 0 ? this.state.items[index - 1] : 0;
+    let second =
+      index !== this.state.items.length - 1 ? this.state.items[index + 1] : 0;
+    const items = this.state.items.map((item, i) => {
+      i === index ? (item = first * second) : item;
+      return item;
+    });
+
+    this.setState({ items });
+  }
+
   render() {
     return (
       <div>
         <ul>
-          {this.state.arrItems.map((num, index) => (
+          {this.state.items.map((num, index) => (
             <li
               key={index}
-              // onClick={() => this.change(index)}
-              onClick={() => this.sum(index)}
+              onClick={() => this.change(index)}
+              // onClick={() => this.sum(index)}
+              onContextMenu={(event) => this.multiplication(event, index)}
             >
               {num}
             </li>
           ))}
         </ul>
-        {/* <button onClick={this.addLi}>создать</button> */}
+        <button onClick={this.addLi}>создать</button>
       </div>
     );
   }
