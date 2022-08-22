@@ -8,7 +8,7 @@ class MoveDiv extends React.Component {
       y: 0,
     };
   }
-  moveDiv = (e) => {
+  move = (e) => {
     let y = this.state.y;
     let x = this.state.x;
     if (e.target.innerHTML === 'вверх') {
@@ -33,7 +33,7 @@ class MoveDiv extends React.Component {
       <div
         className="arrow-div"
         style={{ top: this.state.y, left: this.state.x }}
-        onClick={this.moveDiv}
+        onClick={this.move}
       >
         <button>вверх</button>
         <button>влево</button>
@@ -57,29 +57,18 @@ class Image extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      arrayImg: props.arrayImg,
       numImg: 0,
-      // img: '',
     };
+    this.arrayImg = props.arrayImg;
   }
   changeImg = () => {
     let numImg = this.state.numImg;
-    numImg === this.state.arrayImg.length - 1 ? (numImg = 0) : (numImg += 1);
+    numImg === this.arrayImg.length - 1 ? (numImg = 0) : (numImg += 1);
     this.setState({ numImg });
   };
-  // componentDidMount() {
-  //   this.setState({
-  //     img: this.state.arrayImg[this.state.numImg],
-  //   });
-  // }
   render() {
-    return (
-      <img
-        src={this.state.arrayImg[this.state.numImg]}
-        alt="img"
-        onClick={this.changeImg}
-      />
-    );
+    const imgUrl = this.arrayImg[this.state.numImg];
+    return <img src={imgUrl} alt="img" onClick={this.changeImg} />;
   }
 }
 
