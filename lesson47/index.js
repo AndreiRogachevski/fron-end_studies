@@ -15,14 +15,8 @@ class MathForm extends React.Component {
     event.preventDefault();
   }
   handelSubmitInputChange(event) {
-    // if (event.target.type === 'checkbox') {
-    //   const check = this.state.check;
-    //   this.setState({ check: !check });
-    // }
     const keyName = event.target.name;
     const value = event.target.value === '' ? 0 : parseInt(event.target.value);
-    console.log(isFinite(event.target.value));
-    console.log(value);
     const mathResult = !this.state.check
       ? keyName === 'first'
         ? value + parseInt(this.state.second)
@@ -63,9 +57,48 @@ class MathForm extends React.Component {
     );
   }
 }
+class ToDoS extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: [],
+      newItem: '',
+    };
+    this.handelSubmit = this.handelSubmit.bind(this);
+    this.newValue = this.newValue.bind(this);
+  }
+  newValue(event) {
+    this.setState({ newItem: event.target.value });
+  }
+  handelSubmit(event) {
+    event.preventDefault();
+    const items = this.state.items;
+    console.log(items);
+    items.push(this.state.newItem);
+    this.setState({ items: items, newItem: '' });
+  }
+  render() {
+    return (
+      <form onSubmit={this.handelSubmit}>
+        <ul>
+          {this.state.items.map((item, index) => {
+            return <li key={index}>{item}</li>;
+          })}
+        </ul>
+        <input
+          type="text"
+          value={this.state.newItem}
+          onChange={this.newValue}
+        />
+        <input type="submit" />
+      </form>
+    );
+  }
+}
 const root = ReactDOM.createRoot(document.querySelector('#root'));
 root.render(
   <React.Fragment>
     <MathForm />
+    <ToDoS />
   </React.Fragment>
 );
