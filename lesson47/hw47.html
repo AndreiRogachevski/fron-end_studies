@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script type="text/babel">
+      // function Img(props) {
+      //   const url = props.url;
+      //   return <img src={url} alt="img" />;
+      // }
+      class ShowImg extends React.Component {
+        constructor(props) {
+          super(props);
+          this.state = {
+            url: '',
+            value: '',
+          };
+          this.handleChange = this.handleChange.bind(this);
+          this.handelSubmit = this.handelSubmit.bind(this);
+        }
+        handleChange(event) {
+          this.setState({ value: event.target.value });
+        }
+        showImg() {
+          return <img src={this.state.url} alt="img" />;
+        }
+        loadImg = () => {
+          fetch(this.state.value)
+            .then((response) => {
+              if (response.ok) {
+                return response.url;
+              }
+              throw new Error(response.message);
+            })
+            .then((url) => {
+              this.setState({ url: url });
+              return this.showImg;
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+        };
+        showError() {
+          return <div></div>;
+        }
+        handelSubmit(event) {
+          event.preventDefault();
+          this.loadImg();
+        }
+        render() {
+          return (
+            <form onSubmit={this.handelSubmit}>
+              <span>
+                https://p0.pikist.com/photos/748/129/hedgehog-cute-animal-little-nature-spikes-small-baby-animal.jpg
+                https://i.pinimg.com/originals/2b/46/c2/2b46c229b6de58288c1268e7b48dda3c.jpg
+              </span>
+              <br />
+              <input
+                type="url"
+                value={this.state.value}
+                onChange={this.handleChange}
+              />
+              <input type="submit" />
+              <div>{this.state.url !== '' && this.showImg()}</div>
+            </form>
+          );
+        }
+      }
+      const root = ReactDOM.createRoot(document.querySelector('#root'));
+      root.render(
+        <React.Fragment>
+          <ShowImg />
+        </React.Fragment>
+      );
+    </script>
+  </body>
+</html>
