@@ -5,6 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      img {
+        width: 50vw;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
@@ -18,16 +23,15 @@
     ></script>
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <script type="text/babel">
-      // function Img(props) {
-      //   const url = props.url;
-      //   return <img src={url} alt="img" />;
-      // }
+      'use strict';
       class ShowImg extends React.Component {
         constructor(props) {
           super(props);
           this.state = {
             url: '',
+            status: false,
             value: '',
+            error: '',
           };
           this.handleChange = this.handleChange.bind(this);
           this.handelSubmit = this.handelSubmit.bind(this);
@@ -38,24 +42,25 @@
         showImg() {
           return <img src={this.state.url} alt="img" />;
         }
-        loadImg = () => {
+        showError() {
+          return <span>{this.state.error}</span>;
+        }
+        loadImg() {
           fetch(this.state.value)
             .then((response) => {
-              if (response.ok) {
-                return response.url;
+              if (!response.ok) {
+                throw new Error(response.message);
               }
-              throw new Error(response.message);
+              this.setState({ status: response.ok });
+              return response.url;
             })
             .then((url) => {
               this.setState({ url: url });
-              return this.showImg;
             })
             .catch((error) => {
-              console.log(error);
+              this.setState({ status: false });
+              this.setState({ error: error.message });
             });
-        };
-        showError() {
-          return <div></div>;
         }
         handelSubmit(event) {
           event.preventDefault();
@@ -64,18 +69,22 @@
         render() {
           return (
             <form onSubmit={this.handelSubmit}>
-              <span>
+              <p>
                 https://p0.pikist.com/photos/748/129/hedgehog-cute-animal-little-nature-spikes-small-baby-animal.jpg
+              </p>
+              <p>
                 https://i.pinimg.com/originals/2b/46/c2/2b46c229b6de58288c1268e7b48dda3c.jpg
-              </span>
-              <br />
+              </p>
+              <p>
+                https://hips.hearstapps.com/cos.h-cdn.co/assets/16/29/33-tiny-animals.jpg
+              </p>
               <input
                 type="url"
                 value={this.state.value}
                 onChange={this.handleChange}
               />
               <input type="submit" />
-              <div>{this.state.url !== '' && this.showImg()}</div>
+              <div>{this.state.status ? this.showImg() : this.showError()}</div>
             </form>
           );
         }
