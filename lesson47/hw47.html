@@ -52,10 +52,7 @@
                 throw new Error(response.message);
               }
               this.setState({ status: response.ok });
-              return response.url;
-            })
-            .then((url) => {
-              this.setState({ url: url });
+              this.setState({ url: response.url });
             })
             .catch((error) => {
               this.setState({ status: false });
