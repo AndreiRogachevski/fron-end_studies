@@ -6,20 +6,22 @@ class Show extends React.Component {
       items: [],
     };
     this.addItem = this.addItem.bind(this);
-    this.remove = this.remove.bind(this);
+    this.removeItem = this.removeItem.bind(this);
   }
   addItem(item) {
-    this.setState({ items: [...this.state.items, item] });
+    if (item !== '') this.setState({ items: [...this.state.items, item] });
   }
-  remove(remItem) {
+  removeItem(remItem) {
+    console.log(remItem);
+    const items = this.state.items.filter((item) => item !== remItem);
     this.setState({
-      items: this.state.items.filter((item) => item !== remItem),
+      items,
     });
   }
   render() {
     return (
       <React.Fragment>
-        <Remove items={this.state.items} onRemove={this.remove} />
+        <Remove items={this.state.items} onRemove={this.removeItem} />
         <Form onAddItem={this.addItem} />
       </React.Fragment>
     );
@@ -54,23 +56,23 @@ class Form extends React.Component {
 class Remove extends React.Component {
   constructor(props) {
     super(props);
+    this.remove = this.remove.bind(this);
     this.state = {
       remItem: '',
     };
-    this.remove = this.remove.bind(this);
   }
-
   remove(e) {
-    this.setState({ item: e.target.value });
-    this.props.onRemove(this.state.remItem);
+    console.log(this.state.remItem);
+    this.props.onRemove(e.target.value);
   }
   render() {
     return (
       <React.Fragment>
         {this.props.items.map((item, index) => (
-          <p>
-            <button onClick={this.remove}>remove</button>
-            <span key={index}>{item}</span>
+          <p key={index} onClick={this.remove}>
+            {this.setState({ remItem: item })}
+            <button>remove</button>
+            {item}
           </p>
         ))}
       </React.Fragment>
