@@ -3,20 +3,21 @@ const items = [];
 for (let index = 1; index <= 15; index++) {
   items.push(index);
 }
-const mathOperators = {
-  a: 'addition',
-  m: 'multiplication',
-};
-function math(newIndex, array, sing) {
-  const previous = newIndex === 0 ? 0 : array[newIndex - 1];
-  const next = newIndex === array.length - 1 ? 0 : array[newIndex + 1];
-  const items = array.map((item, index) =>
-    newIndex === index
-      ? sing === mathOperators.a
-        ? (item = previous + next)
-        : (item = previous * next)
-      : item
-  );
+
+function math(eventIndex, array, sing) {
+  const previous = eventIndex === 0 ? 0 : array[eventIndex - 1];
+  const next = eventIndex === array.length - 1 ? 0 : array[eventIndex + 1];
+  const items = array.map((item, index) => {
+    if (eventIndex !== index) return item;
+    switch (sing) {
+      case 'addition':
+        return (item = previous + next);
+        break;
+      case 'multiplication':
+        return (item = previous * next);
+        break;
+    }
+  });
   return items;
 }
 class List extends React.Component {
@@ -28,11 +29,15 @@ class List extends React.Component {
     this.addition = this.addition.bind(this);
     this.multiplication = this.multiplication.bind(this);
   }
-  addition(newIndex) {
-    this.setState({ items: math(newIndex, this.state.items, mathOperators.a) });
+  addition(eventIndex) {
+    this.setState({
+      items: math(eventIndex, this.state.items, 'addition'),
+    });
   }
-  multiplication(newIndex) {
-    this.setState({ items: math(newIndex, this.state.items, mathOperators.m) });
+  multiplication(eventIndex) {
+    this.setState({
+      items: math(eventIndex, this.state.items, 'multiplication'),
+    });
   }
   render() {
     return (
