@@ -6,6 +6,8 @@ export default class ShowImg extends Component {
       error: '',
       images: props.url,
       image: 0,
+      transform: 0,
+      changeNum: 0,
     };
     this.error = this.error.bind(this);
     this.load = this.load.bind(this);
@@ -15,7 +17,7 @@ export default class ShowImg extends Component {
     this.setState({ error: 'error' });
   }
   load() {
-    this.setState({ error: '' });
+    this.setState({ error: '', transform: 0 });
   }
   change(value) {
     let num = this.state.image + value;
@@ -26,15 +28,18 @@ export default class ShowImg extends Component {
     if (num > array - 1) {
       num = 0;
     }
+    this.setState({ transform: 90, changeNum: value });
     this.setState({ image: num });
   }
   render() {
     return (
       <div>
-        <button onClick={() => this.change(-1)}>previos</button>
+        <button onClick={() => this.change(-1)}>previous</button>
         <button onClick={() => this.change(+1)}>next</button>
         <p>{this.state.error}</p>
         <img
+          alt="img"
+          style={{ transform: `rotateY(${this.state.transform}deg)` }}
           src={this.state.images[this.state.image]}
           onLoad={this.load}
           onError={this.error}

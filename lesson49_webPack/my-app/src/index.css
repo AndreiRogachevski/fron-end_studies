@@ -11,8 +11,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+div {
+  /* perspective: 2000px; */
+}
 img {
   width: 400px;
   height: 400px;
   display: block;
+  transition: all ease 1s;
+}
+.previous {
+  transform: rotateY(-180deg);
+}
+.next {
+  transform: rotateY(180deg);
 }
