@@ -5,8 +5,8 @@ export default function Buttons(props) {
   }
   return (
     <Fragment>
-      <button onClick={() => change(-30)}>previos</button>
-      <button onClick={() => change(30)}>next</button>
+      <button onClick={() => change(-props.skip)}>previos</button>
+      <button onClick={() => change(props.skip)}>next</button>
     </Fragment>
   );
 }

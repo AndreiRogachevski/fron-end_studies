@@ -5,3 +5,6 @@ div.list {
 .select {
   background-color: bisque;
 }
+td {
+  cursor: pointer;
+}
