@@ -1,0 +1,7 @@
+div.list {
+  display: flex;
+  align-items: flex-start;
+}
+.select {
+  background-color: bisque;
+}
