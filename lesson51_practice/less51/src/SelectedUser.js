@@ -16,9 +16,7 @@ export default function SelectedUser(props) {
   }, [props.userId]);
   return (
     <Fragment>
-      {isLoad ? (
-        <h1>Loading</h1>
-      ) : (
+      {isLoad || (
         <Fragment>
           <img src={user.image} alt="img" />
           <ul>

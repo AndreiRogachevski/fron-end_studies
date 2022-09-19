@@ -24,7 +24,7 @@ function App() {
     setSelected(id);
   }
   function changePage(num) {
-    setSkip(Number.parseInt(skip + num));
+    setSkip(skip + num);
   }
   function addItemsCount(value) {
     setPerPage(value);
