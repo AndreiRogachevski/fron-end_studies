@@ -10,7 +10,7 @@ export default function CheckButtons(props) {
       style={props.check ? { visibility: 'visible' } : { visibility: 'hidden' }}
     >
       <button onClick={handelCheckAll}>check all</button>
-      <button>delete all</button>
+      <button onClick={props.onDeleteAll}>delete all</button>
     </div>
   );
 }

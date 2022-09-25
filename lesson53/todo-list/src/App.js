@@ -10,10 +10,13 @@ function App() {
   function deleteItem(item, index) {
     setList(list.filter((it, ind) => it !== item || ind !== index));
   }
+  function deleteAll() {
+    setList([]);
+  }
   return (
     <div>
       <Form onAddItem={addItem} />
-      <List items={list} onDeleteItem={deleteItem} />
+      <List items={list} onDeleteItem={deleteItem} onDeleteAll={deleteAll} />
     </div>
   );
 }
