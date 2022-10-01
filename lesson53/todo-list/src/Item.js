@@ -1,18 +1,24 @@
-import { useState } from 'react';
 export default function Item(props) {
-  const [done, setDone] = useState(false);
-  const [checked, setChecked] = useState(false);
   function makeDone(e) {
-    e.target.nodeName === 'LI' && setDone(!done);
+    if (e.target.nodeName === 'LI') {
+      props.setList((currList) => {
+        return currList.map((it, ind) => {
+          if (ind === props.index) {
+            return { ...it, done: !it.done };
+          }
+          return it;
+        });
+      });
+    }
   }
   return (
-    <li className={done ? 'check' : ''} onClick={makeDone}>
+    <li className={props.item.done ? 'check' : ''} onClick={makeDone}>
       <input
         type="checkbox"
-        checked={checked}
-        onChange={(e) => setChecked(e.target.checked)}
+        checked={props.item.checked}
+        onChange={(e) => props.setChecked(e.target.checked)}
       />
-      {props.text}
+      {props.item.text}
       <button onClick={() => props.onDeleteItem()}>delete</button>
     </li>
   );

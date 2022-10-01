@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ .container{
+     width: 1400px;
+     margin: 0 auto;
+ }
+.products{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.product{
+    cursor: pointer;
+    position: relative;
+    padding: 30px;
+    width: 300px;
+    overflow: hidden;
+    display: grid;
+    gap:10px;
+    grid-template-rows:20px 200px auto auto;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+.product:hover::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    background: url("/public/buy-svgrepo-com.svg") no-repeat center center lightgray;
+    z-index: 998;
+    opacity: 0.8;
+}
+.product img{
+    object-fit: cover;
+    width: 100%;
+    max-height: 200px;
+}
+.cart{
+    width: 100%;
+    padding: 20px 0;
+}
+.cart img{
+    max-height: 50px;
+    width: auto;
+}
+tr {
+    text-align: left;
+    border-bottom: 1px solid lightgray;
+}
+tfoot tr td{
+    text-align: right;
+}
+button{
+    background: none;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    width: 26px;
+    height: 26px;
+    margin: 0 10px;
+}
