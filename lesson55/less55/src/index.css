@@ -1,0 +1,5 @@
+div.app{
+    width: 98vw;
+    display: flex;
+    justify-content: center;
+}
