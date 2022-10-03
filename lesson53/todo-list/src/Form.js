@@ -1,16 +1,13 @@
 import { useState } from 'react';
 export default function Form(props) {
   const [value, setValue] = useState('');
-  function addListItem(e) {
+  function handleSubmit(e) {
     e.preventDefault();
-    if (value === '') {
-      return;
-    }
-    props.onAddItem(value);
+    value !== '' && props.onAddItem(value);
     setValue('');
   }
   return (
-    <form onSubmit={addListItem}>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         value={value}
