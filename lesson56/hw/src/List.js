@@ -10,16 +10,18 @@ export default function List() {
     })();
   }, []);
   return (
-    <div>
+    <aside>
       <ul>
         {users.map((user) => (
           <li key={user.id}>
-            <NavLink to={`/users/${user.id}`}>
+            <NavLink
+              to={`/users/${user.id}+${user.firstName}+${user.lastName}`}
+            >
               {user.firstName + ' ' + user.lastName}
             </NavLink>
           </li>
         ))}
       </ul>
-    </div>
+    </aside>
   );
 }

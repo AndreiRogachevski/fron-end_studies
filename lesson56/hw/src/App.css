@@ -18,6 +18,7 @@
 }
 a {
   color: black;
+  align-self: start;
 }
 .active {
   color: red;

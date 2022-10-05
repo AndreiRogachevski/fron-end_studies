@@ -6,22 +6,24 @@ export default function User() {
   const [user, setUser] = useState({});
   useEffect(() => {
     (async () => {
-      const response = await fetch(
-        `http://dummyjson.com/users?skip=${id}&limit=1`
-      );
+      const response = await fetch(`http://dummyjson.com/users/${id}`);
       const json = await response.json();
-      setUser(json.users[0]);
+      setUser(json);
     })();
   }, [id]);
   return (
     <div className="user">
       <Link to={'/'}>Back</Link>
-      <img src={user.image} alt="img" />
-      <ul>
-        <li>First Name: {user.firstName}</li>
-        <li>Last Name: {user.lastName}</li>
-        <li>Age: {user.age}</li>
-      </ul>
+      {user && (
+        <>
+          <img src={user.image} alt="img" />
+          <ul>
+            <li>First Name: {user.firstName}</li>
+            <li>Last Name: {user.lastName}</li>
+            <li>Age: {user.age}</li>
+          </ul>
+        </>
+      )}
     </div>
   );
 }
