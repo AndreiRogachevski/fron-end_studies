@@ -1,0 +1,25 @@
+.App {
+  display: flex;
+}
+.users img {
+  width: 100px;
+}
+.users ul {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  list-style: none;
+  gap: 5px;
+}
+.user {
+  display: flex;
+}
+.user img {
+  align-self: start;
+}
+a {
+  color: black;
+}
+.active {
+  color: red;
+  font-weight: 700;
+}
