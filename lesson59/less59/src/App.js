@@ -10,7 +10,6 @@ function App() {
         <Route path="/" element={<Users />} />
         <Route path="/users/:id" element={<User />} />
       </Routes>
-      <Users />
     </div>
   );
 }

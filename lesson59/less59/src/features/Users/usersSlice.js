@@ -1,10 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchUsers } from './usersAPI';
-import { fetchUser } from './userAPI';
+// import { fetchUser } from './userAPI';
 
 const initialState = {
   users: [],
-  user: 0,
   status: 'idle',
 };
 
@@ -13,12 +12,11 @@ export const usersAsync = createAsyncThunk('users/fetchUsers', async () => {
   const json = await response.json();
   return json.users;
 });
-export const userAsync = createAsyncThunk('users/fetchUser', async (id) => {
-  const response = await fetchUser(id);
-  const json = await response.json();
-  console.log(json);
-  return json;
-});
+// export const userAsync = createAsyncThunk('users/fetchUser', async (id) => {
+//   const response = await fetchUser(id);
+//   const json = await response.json();
+//   return json;
+// });
 
 export const usersSlice = createSlice({
   name: 'users',
@@ -33,7 +31,7 @@ export const usersSlice = createSlice({
       })
       .addCase(usersAsync.fulfilled, (state, action) => {
         state.status = 'idle';
-        state.user = action.payload;
+        state.users = action.payload;
       });
   },
 });
