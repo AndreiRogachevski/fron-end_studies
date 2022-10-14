@@ -1,9 +1,9 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { fetchUsers } from './usersAPI';
-// import { fetchUser } from './userAPI';
 
 const initialState = {
   users: [],
+  deleted: [],
   status: 'idle',
 };
 
@@ -12,17 +12,14 @@ export const usersAsync = createAsyncThunk('users/fetchUsers', async () => {
   const json = await response.json();
   return json.users;
 });
-// export const userAsync = createAsyncThunk('users/fetchUser', async (id) => {
-//   const response = await fetchUser(id);
-//   const json = await response.json();
-//   return json;
-// });
 
 export const usersSlice = createSlice({
   name: 'users',
   initialState,
   reducers: {
-    setUsersId: (state, action) => (state.user = action.payload),
+    setDeleteUser: (state, action) => {
+      state.deleted = [...state.deleted, action.payload];
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -36,7 +33,7 @@ export const usersSlice = createSlice({
   },
 });
 
-export const { setUsersId } = usersSlice.actions;
+export const { setDeleteUser } = usersSlice.actions;
 
 export const selectUsers = (state) => state.users;
 

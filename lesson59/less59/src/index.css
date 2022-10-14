@@ -11,16 +11,28 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-img {
+.users img {
   width: 100px;
 }
-ul {
+ul.users {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   list-style: none;
-  gap: 5px;
+  gap: 30px;
+  background: gray;
+  padding: 20px;
+  margin: 0;
 }
-li {
+.users li {
   display: flex;
   flex-direction: column;
+  background: white;
+  align-items: center;
+}
+.users button {
+  align-self: flex-end;
+}
+.user {
+  display: flex;
+  align-items: center;
 }
