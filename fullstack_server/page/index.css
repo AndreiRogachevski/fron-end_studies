@@ -1,0 +1,26 @@
+div.container {
+  width: 98vw;
+  margin: 0 auto;
+}
+div.users {
+  margin: 0 auto;
+  max-width: 60%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  justify-items: center;
+  align-items: center;
+  gap: 30px;
+}
+
+div.user {
+  cursor: pointer;
+}
+div.popUp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 45%;
+  background-color: white;
+}
