@@ -3,10 +3,10 @@ const users = document.body.querySelector('.users');
 async function getUsers() {
   const response = await fetch('http://127.0.0.1:3000/');
   const users = await response.json();
-  return await users;
+  return users;
 }
 function showPopUp(element) {
-  const popUp = document.body.querySelector('div.popUp');
+  const popUp = document.body.querySelector('div.popUp-info');
   popUp.innerHTML = '';
   const title = document.createElement('h2');
   title.className = 'popUp-title';
@@ -14,6 +14,7 @@ function showPopUp(element) {
   popUp.appendChild(title);
   const divUsers = document.body.querySelector('div.container');
   divUsers.style.backgroundColor = '#808080';
+  // divUsers.style.filter = 'blur(1px)';
 }
 getUsers().then((data) => {
   data.forEach((element) => {
@@ -33,5 +34,7 @@ getUsers().then((data) => {
     mail.innerHTML = element.email;
     div.appendChild(mail);
     div.addEventListener('click', () => showPopUp(element));
+
+    div.removeEventListener('click', () => showPopUp(element));
   });
 });

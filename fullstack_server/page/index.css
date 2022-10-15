@@ -1,6 +1,7 @@
 div.container {
   width: 98vw;
   margin: 0 auto;
+  position: relative;
 }
 div.users {
   margin: 0 auto;
@@ -16,11 +17,14 @@ div.user {
   cursor: pointer;
 }
 div.popUp {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: red;
+  backdrop-filter: blur(2px);
   position: fixed;
   top: 50%;
   left: 45%;
+}
+div.popUp-info {
   background-color: white;
 }
