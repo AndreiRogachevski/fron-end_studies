@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: aliceblue;
 }
 
 code {
@@ -16,4 +17,22 @@ code {
   margin: 20px auto;
   display: flex;
   flex-direction: column;
+}
+button {
+  margin-right: 10px;
+}
+.cart{
+  margin-top: 20px;
+}
+.cart img{
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.product img{
+  width: 150px;
+  height: 150px;
+}
+.product img:not(:last-child){
+  padding-right: 10px;
 }

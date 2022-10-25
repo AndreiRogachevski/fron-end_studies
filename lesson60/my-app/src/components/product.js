@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import Button from './Button';
 export default function Product() {
   const { id } = useParams();
   const [product, setProduct] = useState();
@@ -9,14 +10,19 @@ export default function Product() {
       const json = await response.json();
       setProduct(json);
     })();
-  }, [id, product]);
+  }, []);
   return (
     <>
       <Link to="/">back</Link>
       {product && (
-        <h1>
-          {product.title} <button>to cart</button>
-        </h1>
+        <div className='product'>
+          <Button id={product.id} />
+          <h1>{product.title}</h1>
+          {product.images.map((img,index)=>(
+            <img key={index} src={img} alt={product.title}/>
+          ))}
+          {/* <img src={product.images[1]} alt={product.title}/> */}
+        </div>
       )}
     </>
   );

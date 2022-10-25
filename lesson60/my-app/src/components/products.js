@@ -6,6 +6,7 @@ import {
   selectProducts,
   productStatus,
 } from '../store/productsStore';
+import Button from './Button';
 import Spinner from './spinner/spinner';
 export default function Products() {
   const dispatch = useDispatch();
@@ -16,14 +17,15 @@ export default function Products() {
   }, [dispatch]);
   return (
     <>
+      <Link to="/cart">Cart</Link>
       {status === 'loading' ? (
         <Spinner />
       ) : (
         products.map((product) => (
-          <article key={product.id}>
+          <article key={product.id} className='products'>
+            <Button id={product.id} />
             <Link relative="products" to={`product/${product.id}`}>
               {product.title}
-              <button>to cart</button>
             </Link>
           </article>
         ))

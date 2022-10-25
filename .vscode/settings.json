@@ -3,5 +3,6 @@
     "prettier.tabWidth": 2,
     "emmet.triggerExpansionOnTab": true,
     "editor.fontLigatures": true,
-    "editor.fontFamily": "'Cascadia Code'"
+    "editor.fontFamily": "'Cascadia Code'",
+    "cSpell.language": "en, ru"
 }
