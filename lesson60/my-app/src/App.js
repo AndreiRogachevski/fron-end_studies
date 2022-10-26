@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <Cart />
         <Routes>
           <Route path="/" element={<Products />} />
-          <Route path="/cart" element={<Cart />} />
           <Route path="/product/:id" element={<Product />} />
         </Routes>
       </BrowserRouter>

@@ -6,8 +6,9 @@ import {
   selectProducts,
   productStatus,
 } from '../store/productsStore';
-import Button from './Button';
+import { setToCart } from '../store/cartStore';
 import Spinner from './spinner/spinner';
+
 export default function Products() {
   const dispatch = useDispatch();
   const products = useSelector(selectProducts);
@@ -15,18 +16,18 @@ export default function Products() {
   useEffect(() => {
     dispatch(fetchProducts());
   }, [dispatch]);
+  function addToCart(id) {
+    dispatch(setToCart(id));
+  }
   return (
     <>
-      <Link to="/cart">Cart</Link>
       {status === 'loading' ? (
         <Spinner />
       ) : (
         products.map((product) => (
-          <article key={product.id} className='products'>
-            <Button id={product.id} />
-            <Link relative="products" to={`product/${product.id}`}>
-              {product.title}
-            </Link>
+          <article key={product.id} className="products">
+            <Link to={`product/${product.id}`}>{product.title}</Link>
+            <button onClick={()=>addToCart(product.id)}>add to cart</button>
           </article>
         ))
       )}
