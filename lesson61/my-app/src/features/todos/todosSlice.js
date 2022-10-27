@@ -6,13 +6,15 @@ export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
   return json.todos;
 });
 
-export const deleteItem = createAsyncThunk('todos/deleteItem', async () => {
-  fetch('https://dummyjson.com/todos/1', {
-    method: 'DELETE',
-  })
-    .then((res) => res.json())
-    .then(console.log);
-});
+export const deleteItem = createAsyncThunk(
+  'todos/deleteItem',
+  async (id, { dispatch }) => {
+    await fetch(`https://dummyjson.com/todos/${id}`, {
+      method: 'DELETE',
+    });
+    dispatch(removeItem(id));
+  }
+);
 
 export const todosSlice = createSlice({
   name: 'todos',
@@ -20,7 +22,18 @@ export const todosSlice = createSlice({
     items: [],
     status: 'idle',
   },
-  reducers: {},
+  reducers: {
+    removeItem(state, action) {
+      state.items = state.items.filter((item) => item.id !== action.payload);
+    },
+    addItem(state,action){
+      state.items.push({
+        todo:action.payload,
+        completed: false,
+        userID: Math.floor(Math.random() * (100 - 1 + 1) + 1),
+      });
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchTodos.pending, (state) => {
@@ -37,5 +50,7 @@ export const todosSlice = createSlice({
 });
 
 export const selectTodos = (state) => state.todos.items;
+
+export const { removeItem } = todosSlice.actions;
 
 export default todosSlice.reducer;

@@ -1,12 +1,13 @@
+import { useDispatch } from "react-redux";
+import { deleteItem } from "./todosSlice";
+
 export default function ListItem({item}) {
-  function deleteItem(){
-    
-  }
+  const dispatch = useDispatch();
   return(
     <li>
       <button>edit</button>
       {item.todo}
-      <button onClick={deleteItem}>delete</button>
+      <button onClick={()=>dispatch(deleteItem(item.id))}>delete</button>
       </li>
   )
 }
