@@ -12,8 +12,8 @@ export default function List() {
   }, [dispatch]);
   return (
     <ul>
-      {list.map((item) => (
-        <ListItem key={item.id} item={item} />
+      {list.map((item,index) => (
+        <ListItem key={index} item={item} />
       ))}
     </ul>
   );
