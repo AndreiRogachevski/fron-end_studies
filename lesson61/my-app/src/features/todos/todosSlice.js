@@ -1,15 +1,16 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const fetchTodos = createAsyncThunk('todos/fetchTodos', async () => {
-  const response = await fetch('https://dummyjson.com/todos?limit=10');
+  const response = await fetch('http://192.168.0.139:3000/todos/');
   const json = await response.json();
-  return json.todos;
+  console.log(json);
+  return json;
 });
 
 export const deleteItem = createAsyncThunk(
   'todos/deleteItem',
   async (item, { dispatch }) => {
-    await fetch(`https://dummyjson.com/todos/${item.id}`, {
+    await fetch(`http://192.168.0.139:3000/todos/${item.id}`, {
       method: 'DELETE',
     });
     dispatch(removeItem(item));
@@ -20,11 +21,10 @@ export const addItem = createAsyncThunk(
   'todos/addItem',
   async (text, { dispatch }) => {
     const item = {
-      todo: text,
+      text,
       completed: false,
-      userId: 1,
     };
-    const response = await fetch(`https://dummyjson.com/todos/add`, {
+    const response = await fetch(`http://192.168.0.139:3000/todos`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -32,6 +32,7 @@ export const addItem = createAsyncThunk(
       body: JSON.stringify(item),
     });
     const json = await response.json();
+    console.log(json);
     dispatch(createItem(json));
   }
 );
@@ -39,14 +40,16 @@ export const addItem = createAsyncThunk(
 export const editTodo = createAsyncThunk(
   'todos/editItem',
   async (newItem, { dispatch, getState }) => {
+    console.log(newItem);
     const item = await getState().todos.items.find(
       (todo) => todo.id === newItem.id
     );
-    await fetch(`https://dummyjson.com/todos/${item.id}`, {
+    await fetch(`http://192.168.0.139:3000/todos/${item.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        todo: newItem.value,
+        text: newItem.value,
+        completed: newItem.completed,
       }),
     });
     dispatch(editItem(newItem));
