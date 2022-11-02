@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 200px;
+      }
+      img:not(:last-child) {
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="images"></div>
+    <form
+      action="http://192.168.0.161:3000/upload"
+      method="post"
+      enctype="multipart/form-data"
+    >
+      <input type="file" name="image" id="" multiple />
+      <input type="text" name="text" id="" value="Andrei" />
+      <input type="submit" value="upload" />
+    </form>
+    <script>
+      const form = document.body.querySelector('form');
+      const input = document.body.querySelector('input[type="file"]');
+      const inputText = document.body.querySelector('input[type="text"]');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData();
+        data.append('image', input.files[0]);
+        data.append('text', inputText.value);
+        fetch('http://192.168.0.161:3000/upload', {
+          method: 'POST',
+          body: data,
+        })
+          .then((res) => res.json())
+          .then((log) => console.log(log))
+          .catch((e) => console.log(e.message));
+        location.reload();
+      });
+      async function fetchImage() {
+        const response = await fetch('http://192.168.0.161:3000/files');
+        const result = await response.json();
+        const images = document.body.querySelector('div.images');
+        // result.forEach((element) => {
+        //   let image = document.createElement('img');
+        //   image.src = `http://192.168.0.161:3000/${element}`;
+        //   images.append(image);
+        // });
+        for (const img of result) {
+          let image = document.createElement('img');
+          image.src = `http://192.168.0.161:3000/${img}`;
+          images.append(image);
+        }
+      }
+      fetchImage();
+    </script>
+  </body>
+</html>
