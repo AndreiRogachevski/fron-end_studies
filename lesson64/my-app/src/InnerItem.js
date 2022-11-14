@@ -1,9 +1,8 @@
-import {  useState } from 'react';
+import { useState } from 'react';
 import Item from './Item';
 
 export default function InnerItem({ items }) {
   const [areas, setAreas] = useState([]);
-
   return (
     <>
       <ul>
@@ -11,7 +10,7 @@ export default function InnerItem({ items }) {
           <Item key={i.id} data={i} addAreas={(data) => setAreas(data)} />
         ))}
       </ul>
-      {areas?.areas?.length && <InnerItem key={areas.id} items={areas.areas} />}
+      {areas?.areas && <InnerItem key={areas.id} items={areas.areas} />}
     </>
   );
 }
