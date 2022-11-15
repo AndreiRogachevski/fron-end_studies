@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import json from './areas.json';
+import json from './areasEN.json';
+//import json from './areas.json';
 import InnerItem from './InnerItem';
 import { selectCity } from './Store/citySlice';
 import Weather from './Weather';
