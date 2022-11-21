@@ -1,10 +1,10 @@
 export default function Image(props) {
-  // console.log(props);
+  // console.log(props.data);
   return (
     <img
       src={props.data.urls.thumb}
       alt="img"
-      onClick={() => {props.addBig(props.data.urls.small)}}
+      onClick={() => {props.addBig(props.data)}}
     />
   );
 }

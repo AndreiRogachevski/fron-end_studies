@@ -20,17 +20,14 @@ export default function Gallery() {
     })();
   }, [setPhotos]);
   function changeImg(index) {
-    let currentImg = photos.indexOf((img) => img.urls.small === big);
+    let currentImg = photos.findIndex((img) => img.id === big.id);
     if (currentImg + index < 0) {
-      setBig(photos[photos.length - 1].urls.small);
+      setBig(photos[photos.length - 1]);
     } else if (currentImg + index >= photos.length) {
-      setBig(photos[0].urls.small);
+      setBig(photos[0]);
     } else {
-      setBig(photos[currentImg + index].urls.small);
+      setBig(photos[currentImg + index]);
     }
-    console.log(index);
-    console.log('cur', currentImg);
-    console.log(currentImg + index);
   }
   return (
     <div className="gallery">
@@ -47,7 +44,7 @@ export default function Gallery() {
             src={leftIcon}
             alt="previous"
           />
-          <img className="bigImg" src={big} alt="bigImg" />
+          <img className="bigImg" src={big.urls.regular} alt="bigImg" />
           <img
             className="close"
             onClick={() => {
