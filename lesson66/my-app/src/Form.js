@@ -1,25 +1,52 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function Form(props) {
   const [name, setName] = useState('');
   const [job, setJob] = useState('');
+  let { userId } = useParams();
   const navigate = useNavigate();
   function handleSubmit(e) {
     e.preventDefault();
-    (async () => {
-      const response = await fetch('https://reqres.in/api/users/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, job }),
-      });
-      const user = await response.json();
-      console.log(user);
-      navigate('/');
-    })();
+    if (window.location.pathname === '/form') {
+      (async () => {
+        const response = await fetch('https://reqres.in/api/users/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, job }),
+        });
+        if (response.ok) {
+          console.log(`status:${response.status}\n User successfully create`);
+        }
+        navigate('/');
+      })();
+    } else if (window.location.pathname === `/${userId}/edit`) {
+      (async () => {
+        const response = await fetch('https://reqres.in/api/users/', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, job }),
+        });
+        if (response.ok) {
+          console.log(`status:${response.status}\n User successfully edited`);
+        }
+        navigate('/');
+      })();
+    }
   }
+  useEffect(() => {
+    userId &&
+      (async () => {
+        const response = await fetch(`https://reqres.in/api/users/${userId}`);
+        const user = await response.json();
+        setName(user.data.first_name);
+        setJob('hand - ass');
+      })();
+  }, [userId]);
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
       <input

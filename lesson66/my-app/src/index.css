@@ -13,16 +13,21 @@ code {
 }
 .App {
   display: flex;
+  flex-direction: column;
   font-family: sans-serif;
   text-align: center;
-  display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
 }
 
-.App > div {
-  margin: 0 1rem 2rem 1rem;
+.App > div.users {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 75%;
+  margin: 0 auto;
   text-align: center;
 }
 
