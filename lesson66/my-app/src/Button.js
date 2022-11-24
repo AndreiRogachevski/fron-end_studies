@@ -3,14 +3,11 @@ export default function Button(props) {
   for (let i = 1; i <= props.totalPages; i++) {
     buttons.push(i);
   }
-  function changePage(btnValue) {
-    props.setNewPage(btnValue);
-  }
   return (
-    <div>
+    <div className="pagination">
       <button onClick={() => props.switchPage(-1)}>previous</button>
       {buttons.map((button, ndx) => (
-        <button key={ndx} onClick={() => changePage(button)}>
+        <button key={ndx} onClick={() => props.setNewPage(button)}>
           {button}
         </button>
       ))}

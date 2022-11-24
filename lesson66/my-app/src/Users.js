@@ -1,27 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { deleteUser, getAllUsers } from './APIs';
 import Button from './Button';
-export default function Users() {
+import RangePerPage from './RangePerPage';
+
+export default function Users({ totalUsers }) {
   const [users, setUsers] = useState();
   const [page, setPage] = useState(1);
   const [perPage, setPerPage] = useState(6);
   const [totalPages, setTotalPages] = useState();
   useEffect(() => {
-    (async () => {
-      const response = await fetch(
-        `https://reqres.in/api/users/?page=${page}&per_page=${perPage}`
-      );
-      const json = await response.json();
-      setUsers(json);
-      setTotalPages(json.total_pages);
-    })();
+    getAllUsers(page, perPage).then((users) => {
+      setUsers(users);
+      setTotalPages(users.total_pages);
+      totalUsers(users.total);
+    });
   }, [setUsers, page, perPage]);
-  function userDel(id) {
-    (async () =>
-      await fetch('https://reqres.in/api/users/' + id, {
-        method: 'DELETE',
-      }).then((res) => console.log(res)))();
-  }
   function changePage(int) {
     if (page + int > totalPages) {
       setPage(1);
@@ -34,17 +28,7 @@ export default function Users() {
   return (
     <>
       <div>
-        <label htmlFor="per_page">{perPage}</label>
-        <input
-          type="range"
-          name="per_page"
-          id="per_page"
-          value={perPage}
-          min="2"
-          max="12"
-          step="2"
-          onChange={(e) => setPerPage(e.target.value)}
-        />
+        <RangePerPage perPage={perPage} setPerPage={setPerPage} />
         <Button
           totalPages={totalPages}
           setNewPage={(i) => setPage(i)}
@@ -55,10 +39,12 @@ export default function Users() {
       <div className="users">
         {users &&
           users.data.map((user) => (
-            <div key={user.id}>
+            <div className="user" key={user.id}>
               <p>
-                <strong>{user.first_name + ' ' + user.last_name}</strong>
-                <button onClick={() => userDel(user.id)}>delete</button>
+                <Link to={`${user.id}`}>
+                  <strong>{user.first_name + ' ' + user.last_name}</strong>
+                </Link>
+                <button onClick={() => deleteUser(user.id)}>☠️</button>
               </p>
               <a href={`mailto:${user.email}`}>{user.email}</a>
               <Link to={`${user.id}`}>
