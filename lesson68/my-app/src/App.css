@@ -1,0 +1,16 @@
+div.img {
+  width: 650px;
+  height: 679px;
+  margin: 0 auto;
+}
+div.img:hover img {
+  display: none;
+}
+img {
+  max-width: 100%;
+}
+div.img:hover {
+  background: url(./cat.jpg) 0 0 no-repeat;
+  background-position-x: 50%;
+  background-position-y: 50%;
+}
