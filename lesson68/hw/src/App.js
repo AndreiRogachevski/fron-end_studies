@@ -9,23 +9,28 @@ const data = {
     },
   ],
 };
-function createTableRow(number) {
-  const rows = [];
-  for (let index = 1; index < number/2; index++) {
-    rows.push(index);
-  }
-  console.log(rows);
-}
-console.log(Math.max(data.datasets[0].data));
+// function createTableRow(number) {
+//   const rows = [];
+//   for (let index = 1; index < number/2; index++) {
+//     rows.push(index);
+//   }
+//   console.log(rows);
+// }
+console.log(Math.max(...data.datasets[0].data));
 function App() {
+  const max = Math.max(...data.datasets[0].data);
   return (
     <div className="App">
-      <div className="tableGrid" style={{}}>
+      {/* <div className="tableGrid" style={{}}>
         {createTableRow(Math.max(...data.datasets[0].data))}
-      </div>
+      </div> */}
       <div className="table">
         {data.datasets[0].data.map((item, index) => (
-          <div key={index} className="tableItem" style={{ height: item * 10 }}>
+          <div
+            key={index}
+            className="tableItem"
+            style={{ height: (item / max) * 100 + '%' }}
+          >
             <span>{data.labels[index]}</span>
           </div>
         ))}
