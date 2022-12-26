@@ -1,7 +1,7 @@
-import axios from 'axios';
 import fs from 'fs';
+import axios from 'axios';
 
-let data = fs.readFileSync('./data.json', 'utf8');
+let data = fs.readFileSync('./data.json', 'utf-8');
 data = JSON.parse(data);
 data = data.map((d) => d.images);
 data = data.flat();

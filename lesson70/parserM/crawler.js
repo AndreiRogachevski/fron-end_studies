@@ -5,7 +5,7 @@ import jsdom from 'jsdom';
 
 const { JSDOM } = jsdom;
 
-var q = tress(function (payload, done) {
+const q = tress(function (payload, done) {
   console.log('hello ' + payload.name);
   axios
     .get(payload)
@@ -16,7 +16,9 @@ var q = tress(function (payload, done) {
       );
       done(null, links);
     })
-    .catch((e) => done(e, 'error'));
+    .catch((e) => {
+      done(e, 'Ошибка загрузки страницы');
+    });
 }, 2);
 
 q.drain = function () {
@@ -33,9 +35,7 @@ q.success = function (data) {
       flag: 'a+',
     });
   });
-  console.log('Job ' + this + ' successfully finished. Result is ' + data);
 };
-
 for (let i = 1; i <= 3; i++) {
-  q.push(`https://elki.by/catalog/iskusstvennye-elki/?PAGEN_1=${i}`);
+  q.push('https://elki.by/catalog/iskusstvennye-elki/?PAGEN_1=' + i);
 }
