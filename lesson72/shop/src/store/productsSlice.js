@@ -17,7 +17,7 @@ export const productsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchAll.fulfilled, (state, action) => {
-      state.items.push(...action.payload.data.items);
+      state.items = action.payload.data.items;
       state.meta = action.payload.meta;
     });
   },

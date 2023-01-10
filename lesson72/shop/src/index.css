@@ -1,9 +1,11 @@
 .products{
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  gap: 30px;
+  padding: 0 30px;
 }
 .products div{
-  margin: 20px;
+  margin: 20px 30px;
 }
 img{
   width: 100px;
