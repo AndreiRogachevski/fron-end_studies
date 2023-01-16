@@ -4,10 +4,11 @@ import { metaProducts } from './store/productsSlice';
 
 export default function Pagination() {
   const meta = useSelector(metaProducts);
-  let pages = [];
-  for (let i = 1; i < meta.total; i++) {
-    pages.push(i);
-  }
+  // let pages = [];
+  // for (let i = 1; i < meta.total; i++) {
+  //   pages.push(i);
+  // }
+  let pages = Array.from({ length: meta.total_pages }, (x, i) => i + 1);
   const navigate = useNavigate();
   const { page } = useParams();
   function switchPage(int) {
@@ -15,7 +16,7 @@ export default function Pagination() {
     if (currentPage > meta.total - 1) {
       navigate(`/${meta.total - 1}`);
     } else if (currentPage < 1) {
-      navigate('/1');
+      navigate('/page=1');
     } else navigate(`/${currentPage}`);
   }
   return (
@@ -38,6 +39,15 @@ export default function Pagination() {
       >
         next
       </button>
+      <select
+        onChange={(e) => {
+          navigate(`/1&per_page=${e.target.value}`);
+        }}
+      >
+        <option value="10">10</option>
+        <option value="30">30</option>
+        <option value="50">50</option>
+      </select>
     </div>
   );
 }

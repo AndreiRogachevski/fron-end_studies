@@ -1,14 +1,41 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+}
 .products {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 30px;
-  padding: 0 30px;
+  margin: 0 50px;
 }
-.products div {
+.product {
   margin: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid grey;
+  border-radius: 10px;
 }
-img {
-  width: 100px;
+.image {
+  padding-top: 10px;
+  align-self: center;
+  height: 250px;
+}
+.image img {
+  height: 100%;
+  width: auto;
+}
+.product-describe > * {
+  padding: 0 10px;
+}
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid grey;
+}
+.product-footer img {
+  width: 24px;
 }
 .active {
   color: red;
