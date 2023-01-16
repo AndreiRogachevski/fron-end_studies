@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import productsApi from '../api/products';
+import {productsApi} from '../api/products';
 
-export const fetchAll = createAsyncThunk('products/fetchAll', async () => {
-  const response = await productsApi.getProducts();
+export const fetchAll = createAsyncThunk('products/fetchAll', async (page) => {
+  const response = await productsApi.getProducts(page);
   // console.log(response.data);
   return response.data;
 });
@@ -23,8 +23,7 @@ export const productsSlice = createSlice({
   },
 });
 
-// export const {} = productsSlice.actions;
-
 export const selectProducts = (state) => state.products.items;
+export const metaProducts = (state) => state.products.meta;
 
 export default productsSlice.reducer;

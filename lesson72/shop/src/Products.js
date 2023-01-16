@@ -1,15 +1,16 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import Pagination from './Pagination';
 import { fetchAll, selectProducts } from './store/productsSlice';
 
 export default function Products() {
   const products = useSelector(selectProducts);
   const dispatch = useDispatch();
-  // console.log(products);
+  const { page } = useParams();
   useEffect(() => {
-    dispatch(fetchAll());
-  }, []);
+    dispatch(fetchAll(page));
+  }, [dispatch, page]);
   return (
     <>
       <Pagination />

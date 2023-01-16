@@ -5,5 +5,11 @@ export default createBrowserRouter([
   {
     path: '/',
     element: <Products />,
+    children: [
+      {
+        path: '/:page',
+        element: <Products />,
+      },
+    ],
   },
 ]);
