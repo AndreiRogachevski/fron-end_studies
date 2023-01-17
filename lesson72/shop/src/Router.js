@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
-import Products from './Products';
+import Product from './components/product/Product';
+import Products from './components/product/Products';
 
 export default createBrowserRouter([
   {
@@ -11,5 +12,9 @@ export default createBrowserRouter([
         element: <Products />,
       },
     ],
+  },
+  {
+    path: '/products/:id',
+    element: <Product />,
   },
 ]);
