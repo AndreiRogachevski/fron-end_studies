@@ -45,6 +45,6 @@
   text-decoration: none;
 }
 .title:hover {
-  color: rgba(13, 110, 253, 1);
+  color: var(--bs-primary);
   cursor: pointer;
 }
