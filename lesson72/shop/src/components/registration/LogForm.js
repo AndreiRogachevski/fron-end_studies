@@ -1,10 +1,28 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { productsApi } from '../../api/products';
+import { setUser } from '../../store/userSlice';
 
 export default function LogForm() {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [errors, setErrors] = useState([]);
-  function formSubmit(e) {}
+  const dispatch = useDispatch();
+  function formSubmit(e) {
+    e.preventDefault();
+    productsApi
+      .login({ email, password })
+      .then((res) => {
+        console.log(res);
+        localStorage.clear();
+        localStorage.setItem('token', res.data.access_token);
+        dispatch(setUser(res.data.user));
+        setErrors([]);
+      })
+      .catch((res) => {
+        setErrors(...Object.values(res.response.data.errors));
+      });
+  }
   return (
     <form className="sing-up-form" onSubmit={formSubmit}>
       <div className="mb-3">
@@ -36,7 +54,7 @@ export default function LogForm() {
         />
       </div>
       <div className="mb-3">
-        <input type="submit" className="btn btn-info" value="Sing Up" />
+        <input type="submit" className="btn btn-info" value="Log In" />
       </div>
       {errors.length > 0 && (
         <ul>

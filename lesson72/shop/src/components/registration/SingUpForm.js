@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { productsApi } from '../../api/products';
 import '../../styles/singUp/form.css';
 
-export default function SignUpForm() {
+export default function SignUpForm({ closeForm }) {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -17,6 +17,7 @@ export default function SignUpForm() {
         localStorage.clear();
         localStorage.setItem('token', res.data.access_token);
         setErrors([]);
+        closeForm(false);
       })
       .catch((res) => {
         setErrors(...Object.values(res.response.data.errors));
@@ -67,15 +68,11 @@ export default function SignUpForm() {
         />
       </div>
       <div className="mb-3">
-        <input
-          type="submit"
-          className="btn btn-info"
-          value="Sing Up"
-        />
+        <input type="submit" className="btn btn-info" value="Sing Up" />
       </div>
       {errors.length > 0 && (
         <ul>
-          {errors.map((error,i) => (
+          {errors.map((error, i) => (
             <li key={i}>{error}</li>
           ))}
         </ul>
