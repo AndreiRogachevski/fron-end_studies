@@ -7,4 +7,7 @@ export const productsApi = {
   getProduct: (id) => axios.get(url + `api/products/${id}`),
   register: (payload) => axios.post(url + 'api/register', payload),
   login: (payload) => axios.post(url + 'api/login', payload),
+  setWish: (payload, config) =>
+    axios.post(url + 'api/wishlist', payload, config),
+  getWish: (config) => axios.get(url + 'api/wishlist', config),
 };

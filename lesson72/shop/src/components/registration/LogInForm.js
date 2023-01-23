@@ -2,26 +2,21 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { productsApi } from '../../api/products';
 import { setUser } from '../../store/userSlice';
-import '../../styles/singUp/form.css';
 
-export default function SignUpForm({ closeForm }) {
-  const [name, setName] = useState('');
+export default function LogInForm() {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [errors, setErrors] = useState([]);
-
   const dispatch = useDispatch();
-
   function formSubmit(e) {
     e.preventDefault();
     productsApi
-      .register({ name, email, password })
+      .login({ email, password })
       .then((res) => {
         localStorage.clear();
         localStorage.setItem('token', res.data.access_token);
         dispatch(setUser(res.data.user));
         setErrors([]);
-        closeForm(false);
       })
       .catch((res) => {
         setErrors(...Object.values(res.response.data.errors));
@@ -29,22 +24,7 @@ export default function SignUpForm({ closeForm }) {
   }
   return (
     <div className="log-in-container">
-      <form className="sing-up-form" onSubmit={formSubmit}>
-        <i className="bi bi-x-square-fill"></i>
-        <div className="mb-3">
-          <label htmlFor="name" className="form-label">
-            Name
-          </label>
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            type="text"
-            className="form-control"
-            id="name"
-            name="name"
-            placeholder="Name"
-          />
-        </div>
+      <form className="log-in-form" onSubmit={formSubmit}>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
             Email
@@ -74,7 +54,7 @@ export default function SignUpForm({ closeForm }) {
           />
         </div>
         <div className="mb-3">
-          <input type="submit" className="btn btn-info" value="Sing Up" />
+          <input type="submit" className="btn btn-info" value="Log In" />
         </div>
         {errors.length > 0 && (
           <ul>

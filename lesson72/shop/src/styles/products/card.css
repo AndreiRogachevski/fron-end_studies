@@ -6,9 +6,9 @@
   gap: 30px;
 }
 .product-card {
+  display: flex;
   flex: 0 0 300px;
   box-shadow: 0 1px 2px rgb(51 51 51 / 7%);
-  display: grid !important;
   align-content: space-around;
 }
 .product-card .image-wrap {
@@ -40,11 +40,14 @@
   display: flex;
   justify-content: center;
 }
-.title{
+.title {
   color: #51585e;
   text-decoration: none;
 }
 .title:hover {
   color: var(--bs-primary);
   cursor: pointer;
+}
+.bi-heart-fill:hover {
+  stroke: green;
 }

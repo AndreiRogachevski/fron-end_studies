@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 import View from './components/product/View';
 import Products from './components/product/Products';
+import ViewWish from './components/WishList';
 
 export default createBrowserRouter([
   {
@@ -16,5 +17,9 @@ export default createBrowserRouter([
   {
     path: '/products/:id',
     element: <View />,
+  },
+  {
+    path: '/products/wishlist',
+    element: <ViewWish />,
   },
 ]);

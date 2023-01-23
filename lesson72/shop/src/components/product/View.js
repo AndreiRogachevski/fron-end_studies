@@ -7,7 +7,6 @@ import '../../styles/product/view.css';
 export default function View() {
   const [product, setProduct] = useState({});
   const { id } = useParams();
-  console.log(product);
   useEffect(() => {
     (async () => {
       const response = await productsApi.getProduct(id);
