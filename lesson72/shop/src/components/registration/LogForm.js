@@ -13,7 +13,6 @@ export default function LogForm() {
     productsApi
       .login({ email, password })
       .then((res) => {
-        console.log(res);
         localStorage.clear();
         localStorage.setItem('token', res.data.access_token);
         dispatch(setUser(res.data.user));

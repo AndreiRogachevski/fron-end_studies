@@ -1,0 +1,14 @@
+.view {
+  display: grid;
+  grid-template-rows: 30px 70vh;
+  grid-template-columns: 25% 70%;
+  column-gap: 5%;
+}
+.view > a {
+  grid-row: 1/2;
+  grid-column: 1 / 2;
+}
+.view .swiper-container {
+  grid-row: 2/3;
+  grid-column: 1/2;
+}

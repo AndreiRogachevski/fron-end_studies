@@ -13,7 +13,6 @@ export default function SignUpForm({ closeForm }) {
     productsApi
       .register({ name, email, password })
       .then((res) => {
-        console.log(res);
         localStorage.clear();
         localStorage.setItem('token', res.data.access_token);
         setErrors([]);

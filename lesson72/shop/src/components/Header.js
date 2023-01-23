@@ -20,9 +20,11 @@ export default function Header() {
         (logForm && <LogForm />)}
       <header className="d-flex justify-content-end container">
         <div className="col-md-4 text-end">
-          <span className="m-3 h4">
-            Welcome, <span className="text-primary">{user.name}</span>!
-          </span>
+          {user.length && (
+            <span className="m-3 h4">
+              Welcome, <span className="text-primary">{user.name}</span>!
+            </span>
+          )}
           <button
             type="button"
             className={
