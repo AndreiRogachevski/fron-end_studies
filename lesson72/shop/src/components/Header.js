@@ -14,10 +14,15 @@ export default function Header() {
       setLogForm(false);
     }
   }, [user]);
+  useEffect(() => {
+    logForm || singForm
+      ? (document.body.style.overflow = 'hidden')
+      : (document.body.style.overflow = 'unset');
+  }, [logForm, singForm]);
   return (
     <>
       {(singForm && <SingUpForm closeForm={(s) => setSingForm(s)} />) ||
-        (logForm && <LogInForm />)}
+        (logForm && <LogInForm closeForm={(s) => setLogForm(s)} />)}
       <header className="d-flex justify-content-between container">
         <a href="/products/wishlist">
           <svg

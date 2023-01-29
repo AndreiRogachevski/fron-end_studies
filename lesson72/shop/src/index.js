@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <div className="container mt-3">
+      <div className="container pt-3">
       <Header />
         <RouterProvider router={router} />
       </div>

@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { productsApi } from '../../api/products';
 import { setUser } from '../../store/userSlice';
 import '../../styles/singUp/form.css';
+import CloseButton from './CloseButton';
 
 export default function SignUpForm({ closeForm }) {
   const [name, setName] = useState('');
@@ -30,7 +31,7 @@ export default function SignUpForm({ closeForm }) {
   return (
     <div className="log-in-container">
       <form className="sing-up-form" onSubmit={formSubmit}>
-        <i className="bi bi-x-square-fill"></i>
+        <CloseButton closeForm={() => closeForm(false)} />
         <div className="mb-3">
           <label htmlFor="name" className="form-label">
             Name

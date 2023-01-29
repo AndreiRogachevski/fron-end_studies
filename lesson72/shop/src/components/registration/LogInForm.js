@@ -2,8 +2,9 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { productsApi } from '../../api/products';
 import { setUser } from '../../store/userSlice';
+import CloseButton from './CloseButton';
 
-export default function LogInForm() {
+export default function LogInForm({ closeForm }) {
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [errors, setErrors] = useState([]);
@@ -25,6 +26,7 @@ export default function LogInForm() {
   return (
     <div className="log-in-container">
       <form className="log-in-form" onSubmit={formSubmit}>
+        <CloseButton closeForm={()=>closeForm(false)}/>
         <div className="mb-3">
           <label htmlFor="email" className="form-label">
             Email
